@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<items totalitems="75" termsofuse="http://boardgamegeek.com/xmlapi/termsofuse" pubdate="Wed, 13 Sep 2017 02:48:56 +0000">
+		<item objecttype="thing" objectid="68448" subtype="boardgame" collid="44244413">
+	<name sortindex="1">7 Wonders</name>
+		<yearpublished>2010</yearpublished>			<image>https://cf.geekdo-images.com/images/pic860217.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic860217_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-08-03 17:32:18" />
+	<numplays>1</numplays>							</item>
+		<item objecttype="thing" objectid="205637" subtype="boardgame" collid="41825223">
+	<name sortindex="1">Arkham Horror: The Card Game</name>
+		<yearpublished>2016</yearpublished>			<image>https://cf.geekdo-images.com/images/pic3122349.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic3122349_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-04-12 11:38:33" />
+	<numplays>4</numplays>							</item>
+		<item objecttype="thing" objectid="760" subtype="boardgame" collid="30143462">
+	<name sortindex="1">Battle Line</name>
+		<yearpublished>2000</yearpublished>			<image>https://cf.geekdo-images.com/images/pic149717.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic149717_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 15:32:07" />
+	<numplays>4</numplays>			<comment>Really enjoy all the strategy involved in this one, seems simple at first but is actually much deeper than I initially thought</comment>				</item>
+		<item objecttype="thing" objectid="135219" subtype="boardgame" collid="30042753">
+	<name sortindex="5">The Battle of Five Armies</name>
+		<yearpublished>2014</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1886964.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1886964_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:44:02" />
+	<numplays>3</numplays>			<comment>This is a great great game, can&#039;t say enough how much fun it is. I just got it recently and am liking it more than WotR because it doesn&#039;t feel hopeless constant losing battle for the humans</comment>				</item>
+		<item objecttype="thing" objectid="37111" subtype="boardgame" collid="32275301">
+	<name sortindex="1">Battlestar Galactica</name>
+		<yearpublished>2008</yearpublished>			<image>https://cf.geekdo-images.com/images/pic354500.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic354500_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 15:37:21" />
+	<numplays>3</numplays>							</item>
+		<item objecttype="thing" objectid="170216" subtype="boardgame" collid="36587621">
+	<name sortindex="1">Blood Rage</name>
+		<yearpublished>2015</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2439223.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2439223_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-08-30 10:32:51" />
+	<numplays>1</numplays>							</item>
+		<item objecttype="thing" objectid="11" subtype="boardgame" collid="30042801">
+	<name sortindex="1">Bohnanza</name>
+		<yearpublished>1997</yearpublished>			<image>https://cf.geekdo-images.com/images/pic69366.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic69366_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:44:07" />
+	<numplays>9</numplays>			<comment>Fun game for a group, keeps everyone engaged the entire game. One of the only games I can reliably get the girlfriend to play</comment>				</item>
+		<item objecttype="thing" objectid="153938" subtype="boardgame" collid="30042799">
+	<name sortindex="1">Camel Up</name>
+		<yearpublished>2014</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2031446.png</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2031446_t.png</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:44:10" />
+	<numplays>3</numplays>							</item>
+		<item objecttype="thing" objectid="171131" subtype="boardgame" collid="37067706">
+	<name sortindex="1">Captain Sonar</name>
+		<yearpublished>2016</yearpublished>			<image>https://cf.geekdo-images.com/images/pic3013621.png</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic3013621_t.png</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-09-23 18:27:51" />
+	<numplays>2</numplays>							</item>
+		<item objecttype="thing" objectid="478" subtype="boardgame" collid="41825239">
+	<name sortindex="1">Citadels</name>
+		<yearpublished>2000</yearpublished>			<image>https://cf.geekdo-images.com/images/pic3239104.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic3239104_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-04-12 11:39:19" />
+	<numplays>1</numplays>							</item>
+		<item objecttype="thing" objectid="178900" subtype="boardgame" collid="32374238">
+	<name sortindex="1">Codenames</name>
+		<yearpublished>2015</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2582929.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2582929_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-09-23 18:44:02" />
+	<numplays>6</numplays>			<comment>Excellent game so long as you have two people guessing on each team. The real beauty and fun of the game is when people are discussing the clue and struggle to figure out what their spy master is hinting at. When there&#039;s only one person guessing it all goes on in their head so no one else gets to hear and enjoy their dialogue and inability to connect poison and oak...</comment>				</item>
+		<item objecttype="thing" objectid="198773" subtype="boardgame" collid="40607730">
+	<name sortindex="1">Codenames: Pictures</name>
+		<yearpublished>2016</yearpublished>			<image>https://cf.geekdo-images.com/images/pic3476592.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic3476592_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-02-17 17:58:39" />
+	<numplays>3</numplays>			<comment>Very fun version of codenames. The pictures make it easier to make multi word clues but harder to make more than 2/3 word clues due to so many being able to be interpreted similarly. Really fun not sure yet if I like it as much as the original though.</comment>				</item>
+		<item objecttype="thing" objectid="158899" subtype="boardgame" collid="32275379">
+	<name sortindex="1">Colt Express</name>
+		<yearpublished>2014</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2869710.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2869710_t.jpg</thumbnail>
+			<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 15:37:09" />
+	<numplays>1</numplays>			<comment>Really fun light game that has a surprising amount of depth/strategy where you&#039;re trying to guess what other folks are playing</comment>				</item>
+		<item objecttype="thing" objectid="39463" subtype="boardgame" collid="30042793">
+	<name sortindex="1">Cosmic Encounter</name>
+		<yearpublished>2008</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1521633.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1521633_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:44:13" />
+	<numplays>8</numplays>			<comment>Excellent game that ruins friendships. Maybe not ruins, but people definitely remember if you happen to screw them over on a negotiate call...</comment>				</item>
+		<item objecttype="thing" objectid="54998" subtype="boardgame" collid="41825251">
+	<name sortindex="1">Cyclades</name>
+		<yearpublished>2009</yearpublished>			<image>https://cf.geekdo-images.com/images/pic584779.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic584779_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-04-12 11:39:44" />
+	<numplays>2</numplays>							</item>
+		<item objecttype="thing" objectid="184522" subtype="boardgame" collid="41825254">
+	<name sortindex="1">Dead Last</name>
+		<yearpublished>2016</yearpublished>			<image>https://cf.geekdo-images.com/images/pic3021686.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic3021686_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-04-12 11:40:00" />
+	<numplays>11</numplays>							</item>
+		<item objecttype="thing" objectid="39856" subtype="boardgame" collid="30042892">
+	<name sortindex="1">Dixit</name>
+		<yearpublished>2008</yearpublished>			<image>https://cf.geekdo-images.com/images/pic3483909.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic3483909_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:44:19" />
+	<numplays>4</numplays>			<comment>Fun game that&#039;s easy for everyone to pick up and play. If you want to play it more than once in a row you really need more than just one deck, need at least one expansion otherwise you&#039;ll wind up seeing all the same cards the second time through</comment>				</item>
+		<item objecttype="thing" objectid="72125" subtype="boardgame" collid="44244419">
+	<name sortindex="1">Eclipse</name>
+		<yearpublished>2011</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1974056.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1974056_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-08-03 17:32:31" />
+	<numplays>0</numplays>							</item>
+		<item objecttype="thing" objectid="146021" subtype="boardgame" collid="30042764">
+	<name sortindex="1">Eldritch Horror</name>
+		<yearpublished>2013</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1872452.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1872452_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 15:33:52" />
+	<numplays>5</numplays>			<comment>Fun for about 3-5 people, any more and it takes way too long between turns. Great atmosphere, not the worst setup, make sure to separate things into different containers/baggies and it will go much quicker</comment>				</item>
+		<item objecttype="thing" objectid="206718" subtype="boardgame" collid="42796228">
+	<name sortindex="1">Ethnos</name>
+		<yearpublished>2017</yearpublished>			<image>https://cf.geekdo-images.com/images/pic3304124.png</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic3304124_t.png</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-05-27 07:02:00" />
+	<numplays>3</numplays>							</item>
+		<item objecttype="thing" objectid="258" subtype="boardgame" collid="37067700">
+	<name sortindex="1">Fluxx</name>
+		<yearpublished>1997</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2405641.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2405641_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-09-23 18:27:16" />
+	<numplays>1</numplays>							</item>
+		<item objecttype="thing" objectid="172" subtype="boardgame" collid="32275364">
+	<name sortindex="1">For Sale</name>
+		<yearpublished>1997</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1513085.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1513085_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 15:35:47" />
+	<numplays>2</numplays>							</item>
+		<item objecttype="thing" objectid="136063" subtype="boardgame" collid="30043555">
+	<name sortindex="1">Forbidden Desert</name>
+		<yearpublished>2013</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1528722.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1528722_t.jpg</thumbnail>
+			<status own="0" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 17:26:23" />
+	<numplays>2</numplays>			<comment>It&#039;s fun light game, a little too light for me, also co-op seems to deteriorate to one or two people deciding for the group</comment>				</item>
+		<item objecttype="thing" objectid="37904" subtype="boardgame" collid="35043758">
+	<name sortindex="1">Formula D</name>
+		<yearpublished>2008</yearpublished>			<image>https://cf.geekdo-images.com/images/pic519914.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic519914_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-09-23 16:24:27" />
+	<numplays>4</numplays>							</item>
+		<item objecttype="thing" objectid="181279" subtype="boardgame" collid="32275291">
+	<name sortindex="1">Fury of Dracula (third edition)</name>
+		<yearpublished>2015</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2628062.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2628062_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-08 16:28:24" />
+	<numplays>1</numplays>			<comment>Awesome game with very fun asymmetrical play. I really enjoy the co-op while still playing against a real player. Also the joy of being Dracula and being able to slip in between the other players as they&#039;re all talking about where you could be is fantastic. My best endorsement I can give it is I&#039;ve been thinking about it for the past two days since playing it, and really need to play it again. I need to beat those hunters...</comment>				</item>
+		<item objecttype="thing" objectid="192547" subtype="boardgame" collid="40607735">
+	<name sortindex="1">Go Cuckoo!</name>
+		<yearpublished>2016</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2858953.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2858953_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-02-17 17:59:01" />
+	<numplays>1</numplays>							</item>
+		<item objecttype="thing" objectid="98778" subtype="boardgame" collid="37067704">
+	<name sortindex="1">Hanabi</name>
+		<yearpublished>2010</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2007286.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2007286_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-09-23 18:27:27" />
+	<numplays>2</numplays>							</item>
+		<item objecttype="thing" objectid="155821" subtype="boardgame" collid="43393096">
+	<name sortindex="1">Inis</name>
+		<yearpublished>2016</yearpublished>			<image>https://cf.geekdo-images.com/images/pic3112623.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic3112623_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-06-24 14:20:06" />
+	<numplays>4</numplays>							</item>
+		<item objecttype="thing" objectid="28023" subtype="boardgame" collid="37067696">
+	<name sortindex="1">Jamaica</name>
+		<yearpublished>2007</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1502119.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1502119_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-09-23 18:26:51" />
+	<numplays>5</numplays>							</item>
+		<item objecttype="thing" objectid="70323" subtype="boardgame" collid="30042883">
+	<name sortindex="1">King of Tokyo</name>
+		<yearpublished>2011</yearpublished>			<image>https://cf.geekdo-images.com/images/pic3043734.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic3043734_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 17:26:11" />
+	<numplays>6</numplays>			<comment>Quick excellent game that has surprising depth and can turn into not so quick a game. Surprisingly not had great luck with people who are first time gamers enjoying it. They don&#039;t mind it but don&#039;t fall in love with gaming because of it</comment>				</item>
+		<item objecttype="thing" objectid="127067" subtype="boardgame" collid="30042885">
+	<name sortindex="1">King of Tokyo: Power Up!</name>
+		<yearpublished>2012</yearpublished>			<image>https://cf.geekdo-images.com/images/pic3330452.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic3330452_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:44:41" />
+	<numplays>2</numplays>							</item>
+		<item objecttype="thing" objectid="107529" subtype="boardgame" collid="32275295">
+	<name sortindex="1">Kingdom Builder</name>
+		<yearpublished>2011</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1152359.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1152359_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 15:33:01" />
+	<numplays>4</numplays>							</item>
+		<item objecttype="thing" objectid="129437" subtype="boardgame" collid="32478621">
+	<name sortindex="1">Legendary: A Marvel Deck Building Game</name>
+		<yearpublished>2012</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1430769.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1430769_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-13 12:34:52" />
+	<numplays>5</numplays>							</item>
+		<item objecttype="thing" objectid="149922" subtype="boardgame" collid="32478660">
+	<name sortindex="1">Legendary: Paint the Town Red</name>
+		<yearpublished>2014</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2024982.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2024982_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-13 12:34:58" />
+	<numplays>0</numplays>							</item>
+		<item objecttype="thing" objectid="175156" subtype="boardgame" collid="32478630">
+	<name sortindex="1">Legendary: Secret Wars – Volume 1</name>
+		<yearpublished>2015</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2545261.png</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2545261_t.png</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-13 12:35:03" />
+	<numplays>0</numplays>							</item>
+		<item objecttype="thing" objectid="110327" subtype="boardgame" collid="30042809">
+	<name sortindex="1">Lords of Waterdeep</name>
+		<yearpublished>2012</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1116080.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1116080_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-08 16:30:43" />
+	<numplays>5</numplays>			<comment>Spectacular entry into worker placement games. So great, easy for people to learn, has as much theme as the player wants, the players can be either collecting orange squares or they can be collecting warriors for their faction. Very well balanced with lots of options for players. My only complaint is that only the builder lord has a vastly different strategy built into their scoring. Everyone else is just two different types of quests</comment>				</item>
+		<item objecttype="thing" objectid="134342" subtype="boardgame" collid="30042899">
+	<name sortindex="1">Lords of Waterdeep: Scoundrels of Skullport</name>
+		<yearpublished>2013</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1590236.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1590236_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 15:34:20" />
+	<numplays>1</numplays>							</item>
+		<item objecttype="thing" objectid="50" subtype="boardgame" collid="30042835">
+	<name sortindex="1">Lost Cities</name>
+		<yearpublished>1999</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2606107.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2606107_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:44:57" />
+	<numplays>1</numplays>							</item>
+		<item objecttype="thing" objectid="143884" subtype="boardgame" collid="41825283">
+	<name sortindex="1">Machi Koro</name>
+		<yearpublished>2012</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1992476.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1992476_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-04-12 11:41:21" />
+	<numplays>3</numplays>							</item>
+		<item objecttype="thing" objectid="83330" subtype="boardgame" collid="30042791">
+	<name sortindex="1">Mansions of Madness</name>
+		<yearpublished>2011</yearpublished>			<image>https://cf.geekdo-images.com/images/pic814011.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic814011_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 15:34:35" />
+	<numplays>1</numplays>							</item>
+		<item objecttype="thing" objectid="205059" subtype="boardgame" collid="40607758">
+	<name sortindex="1">Mansions of Madness: Second Edition</name>
+		<yearpublished>2016</yearpublished>			<image>https://cf.geekdo-images.com/images/pic3118622.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic3118622_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-02-17 18:00:22" />
+	<numplays>1</numplays>			<comment>Excellent take on mansions of madness. Having the app is hands down far better than the keeper. This is one of the best games played recently.</comment>				</item>
+		<item objecttype="thing" objectid="10630" subtype="boardgame" collid="30042796">
+	<name sortindex="1">Memoir &#039;44</name>
+		<yearpublished>2004</yearpublished>			<image>https://cf.geekdo-images.com/images/pic43663.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic43663_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:45:07" />
+	<numplays>3</numplays>							</item>
+		<item objecttype="thing" objectid="156546" subtype="boardgame" collid="40607678">
+	<name sortindex="1">Monikers</name>
+		<yearpublished>2015</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2357036.png</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2357036_t.png</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-02-17 17:55:25" />
+	<numplays>5</numplays>			<comment>Fantastic fun party game that is more in depth than most. The multiple rounds mean that people slowly ease into it and I have yet to have anyone not thoroughly enjoy themselves.</comment>				</item>
+		<item objecttype="thing" objectid="181304" subtype="boardgame" collid="36587568">
+	<name sortindex="1">Mysterium</name>
+		<yearpublished>2015</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2601683.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2601683_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-08-30 10:30:36" />
+	<numplays>6</numplays>							</item>
+		<item objecttype="thing" objectid="12942" subtype="boardgame" collid="30143467">
+	<name sortindex="1">No Thanks!</name>
+		<yearpublished>2004</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2602161.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2602161_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 15:34:40" />
+	<numplays>4</numplays>			<comment>Fun quick game that&#039;s got some strategy to it, easy to teach</comment>				</item>
+		<item objecttype="thing" objectid="163166" subtype="boardgame" collid="30042779">
+	<name sortindex="1">One Night Ultimate Werewolf Daybreak</name>
+		<yearpublished>2015</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2225958.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2225958_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:45:12" />
+	<numplays>1</numplays>							</item>
+		<item objecttype="thing" objectid="30549" subtype="boardgame" collid="30042848">
+	<name sortindex="1">Pandemic</name>
+		<yearpublished>2008</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1534148.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1534148_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:45:21" />
+	<numplays>3</numplays>							</item>
+		<item objecttype="thing" objectid="161936" subtype="boardgame" collid="37067678">
+	<name sortindex="1">Pandemic Legacy: Season 1</name>
+		<yearpublished>2015</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2452831.png</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2452831_t.png</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-09-23 18:24:42" />
+	<numplays>0</numplays>							</item>
+		<item objecttype="thing" objectid="163412" subtype="boardgame" collid="30042842">
+	<name sortindex="1">Patchwork</name>
+		<yearpublished>2014</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2270442.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2270442_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:32:00" />
+	<numplays>2</numplays>							</item>
+		<item objecttype="thing" objectid="218161" subtype="boardgame" collid="44257396">
+	<name sortindex="1">Pit Crew</name>
+		<yearpublished>2017</yearpublished>			<image>https://cf.geekdo-images.com/images/pic3363575.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic3363575_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-08-04 08:40:47" />
+	<numplays>1</numplays>							</item>
+		<item objecttype="thing" objectid="25669" subtype="boardgame" collid="45160791">
+	<name sortindex="1">Qwirkle</name>
+		<yearpublished>2006</yearpublished>			<image>https://cf.geekdo-images.com/images/pic309353.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic309353_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-09-06 20:54:19" />
+	<numplays>1</numplays>							</item>
+		<item objecttype="thing" objectid="28143" subtype="boardgame" collid="30042822">
+	<name sortindex="1">Race for the Galaxy</name>
+		<yearpublished>2007</yearpublished>			<image>https://cf.geekdo-images.com/images/pic236327.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic236327_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:45:29" />
+	<numplays>2</numplays>							</item>
+		<item objecttype="thing" objectid="128882" subtype="boardgame" collid="30042771">
+	<name sortindex="5">The Resistance: Avalon</name>
+		<yearpublished>2012</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1398895.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1398895_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 15:34:55" />
+	<numplays>12</numplays>							</item>
+		<item objecttype="thing" objectid="105134" subtype="boardgame" collid="30042817">
+	<name sortindex="1">Risk Legacy</name>
+		<yearpublished>2011</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1196938.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1196938_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:30:30" />
+	<numplays>2</numplays>							</item>
+		<item objecttype="thing" objectid="129090" subtype="boardgame" collid="37067686">
+	<name sortindex="1">Roll For It!</name>
+		<yearpublished>2011</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1638562.png</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1638562_t.png</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-09-23 18:48:13" />
+	<numplays>7</numplays>			<comment>Good light fun that can get people moving but overall not much strategy and kind of boring. There won&#039;t be any great gaming moments from this game. Luckily it&#039;s fast play so you&#039;re done before it goes on too long like a number of other games that end long after they&#039;ve stopped being fun</comment>				</item>
+		<item objecttype="thing" objectid="33604" subtype="boardgame" collid="30042784">
+	<name sortindex="1">Say Anything</name>
+		<yearpublished>2008</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2444563.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2444563_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:45:48" />
+	<numplays>4</numplays>							</item>
+		<item objecttype="thing" objectid="15062" subtype="boardgame" collid="40607773">
+	<name sortindex="1">Shadows over Camelot</name>
+		<yearpublished>2005</yearpublished>			<image>https://cf.geekdo-images.com/images/pic70547.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic70547_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-02-17 18:01:26" />
+	<numplays>1</numplays>			<comment>It&#039;s fun and easy to teach, not quite sure yet how much better the traitor mechanic is from the start, will need to play with folks that know it first</comment>				</item>
+		<item objecttype="thing" objectid="2511" subtype="boardgame" collid="41825308">
+	<name sortindex="1">Sherlock Holmes Consulting Detective: The Thames Murders &amp; Other Cases</name>
+		<yearpublished>1981</yearpublished>			<image>https://cf.geekdo-images.com/images/pic3514298.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic3514298_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-04-12 11:42:36" />
+	<numplays>1</numplays>							</item>
+		<item objecttype="thing" objectid="40692" subtype="boardgame" collid="30042812">
+	<name sortindex="1">Small World</name>
+		<yearpublished>2009</yearpublished>			<image>https://cf.geekdo-images.com/images/pic428828.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic428828_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 15:35:09" />
+	<numplays>4</numplays>							</item>
+		<item objecttype="thing" objectid="122522" subtype="boardgame" collid="30042813">
+	<name sortindex="1">Smash Up</name>
+		<yearpublished>2012</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1269874.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1269874_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:45:55" />
+	<numplays>3</numplays>							</item>
+		<item objecttype="thing" objectid="148228" subtype="boardgame" collid="37067682">
+	<name sortindex="1">Splendor</name>
+		<yearpublished>2014</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1904079.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1904079_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-09-23 18:25:11" />
+	<numplays>3</numplays>							</item>
+		<item objecttype="thing" objectid="166384" subtype="boardgame" collid="37067679">
+	<name sortindex="1">Spyfall</name>
+		<yearpublished>2014</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2453926.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2453926_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-09-23 18:25:00" />
+	<numplays>1</numplays>							</item>
+		<item objecttype="thing" objectid="187645" subtype="boardgame" collid="35043709">
+	<name sortindex="1">Star Wars: Rebellion</name>
+		<yearpublished>2016</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2737530.png</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2737530_t.png</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-09-23 18:50:59" />
+	<numplays>3</numplays>			<comment>Had one of my favorite gaming experiences with my last play of this. Extremely fun chock full of awesome starwarsness. Only downside is the battles are a bit bulky and not the best part</comment>				</item>
+		<item objecttype="thing" objectid="133473" subtype="boardgame" collid="35043734">
+	<name sortindex="1">Sushi Go!</name>
+		<yearpublished>2013</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1900075.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1900075_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-06-06 12:40:55" />
+	<numplays>4</numplays>							</item>
+		<item objecttype="thing" objectid="146508" subtype="boardgame" collid="37067688">
+	<name sortindex="1">T.I.M.E Stories</name>
+		<yearpublished>2015</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2617634.png</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2617634_t.png</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-02-17 18:04:24" />
+	<numplays>3</numplays>			<comment>The games are spectacular, I haven&#039;t had a better gaming experience ever. Each story is unique and so much fun and challenging. I have yet to play it by the complete legit rules but I&#039;m not sure I even want to, the way we&#039;re playing it we get to feel empowered but not too powerful and everyone is working together to solve the mysteries! Can not recommend it more! Go get it now.</comment>				</item>
+		<item objecttype="thing" objectid="189686" subtype="boardgame" collid="37067692">
+	<name sortindex="1">T.I.M.E Stories: Under the Mask</name>
+		<yearpublished>2016</yearpublished>			<image>https://cf.geekdo-images.com/images/pic3013618.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic3013618_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-09-23 18:26:31" />
+	<numplays>0</numplays>							</item>
+		<item objecttype="thing" objectid="130176" subtype="boardgame" collid="35043767">
+	<name sortindex="1">Tales &amp; Games: The Hare &amp; the Tortoise</name>
+		<yearpublished>2011</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2433578.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2433578_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-06-06 12:43:48" />
+	<numplays>3</numplays>			<comment>fun game that is easy to learn and teach, got some decent strategy to it without having it be too intense. Anyone and everyone can pick up and play this</comment>				</item>
+		<item objecttype="thing" objectid="34119" subtype="boardgame" collid="30042829">
+	<name sortindex="1">Tales of the Arabian Nights</name>
+		<yearpublished>2009</yearpublished>			<image>https://cf.geekdo-images.com/images/pic486114.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic486114_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-04 15:35:16" />
+	<numplays>5</numplays>			<comment>Fun but drags on and on, especially when played with a large number of people</comment>				</item>
+		<item objecttype="thing" objectid="153016" subtype="boardgame" collid="30042787">
+	<name sortindex="1">Telestrations: 12 Player Party Pack</name>
+		<yearpublished>2011</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2587359.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2587359_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-01-08 16:17:57" />
+	<numplays>2</numplays>			<comment>Fun game that is better the more people you have. Some of the cards are a little too simple, if everyone can draw the item and guess it then it&#039;s pretty boring. Would be more entertaining with harder cards. Going to try to play it with Cards against Humanity and also having people have to add an adjective/adverb to the word. Also having people come up with a sentence sounds fun too</comment>				</item>
+		<item objecttype="thing" objectid="9209" subtype="boardgame" collid="30042766">
+	<name sortindex="1">Ticket to Ride</name>
+		<yearpublished>2004</yearpublished>			<image>https://cf.geekdo-images.com/images/pic38668.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic38668_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:46:10" />
+	<numplays>15</numplays>			<comment>Excellent game for 2-5 players. Really simple to teach, lots of strategy built into it. Just all around great entry point for people into gaming</comment>				</item>
+		<item objecttype="thing" objectid="31627" subtype="boardgame" collid="37067711">
+	<name sortindex="1">Ticket to Ride: Nordic Countries</name>
+		<yearpublished>2007</yearpublished>			<image>https://cf.geekdo-images.com/images/pic369616.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic369616_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-09-23 18:28:11" />
+	<numplays>1</numplays>							</item>
+		<item objecttype="thing" objectid="12333" subtype="boardgame" collid="30042756">
+	<name sortindex="1">Twilight Struggle</name>
+		<yearpublished>2005</yearpublished>			<image>https://cf.geekdo-images.com/images/pic361592.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic361592_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:46:12" />
+	<numplays>4</numplays>							</item>
+		<item objecttype="thing" objectid="115746" subtype="boardgame" collid="30042749">
+	<name sortindex="1">War of the Ring (Second Edition)</name>
+		<yearpublished>2012</yearpublished>			<image>https://cf.geekdo-images.com/images/pic1215633.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic1215633_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2015-09-01 16:46:15" />
+	<numplays>4</numplays>			<comment>Spectacular recreation of the lord of the rings trilogy. It has everything in it! My only complaint is that it just seems so hopeless as the free people, which it should! It&#039;s fantastic that the stories that come out of it are from gameplay rather than event cards. Killing off Saruman with my army lead by Pippin and Gandalf or losing Aragorn and Gimli in the battle for Minis Tirith are things that you decide for yourself. It&#039;s a fantastic game and everyone who loves strategy games should play it.</comment>				</item>
+		<item objecttype="thing" objectid="181521" subtype="boardgame" collid="45084687">
+	<name sortindex="1">Warhammer Quest: The Adventure Card Game</name>
+		<yearpublished>2015</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2625794.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2625794_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2017-09-03 18:18:17" />
+	<numplays>1</numplays>							</item>
+		<item objecttype="thing" objectid="62871" subtype="boardgame" collid="37951687">
+	<name sortindex="1">Zombie Dice</name>
+		<yearpublished>2010</yearpublished>			<image>https://cf.geekdo-images.com/images/pic2664015.jpg</image>
+		<thumbnail>https://cf.geekdo-images.com/images/pic2664015_t.jpg</thumbnail>
+			<status own="1" prevowned="0" fortrade="0" want="0" wanttoplay="0" wanttobuy="0" wishlist="0"  preordered="0" lastmodified="2016-11-02 12:03:33" />
+	<numplays>0</numplays>							</item>
+		
+</items>
