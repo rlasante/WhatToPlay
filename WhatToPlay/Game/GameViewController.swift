@@ -9,7 +9,7 @@
 import Material
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: UITableViewController {
     var game: Game!
 
     private var card: ImageCard!
@@ -39,65 +39,36 @@ class GameViewController: UIViewController {
 //                self.headerImage.image = self.headerImage.image?.resize(toWidth: self.view.bounds.width)
 //            }
 //        }
-
-        prepareImageView()
-        prepareMoreButton()
-        prepareToolbar()
-        prepareContentView()
-        prepareCard()
     }
 
-    func prepareImageView() {
-        imageView = UIImageView()
-        imageView.clipsToBounds = true
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell", for: indexPath) as! HeaderTableViewCell
+        cell.titleLabel.text = game.name
+        cell.playerCountLabel.text = game.playerCount.description
+        cell.suggestedPlayerCountLabel.text = "Suggested: \(game.suggestedPlayerCount.description)"
+        if let bestPlayerCount = game.bestPlayerCount {
+            cell.bestPlayerCountLabel.text = "Best: \([bestPlayerCount].description)"
+        } else {
+            cell.bestPlayerCountLabel.text = nil
+        }
         if let imageUrl = game.imageURL {
-            imageView.af_setImage(withURL: imageUrl) { _ in
-                self.imageView.image = self.imageView.image?.resize(toWidth: self.view.bounds.width - 40)
-                self.view.setNeedsLayout()
+            cell.backgroundImageView.af_setImage(withURL: imageUrl) { _ in
+                self.tableView.beginUpdates()
+                self.tableView.endUpdates()
             }
         }
+        // TODO make these actually work
+        cell.ratingLabel.text = "8.5"
+        cell.myRatingLabel.isHidden = true
+        cell.myPlayCountLabel.isHidden = true
+        return cell
     }
-
-    func prepareMoreButton() {
-        moreButton = IconButton(image: Icon.cm.moreVertical, tintColor: Color.grey.base)
-    }
-
-    func prepareToolbar() {
-        toolbar = Toolbar(rightViews: [moreButton])
-
-        toolbar.title = game.name
-        toolbar.titleLabel.textAlignment = .left
-
-        toolbar.detail = "Build Beautiful Software"
-        toolbar.detailLabel.textAlignment = .left
-        toolbar.detailLabel.textColor = Color.grey.base
-    }
-
-    fileprivate func prepareContentView() {
-        contentView = UILabel()
-        contentView.numberOfLines = 10
-        contentView.text = game.description
-        contentView.font = RobotoFont.regular(with: 14)
-    }
-
-    func prepareCard() {
-        card = ImageCard()
-
-        card.toolbar = toolbar
-        card.toolbarEdgeInsetsPreset = .square3
-//        card.toolbarEdgeInsets.bottom = 0
-//        card.toolbarEdgeInsets.right = 8
-
-        card.imageView = imageView
-
-        card.contentView = contentView
-        card.contentViewEdgeInsetsPreset = .square3
-
-//        card.bottomBar = bottomBar
-//        card.bottomBarEdgeInsetsPreset = .wideRectangle2
-
-        view.layout(card).horizontally(left: 20, right: 20).centerHorizontally().top(20)
-//        view.layout(card).horizontally(left: 20, right: 20)
-    }
-
 }

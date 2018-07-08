@@ -12,15 +12,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var getCollectionButton: UIButton!
     @IBOutlet weak var usernameTextField: UITextField!
+    private static let usernameKey = "Username"
+
+    var storedUsername: String? {
+        get {
+            return UserDefaults.standard.string(forKey: ViewController.usernameKey)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: ViewController.usernameKey)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        usernameTextField.text = "Hunter9110"
+        if let storedUsername = storedUsername {
+            usernameTextField.text = storedUsername
+            self.performSegue(withIdentifier: "get_collection", sender: nil)
+        } else {
+            usernameTextField.text = "Hunter9110"
+        }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let username = usernameTextField.text else { return }
         guard let collectionViewController = segue.destination as? GameCollectionViewController else { return }
+        storedUsername = username
 
         BoardGameGeekAPI.getCollection(userName: username)
         .done { [weak collectionViewController] games in

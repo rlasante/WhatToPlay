@@ -14,4 +14,10 @@ protocol FilterTemplate {
     func isValid(_ game: Game) -> Bool
     var description: String { get }
     var shortDescription: String { get }
+    var descriptions: [String] { get }
+}
+extension FilterTemplate {
+    var descriptions: [String] {
+        return [description]
+    }
 }

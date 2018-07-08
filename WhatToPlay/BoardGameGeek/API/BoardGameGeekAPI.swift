@@ -88,7 +88,7 @@ class BoardGameGeekAPI {
         }.map { xmlString -> [String] in
             let xml = SWXMLHash.parse(xmlString)
             let nodes = xml["items"].children
-            let gameIds = nodes.flatMap { node -> String? in
+            let gameIds = nodes.compactMap { node -> String? in
                 guard let objectType: String = node.value(ofAttribute: "objecttype".lowercased()), objectType == "thing".lowercased(),
                     let subType: String = node.value(ofAttribute: "subtype".lowercased()), subType == "boardgame".lowercased() else { return nil }
                 let gameId: String? = node.value(ofAttribute: "objectid".lowercased())

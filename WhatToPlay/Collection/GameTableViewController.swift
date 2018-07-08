@@ -60,9 +60,12 @@ class GameTableViewController: UITableViewController {
         let game = games[indexPath.row]
         guard cell.textLabel?.text != game.name else { return cell }
         cell.textLabel?.text = game.name
+        cell.detailTextLabel?.text = game.detailText
 
         cell.imageView?.image = nil
         if let thumbnailURL = game.thumbnailURL {
+            cell.imageView?.contentMode = .scaleAspectFill
+            cell.imageView?.clipsToBounds = true
             cell.imageView?.af_setImage(withURL: thumbnailURL) { response in
                 guard response.response != nil else { return }
                 self.tableView.beginUpdates()
@@ -130,3 +133,42 @@ class GameTableViewController: UITableViewController {
     */
 
 }
+
+extension Game {
+    var detailText: String {
+        let duration: String
+        if let minPlayingTime = minPlayingTime, let maxPlayingTime = maxPlayingTime, minPlayingTime != maxPlayingTime {
+            duration = "\(Int(minPlayingTime / 60))-\(Int(maxPlayingTime / 60)) min"
+        } else if let playingTime = playingTime {
+            duration = "\(Int(playingTime / 60)) min"
+        } else {
+            duration = ""
+        }
+        return "\(playerCount.description), \(duration)"
+    }
+}
+
+extension Array where Element == PlayerCount {
+    var description: String {
+        var description = ""
+        for (index, playerCount) in self.enumerated() {
+            switch playerCount {
+            case .count(let value):
+                description += "\(value)"
+            case let .range(min, max):
+                if min == max {
+                    description += "\(min)"
+                } else if max != Int.max {
+                    description += "\(min)-\(max)"
+                } else {
+                    description += "\(min)+"
+                }
+            }
+            if index < count - 1 {
+                description += ", "
+            }
+        }
+        return "\(description) players"
+    }
+}
+

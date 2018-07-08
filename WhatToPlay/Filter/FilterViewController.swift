@@ -12,6 +12,7 @@ protocol FilterDelegate: class {
     var filter: ((Game)->Bool)? { get set }
     var filterData: [String: Any] { get set }
     var filterLabel: String { get set }
+    var filterLabels: [String] { get set }
 }
 
 enum FilterType: String {
@@ -29,10 +30,10 @@ class FilterViewController: UITableViewController {
 
     var filters: [(FilterTemplate.Type, FilterTemplate?)] = [
         (PlayerCountFilter.self, nil),
-        (GameCategoryFilter.self, nil),
-        (GameMechanicFilter.self, nil),
+        (ComplexityFilter.self, nil),
         (PlayDurationFilter.self, nil),
-        (ComplexityFilter.self, nil)
+        (GameMechanicFilter.self, nil),
+        (GameCategoryFilter.self, nil)
     ]
 
     func setFilter(_ filter: FilterTemplate) {
@@ -65,17 +66,17 @@ class FilterViewController: UITableViewController {
             .bestPlayerCount
         ],
         [
-            .category
-        ],
-        [
-            .mechanic
+            .complexity
         ],
         [
             .minPlayTime,
             .maxPlayTime
         ],
         [
-            .complexity
+            .mechanic
+        ],
+        [
+            .category
         ]
         ]
 
@@ -177,6 +178,7 @@ class FilterViewController: UITableViewController {
         delegate?.filter = nil
         delegate?.filterData = [:]
         delegate?.filterLabel = "No Filters"
+        delegate?.filterLabels = []
         navigationController?.popViewController(animated: true)
     }
 
@@ -223,7 +225,7 @@ class FilterViewController: UITableViewController {
             clearFilters(ComplexityFilter.self)
         }
 
-        let enabledFilters = filters.flatMap { $0.1 }
+        let enabledFilters = filters.compactMap { $0.1 }
 
         delegate?.filter = { game in
             // find first one that returns false, if none return false then its true
@@ -239,9 +241,11 @@ class FilterViewController: UITableViewController {
     }
 
     private func updateFilterLabels(filters: [FilterTemplate]) {
-        var filterLabel = filters.map { filters.count < 3 ? $0.description : $0.shortDescription }.joined(separator: "; ")
+        let filterLabels = filters.map { filters.count < 3 ? $0.description : $0.shortDescription }
+        var filterLabel = filterLabels.joined(separator: "; ")
         if filterLabel.isEmpty { filterLabel = "No Filters" }
         delegate?.filterLabel = filterLabel
+        delegate?.filterLabels = filters.flatMap { $0.descriptions }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

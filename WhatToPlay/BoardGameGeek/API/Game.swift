@@ -119,8 +119,8 @@ struct Game: XMLIndexerDeserializable {
         }
 
         let suggestedPlayerCount = recommended
-        let categories: [GameCategory] = node[GameCategory.serverNodeType].all.flatMap { try? $0.value() }
-        let mechanics: [GameMechanic] = node[GameMechanic.serverNodeType].all.flatMap { try? $0.value() }
+        let categories: [GameCategory] = node[GameCategory.serverNodeType].all.compactMap { try? $0.value() }
+        let mechanics: [GameMechanic] = node[GameMechanic.serverNodeType].all.compactMap { try? $0.value() }
 
         let complexity: GameComplexity = (try? node["statistics"]["ratings"][GameComplexity.serverNodeType].value()) ?? .heavy(actualWeight: 5)
 

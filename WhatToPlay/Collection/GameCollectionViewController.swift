@@ -11,8 +11,9 @@ import UIKit
 class GameCollectionViewController: UIViewController, FilterDelegate {
 
     weak var gamesViewController: GameTableViewController?
+    weak var filterCollectionController: FilterCollectionViewController?
     @IBOutlet weak var filterDescriptionView: FilterDescriptionView?
-    @IBOutlet weak var filterPillContainer: UICollectionView?
+
 
     var gamesCollection: [Game] = [] {
         didSet {
@@ -37,6 +38,7 @@ class GameCollectionViewController: UIViewController, FilterDelegate {
     var filterLabels: [String] = [] {
         didSet {
             // Update the filter Container with the pills
+            filterCollectionController?.filterLabels = filterLabels
         }
     }
 
@@ -54,13 +56,20 @@ class GameCollectionViewController: UIViewController, FilterDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        print("View Did Load")
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "embed_gamesVC", let destination = segue.destination as? GameTableViewController {
             gamesViewController = destination
             gamesViewController?.games = filteredGames
             gamesViewController?.delegate = self
+        } else if segue.identifier == "embed_filterCollectionVC", let destination = segue.destination as? FilterCollectionViewController {
+            filterCollectionController = destination
+            filterCollectionController?.filterLabels = filterLabels
         } else if segue.identifier == "filter", let destination = segue.destination as? FilterViewController {
             destination.delegate = self
             destination.configure(withFilterData: filterData)

@@ -28,9 +28,26 @@ struct PlayerCountFilter: FilterTemplate {
         case .count(let value): return "\(value) Player" + "\(value == 1 ? "" : "s")" + addon
         case let .range(min, max): return "\(min)-\(max) Players" + addon
         }
-
     }
     var shortDescription: String { return "Players" }
+    var descriptions: [String] {
+        var descriptions = [String]()
+        switch playerCount {
+        case .count(let value): descriptions.append("\(value) Player" + "\(value == 1 ? "" : "s")")
+        case let .range(min, max):
+            if min == max {
+                descriptions.append("\(min) Player" + "\(min == 1 ? "" : "s")")
+            } else {
+                descriptions.append("\(min)-\(max) Players")
+            }
+        }
+        switch (suggestedPlayerCountOnly, bestPlayerCountOnly) {
+        case (true, false): descriptions.append("Suggested Only")
+        case (false, true): descriptions.append("Best Only")
+        default: break
+        }
+        return descriptions
+    }
 
     init?(playerCount: PlayerCount, suggestedPlayerCountOnly: Bool, bestPlayerCountOnly: Bool) {
         guard !(suggestedPlayerCountOnly && bestPlayerCountOnly) else {
