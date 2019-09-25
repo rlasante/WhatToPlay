@@ -17,8 +17,8 @@ struct GameCategoryFilter: FilterTemplate {
     }
     var shortDescription: String { return "Categories" }
 
-    func isValid(_ game: Game) -> Bool {
-        return !game.categories.intersection(categories).isEmpty
+    func filter(_ game: Game) -> Bool {
+        return categories.contains { game.categories.contains($0) }
     }
 
     init?(categories: [GameCategory]) {

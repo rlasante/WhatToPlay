@@ -6,6 +6,7 @@
 //  Copyright © 2017 rlasante. All rights reserved.
 //
 
+import CoreData
 import UIKit
 import Alamofire
 import SWXMLHash
@@ -13,8 +14,9 @@ import PMKAlamofire
 import PromiseKit
 
 enum APIError: Error {
-    case tryAgain
     case noGames
+    case noUser
+    case tryAgain
 }
 
 class BoardGameGeekAPI {
@@ -52,34 +54,41 @@ class BoardGameGeekAPI {
         return attempt()
     }
 
-    class func getUser(userName: String) -> Promise<User> {
-        return attempt {
-            bggSessionManager.request("\(baseURL)/user?name=\(userName)&top=1")
-            .responseString()
-            .map { xmlString, dataResponse -> String in
-                guard dataResponse.response?.statusCode != 202 else {
-                    print("[API]: Retrying fetching user")
-                    throw APIError.tryAgain
-                }
-                return xmlString
-            }
-        }.map { xmlString in
-            let xml = SWXMLHash.lazy(xmlString)
-            return try xml["user"].value() as User
-        }
-    }
+//    class func getUser(userName: String, context: NSManagedObjectContext) -> Promise<User> {
+//        return attempt { Void -> String
+//            let url = "\(baseURL)/user?name=\(userName)&top=1"
+//            print("[GetUser] Performing Request: \(url)")
+//            return bggSessionManager.request(url)
+//            .responseString()
+//            .map { xmlString, dataResponse -> String in
+//                guard !dataResponse.response.statusCode else {
+//                    print("[API]: Retrying fetching user")
+//                    throw APIError.tryAgain
+//                }
+//                return xmlString
+//            }
+//        }.map(on: .main) { xmlString -> User in
+//            let xml = SWXMLHash.lazy(xmlString)
+//            guard let userData: UserXMLData = xml["user"].value()
+//                throw APIError.noUser
+//            }
+//            return User(data: userData, in: context)
+//        }
+//    }
 
-    class func getCollection(userName: String) -> Promise<[Game]> {
+    class func getCollection(userName: String, context: NSManagedObjectContext) -> Promise<[Game]> {
 //        if useMockData, let mockCollectionData = mockCollectionData {
 //            print("[Collection] Using Mock Collection")
 //            handleResponse(xmlString: mockCollectionData)
 //        }
         return attempt { () -> Promise<String> in
-            bggSessionManager.request("\(baseURL)/collection?username=\(userName)")
+            let url = "\(baseURL)/collection?username=\(userName)&own=1"
+            print("\(#function) Performing Request: \(url)")
+            return bggSessionManager.request(url)
             .responseString()
             .tap { _ in print("[API]: Fetched Collection") }
             .map { xmlString, dataResponse in
-                guard dataResponse.response?.statusCode != 202 else {
+                guard !dataResponse.response.shouldRetryRequest else {
                     print("[API]: Retrying fetching Collection")
                     throw APIError.tryAgain
                 }
@@ -89,8 +98,12 @@ class BoardGameGeekAPI {
             let xml = SWXMLHash.parse(xmlString)
             let nodes = xml["items"].children
             let gameIds = nodes.compactMap { node -> String? in
-                guard let objectType: String = node.value(ofAttribute: "objecttype".lowercased()), objectType == "thing".lowercased(),
-                    let subType: String = node.value(ofAttribute: "subtype".lowercased()), subType == "boardgame".lowercased() else { return nil }
+                guard
+                    let objectType: String = node.value(ofAttribute: "objecttype".lowercased()),
+                    objectType == "thing".lowercased(),
+                    let subType: String = node.value(ofAttribute: "subtype".lowercased()),
+                    subType == "boardgame".lowercased()
+                else { return nil }
                 let gameId: String? = node.value(ofAttribute: "objectid".lowercased())
                 return gameId
             }
@@ -98,38 +111,55 @@ class BoardGameGeekAPI {
         }.tap {
             print("Game Ids to fetch: \($0)")
         }.then { gameIds -> Promise<[Game]> in
-            getBoardGames(gameIds: gameIds)
+            getBoardGames(gameIds: gameIds, context: context)
         }
     }
 
-    class func getBoardGame(gameId: String) -> Promise<Game> {
-        return getBoardGames(gameIds: [gameId]).firstValue
+    class func getBoardGame(gameId: String, context: NSManagedObjectContext) -> Promise<Game> {
+        return getBoardGames(gameIds: [gameId], context: context).firstValue
     }
 
-    class func getBoardGames(gameIds: [String]) -> Promise<[Game]> {
+    class func getBoardGames(gameIds: [String], context: NSManagedObjectContext) -> Promise<[Game]> {
 //        if useMockData, let mockData = mockGameData {
 //            print("[Games] Using mock games")
 //            handleResponse(xmlString: mockData)
 //        }
+        // first we want to see if we have the games locally
+        let localGames: [Game] = (try? context.fetch(Game.fetchRequest(forIds: gameIds))) ?? []
+        let gameIds = gameIds.filter { id in
+            !localGames.contains { $0.gameId == id }
+        }
+        if gameIds.isEmpty {
+            return Promise<[Game]>.value(localGames)
+        }
         return attempt { () -> Promise<String> in
             let url = "\(baseURL)/thing?id=\(gameIds.joined(separator: ","))&type=boardgame&stats=1"
+            print("\(#function) Performing Request: \(url)")
             return gamesSessionManager.request(url)
             .responseString()
             .tap { _ in print("[API]: Got Board Games") }
             .map { xmlString, dataResponse -> String in
-                guard dataResponse.response?.statusCode != 202 else {
+                guard !dataResponse.response.shouldRetryRequest else {
                     print("[API]: Retrying Fetching Board Games")
                     throw APIError.tryAgain
                 }
                 return xmlString
             }
-        }.map { xmlString -> [Game] in
+        }.map(on: .main) { xmlString -> [Game] in
             let xml = SWXMLHash.parse(xmlString)
-            let games: [Game] = try xml["items"]["item"].all.map { try $0.value() }
-            guard !games.isEmpty else {
+            // TODO figure out a way to store the data so that way we will have it when I add new properties
+            let gamesData: [GameXMLData] = try xml["items"]["item"].all.map { try $0.value() }
+
+            let games = gamesData.map { Game(data: $0, in: context)}
+            _ = try? context.save()
+            let allSortedGames = [games, localGames].flatMap { $0 }.sorted { $0.name ?? "" < $1.name ?? "" }
+            guard !allSortedGames.isEmpty else {
                 throw APIError.noGames
             }
-            return games
+            if !gameIds.isEmpty {
+                print("Missing the following ids: \(gameIds)")
+            }
+            return allSortedGames
         }
     }
 
@@ -147,12 +177,21 @@ class BoardGameGeekAPI {
                 completion(false, 0)
                 return
             }
-            if response.statusCode == 202 {
+            if response.shouldRetryRequest {
                 completion(true, 0.2)
             }
             completion(false, 0)
         }
+    }
+}
 
-
+private extension Optional where Wrapped == HTTPURLResponse {
+    var shouldRetryRequest: Bool {
+        return self?.shouldRetryRequest ?? true
+    }
+}
+private extension HTTPURLResponse {
+    var shouldRetryRequest: Bool {
+        return statusCode == 202
     }
 }

@@ -6,6 +6,7 @@
 //  Copyright © 2017 rlasante. All rights reserved.
 //
 
+import CoreData
 import UIKit
 import SWXMLHash
 
@@ -92,5 +93,31 @@ enum GameCategory: String, EnumCollection, XMLIndexerDeserializable {
                 throw XMLDeserializationError.nodeIsInvalid(node: node)
         }
         return category
+    }
+}
+
+class GameCategoryValueTransformer: ValueTransformer {
+    override func transformedValue(_ value: Any?) -> Any? {
+        guard let category = value as? GameCategory else { return nil }
+        return category.rawValue
+    }
+
+    override func reverseTransformedValue(_ value: Any?) -> Any? {
+        guard let rawValue = value as? String else { return nil }
+        return GameCategory(rawValue: rawValue)
+    }
+}
+
+class ArrayGameCategoryValueTransformer: ValueTransformer {
+    override func transformedValue(_ value: Any?) -> Any? {
+        guard let categories = value as? [GameCategory] else { return nil }
+        let transformer = GameCategoryValueTransformer()
+        return categories.map { transformer.transformedValue($0) }
+    }
+
+    override func reverseTransformedValue(_ value: Any?) -> Any? {
+        guard let rawValues = value as? [Any] else { return nil }
+        let transformer = GameCategoryValueTransformer()
+        return rawValues.map { transformer.reverseTransformedValue($0) }
     }
 }

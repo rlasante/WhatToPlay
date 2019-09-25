@@ -8,13 +8,13 @@
 
 import UIKit
 
-protocol FilterTemplate {
+protocol FilterTemplate: FilterModel {
     init?(filterData: [String: Any]?)
     func serialize() -> [String: Any]
-    func isValid(_ game: Game) -> Bool
     var description: String { get }
     var shortDescription: String { get }
     var descriptions: [String] { get }
+    func filter(_ game: Game) -> Bool
 }
 extension FilterTemplate {
     var descriptions: [String] {

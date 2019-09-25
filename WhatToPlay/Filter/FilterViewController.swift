@@ -15,6 +15,32 @@ protocol FilterDelegate: class {
     var filterLabels: [String] { get set }
 }
 
+struct Section: ExpressibleByArrayLiteral {
+    typealias ArrayLiteralElement = Cell
+    let cells: [Cell]
+    var count: Int { return cells.count }
+
+    public init(arrayLiteral elements: Cell...) {
+        self.cells = elements
+    }
+
+    subscript(index: Int) -> Cell {
+        return cells[index]
+    }
+}
+
+enum Cell {
+    case header(String)
+    case filter(FilterType)
+
+    var reuseCellIdentifier: String {
+        switch self {
+        case .header: return "HeaderCell"
+        case .filter(let filterType): return filterType.rawValue
+        }
+    }
+}
+
 enum FilterType: String {
     case playerCount
     case suggestedPlayerCount
@@ -38,7 +64,7 @@ class FilterViewController: UITableViewController {
 
     func setFilter(_ filter: FilterTemplate) {
         let filterType = type(of: filter)
-        if let filterIndex = filters.index(where: { $0.0 == filterType }) {
+        if let filterIndex = filters.firstIndex(where: { $0.0 == filterType }) {
             filters[filterIndex] = (filterType, filter)
         } else {
             filters.append((filterType, filter))
@@ -48,10 +74,9 @@ class FilterViewController: UITableViewController {
     func clearFilters(_ filterTypes: FilterTemplate.Type...) {
         clearFilters(filterTypes)
     }
-
     func clearFilters(_ filterTypes: [FilterTemplate.Type]) {
         for type in filterTypes {
-            if let filterIndex = filters.index(where: { $0.0 == type }) {
+            if let filterIndex = filters.firstIndex(where: { $0.0 == type }) {
                 filters[filterIndex] = (type, nil)
             } else {
                 filters.append((type, nil))
@@ -59,24 +84,29 @@ class FilterViewController: UITableViewController {
         }
     }
 
-    var data: [[FilterType]] = [
+    var data: [Section] = [
         [
-            .playerCount,
-            .suggestedPlayerCount,
-            .bestPlayerCount
+            .header("Player Count"),
+            .filter(.playerCount),
+            .filter(.suggestedPlayerCount),
+            .filter(.bestPlayerCount)
         ],
         [
-            .complexity
+            .header("Complexity"),
+            .filter(.complexity)
         ],
         [
-            .minPlayTime,
-            .maxPlayTime
+            .header("Play Time"),
+            .filter(.minPlayTime),
+            .filter(.maxPlayTime)
         ],
         [
-            .mechanic
+            .header("Game Mechanics"),
+            .filter(.mechanic)
         ],
         [
-            .category
+            .header("Game Categories"),
+            .filter(.category)
         ]
         ]
 
@@ -87,6 +117,18 @@ class FilterViewController: UITableViewController {
     var minPlayTimeController = PickerController(data: [[Int](0...32).map { $0 * 15 }])
     var maxPlayTimeController = PickerController(data: [[Int](0...32).map { $0 * 15 }])
     var complexityController = PickerController(data: [GameComplexity.all])
+
+    func filterController<Controller>(for filterType: FilterType) -> Controller {
+        let filterController: [FilterType: Any] = [
+            .playerCount: playerCountController,
+            .category: categoryController,
+            .mechanic: mechanicController,
+            .minPlayTime: minPlayTimeController,
+            .maxPlayTime: maxPlayTimeController,
+            .complexity: complexityController
+        ]
+        return filterController[filterType] as! Controller
+    }
 
     var playerCount: PlayerCount? {
         get { return playerCountController.playerCount }
@@ -118,7 +160,6 @@ class FilterViewController: UITableViewController {
         let clearFiltersButton = UIBarButtonItem(title: "Clear", style: .plain, target: self, action: #selector(onClearFiltersButton))
         self.navigationItem.leftBarButtonItem = newBackButton
         self.navigationItem.rightBarButtonItem = clearFiltersButton
-
     }
 
     func configure(withFilterData filterData: [String: Any]) {
@@ -151,25 +192,17 @@ class FilterViewController: UITableViewController {
 
             default:
                 assertionFailure("No such filter supported")
-
             }
         }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return data.count
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return data[section].count
     }
 
@@ -183,9 +216,7 @@ class FilterViewController: UITableViewController {
     }
 
     @IBAction func back(sender: UIBarButtonItem) {
-        defer {
-            navigationController?.popViewController(animated: true)
-        }
+        defer { navigationController?.popViewController(animated: true) }
 
         if let filteredPlayerCount = playerCountController.playerCount, let playerFilter = PlayerCountFilter(playerCount: filteredPlayerCount, suggestedPlayerCountOnly: suggestedPlayerCountOnly, bestPlayerCountOnly: bestPlayerCountOnly) {
             setFilter(playerFilter)
@@ -229,7 +260,7 @@ class FilterViewController: UITableViewController {
 
         delegate?.filter = { game in
             // find first one that returns false, if none return false then its true
-            return !enabledFilters.contains(where: { !($0.isValid(game)) })
+            return !enabledFilters.contains(where: { !($0.filter(game)) })
         }
 
         delegate?.filterData = enabledFilters.reduce([String: Any]()) { result, filter in
@@ -249,7 +280,6 @@ class FilterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellType = filterType(for: indexPath)
         let pickerControllers: [FilterType: Any] = [
             .playerCount: playerCountController,
             .category: categoryController,
@@ -259,12 +289,25 @@ class FilterViewController: UITableViewController {
             .complexity: complexityController
         ]
 
-        switch cellType {
+        let cellType = self.cellType(for: indexPath)
+
+        if case Cell.header(let title) = cellType {
+            let cell: UITableViewCell = tableViewCell(for: indexPath)
+            cell.textLabel?.text = title
+            return cell
+        }
+
+        guard case Cell.filter(let filterType) = cellType else {
+            assertionFailure("This should never happen")
+            return UITableViewCell()
+        }
+
+        switch filterType {
         case .playerCount, .category, .mechanic, .minPlayTime, .maxPlayTime, .complexity:
             let cell: PickerTableViewCell = tableViewCell(for: indexPath)
-            let delegate: UIPickerViewDelegate = pickerControllers[cellType] as! UIPickerViewDelegate
-            let datasource: UIPickerViewDataSource = pickerControllers[cellType] as! UIPickerViewDataSource
-            var listener: UIPickerViewListener = pickerControllers[cellType] as! UIPickerViewListener
+            let delegate: UIPickerViewDelegate = pickerControllers[filterType] as! UIPickerViewDelegate
+            let datasource: UIPickerViewDataSource = pickerControllers[filterType] as! UIPickerViewDataSource
+            var listener: UIPickerViewListener = pickerControllers[filterType] as! UIPickerViewListener
 
             cell.picker.delegate = delegate
             cell.picker.dataSource = datasource
@@ -282,8 +325,23 @@ class FilterViewController: UITableViewController {
         }
     }
 
+    func cellIsExpanded(for indexPath: IndexPath) -> Bool {
+        return false
+    }
+
+    override func tableView(_ tableView: UITableView, shouldHighlightRowAt indexPath: IndexPath) -> Bool {
+        return filterType(for: indexPath) != nil ? true : false
+    }
+
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return filterType(for: indexPath) != nil ? indexPath : nil
+    }
+
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch filterType(for: indexPath) {
+        guard let filterType = self.filterType(for: indexPath) else {
+            return
+        }
+        switch filterType {
         case .playerCount, .category, .mechanic, .complexity, .minPlayTime, .maxPlayTime:
             return
         case .suggestedPlayerCount:
@@ -296,13 +354,17 @@ class FilterViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        switch filterType(for: indexPath) {
-        case .playerCount, .minPlayTime, .maxPlayTime, .complexity:
-            return 99
-        case .category, .mechanic:
-            return 150
-        default:
-            return 44
+        switch cellType(for: indexPath) {
+        case .header: return 44
+        case .filter(let filterType):
+            switch filterType {
+            case .playerCount, .minPlayTime, .maxPlayTime, .complexity:
+                return 99
+            case .category, .mechanic:
+                return 150
+            default:
+                return 44
+            }
         }
     }
 
@@ -317,22 +379,29 @@ class FilterViewController: UITableViewController {
     */
 
     func indexPath(for filterType: FilterType) -> IndexPath? {
-        for (section, filterTypes) in data.enumerated() {
-            for (row, possibleFilterType) in filterTypes.enumerated() {
-                if possibleFilterType == filterType {
-                    return IndexPath(row: row, section: section)
+        for (sectionIndex, section) in data.enumerated() {
+            for (row, cellType) in section.cells.enumerated() {
+                if case Cell.filter(let possibleFilterType) = cellType, possibleFilterType == filterType {
+                    return IndexPath(row: row, section: sectionIndex)
                 }
             }
         }
         return nil
     }
 
-    func filterType(for indexPath: IndexPath) -> FilterType {
+    func cellType(for indexPath: IndexPath) -> Cell {
         return data[indexPath.section][indexPath.row]
     }
 
+    func filterType(for indexPath: IndexPath) -> FilterType? {
+        switch cellType(for: indexPath) {
+        case .filter(let filterType): return filterType
+        default: return nil
+        }
+    }
+
     func tableViewCell<T: UITableViewCell>(for indexPath: IndexPath) -> T {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: filterType(for: indexPath).rawValue) as? T else { return T() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellType(for: indexPath).reuseCellIdentifier) as? T else { return T() }
         return cell
     }
 

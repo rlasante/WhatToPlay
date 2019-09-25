@@ -6,9 +6,12 @@
 //  Copyright © 2017 rlasante. All rights reserved.
 //
 
+import CoreData
 import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
+
+    weak var context: NSManagedObjectContext!
 
     @IBOutlet weak var getCollectionButton: UIButton!
     @IBOutlet weak var usernameTextField: UITextField!
@@ -25,6 +28,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        context = (UIApplication.shared.delegate as! AppDelegate).mainManagedObjectContext
         if let storedUsername = storedUsername {
             usernameTextField.text = storedUsername
             self.performSegue(withIdentifier: "get_collection", sender: nil)
@@ -36,15 +40,16 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let username = usernameTextField.text else { return }
         guard let collectionViewController = segue.destination as? GameCollectionViewController else { return }
+        collectionViewController.context = context
         storedUsername = username
 
-        BoardGameGeekAPI.getCollection(userName: username)
+        BoardGameGeekAPI.getCollection(userName: username, context: context)
         .done { [weak collectionViewController] games in
             collectionViewController?.gamesCollection = games
         }.catch { [weak collectionViewController] error in
             print("Error Fetching collection: \(error)")
 
-            let alertController = UIAlertController(title: "Error", message: "Failed to download collection", preferredStyle: UIAlertControllerStyle.alert)
+            let alertController = UIAlertController(title: "Error", message: "Failed to download collection", preferredStyle: .alert)
             collectionViewController?.present(alertController, animated: true, completion: nil)
         }
     }

@@ -79,3 +79,29 @@ enum GameMechanic: String, EnumCollection, XMLIndexerDeserializable {
         return mechanic
     }
 }
+
+class GameMechanicValueTransformer: ValueTransformer {
+    override func transformedValue(_ value: Any?) -> Any? {
+        guard let mechanic = value as? GameMechanic else { return nil }
+        return mechanic.rawValue
+    }
+
+    override func reverseTransformedValue(_ value: Any?) -> Any? {
+        guard let rawValue = value as? String else { return nil }
+        return GameMechanic(rawValue: rawValue)
+    }
+}
+
+class ArrayGameMechanicValueTransformer: ValueTransformer {
+    override func transformedValue(_ value: Any?) -> Any? {
+        guard let mechanics = value as? [GameMechanic] else { return nil }
+        let transformer = GameMechanicValueTransformer()
+        return mechanics.map { transformer.transformedValue($0) }
+    }
+
+    override func reverseTransformedValue(_ value: Any?) -> Any? {
+        guard let rawValues = value as? [Any] else { return nil }
+        let transformer = GameMechanicValueTransformer()
+        return rawValues.map { transformer.reverseTransformedValue($0) }
+    }
+}

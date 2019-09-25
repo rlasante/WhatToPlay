@@ -6,10 +6,11 @@
 //  Copyright © 2017 rlasante. All rights reserved.
 //
 
+import CoreData
 import UIKit
 
 class GameCollectionViewController: UIViewController, FilterDelegate {
-
+    weak var context: NSManagedObjectContext!
     weak var gamesViewController: GameTableViewController?
     weak var filterCollectionController: FilterCollectionViewController?
     @IBOutlet weak var filterDescriptionView: FilterDescriptionView?

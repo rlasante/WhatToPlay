@@ -17,9 +17,9 @@ struct ComplexityFilter: FilterTemplate {
     }
     var shortDescription: String { return "Complexity" }
 
-    func isValid(_ game: Game) -> Bool {
-        return game.complexity.weight == desiredComplexity.weight
-            || abs(game.complexity.actualWeight - desiredComplexity.actualWeight) < 0.25
+    func filter(_ game: Game) -> Bool {
+        return game.complexity!.weight == desiredComplexity.weight
+            || abs(game.complexity!.actualWeight - desiredComplexity.actualWeight) < 0.25
     }
 
     init(complexity: GameComplexity) {

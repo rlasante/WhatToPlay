@@ -10,9 +10,9 @@ import UIKit
 
 struct PlayerCountFilter: FilterTemplate {
 
-    let playerCount: PlayerCount
-    let suggestedPlayerCountOnly: Bool
-    let bestPlayerCountOnly: Bool
+    var playerCount: PlayerCount
+    var suggestedPlayerCountOnly: Bool
+    var bestPlayerCountOnly: Bool
 
     var description: String {
         let addon: String
@@ -59,7 +59,7 @@ struct PlayerCountFilter: FilterTemplate {
         self.bestPlayerCountOnly = bestPlayerCountOnly
     }
 
-    func isValid(_ game: Game) -> Bool {
+    func filter(_ game: Game) -> Bool {
         switch (suggestedPlayerCountOnly, bestPlayerCountOnly) {
         case (true, false):
             return game.suggestedPlayerCount.contains {

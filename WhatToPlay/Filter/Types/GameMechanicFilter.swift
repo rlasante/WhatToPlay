@@ -17,8 +17,8 @@ struct GameMechanicFilter: FilterTemplate {
     }
     var shortDescription: String { return "Mechanics" }
 
-    func isValid(_ game: Game) -> Bool {
-        return !game.mechanics.intersection(mechanics).isEmpty
+    func filter(_ game: Game) -> Bool {
+        return mechanics.contains { game.mechanics.contains($0) }
     }
 
     init?(mechanics: [GameMechanic]) {

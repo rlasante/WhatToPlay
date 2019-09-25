@@ -41,7 +41,7 @@ struct PlayDurationFilter: FilterTemplate {
     }
     var shortDescription: String { return "Playtime" }
 
-    func isValid(_ game: Game) -> Bool {
+    func filter(_ game: Game) -> Bool {
         let playTimes = [game.minPlayingTime, game.playingTime, game.maxPlayingTime].compactMap { $0 }
         if playTimes.isEmpty { return false }
 

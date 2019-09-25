@@ -21,7 +21,7 @@ class PickerController<DataType: PickerData>: NSObject, UIPickerViewListener, UI
         didSet {
             guard let pickerView = pickerView else { return }
             for (component, rows) in data.enumerated() {
-                let index = rows.index(where: {
+                let index = rows.firstIndex(where: {
                     guard let newComponentLabel = selectedData[component]?.label else { return false }
                     return $0.label == newComponentLabel
                 })
@@ -37,7 +37,7 @@ class PickerController<DataType: PickerData>: NSObject, UIPickerViewListener, UI
         didSet {
             guard let pickerView = pickerView else { return }
             for (component, rows) in data.enumerated() {
-                let index = rows.index(where: {
+                let index = rows.firstIndex(where: {
                     guard let newComponentLabel = selectedData[component]?.label else { return false }
                     return $0.label == newComponentLabel
                 })

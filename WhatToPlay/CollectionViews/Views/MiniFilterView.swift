@@ -37,23 +37,24 @@ extension UIView {
         }
     }
 
-    @IBInspectable var borderColor: UIColor? {
-        set {
-            layer.borderColor = newValue?.cgColor
-            if newValue != nil {
-                layer.borderWidth = 1
-            } else {
-                layer.borderWidth = 0
-            }
-        }
-        get {
-            if let color = layer.borderColor {
-                return UIColor(cgColor: color)
-            } else {
-                return nil
-            }
-        }
-    }
+
+//    @IBInspectable var borderColor: UIColor? {
+//        set {
+//            layer.borderColor = newValue?.cgColor
+//            if newValue != nil {
+//                layer.borderWidth = 1
+//            } else {
+//                layer.borderWidth = 0
+//            }
+//        }
+//        get {
+//            if let color = layer.borderColor {
+//                return UIColor(cgColor: color)
+//            } else {
+//                return nil
+//            }
+//        }
+//    }
 }
 
 class GradientView: UIView {

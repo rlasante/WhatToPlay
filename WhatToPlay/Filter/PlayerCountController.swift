@@ -9,7 +9,6 @@
 import UIKit
 
 class PlayerCountController: NSObject, UIPickerViewListener, UIPickerViewDelegate, UIPickerViewDataSource {
-
     var pickerView: UIPickerView? {
         didSet {
             guard let playerCount = playerCount else { pickerView?.selectRow(0, inComponent: 0, animated: true); return }

@@ -103,3 +103,15 @@ enum GameComplexity: XMLIndexerDeserializable, Comparable, PickerData {
         return "\(title) \(formatter.string(for: self.weight) ?? "--")"
     }
 }
+
+class GameComplexityValueTransformer: ValueTransformer {
+    override func transformedValue(_ value: Any?) -> Any? {
+        guard let complexity = value as? GameComplexity else { return nil }
+        return complexity.actualWeight
+    }
+
+    override func reverseTransformedValue(_ value: Any?) -> Any? {
+        guard let actualWeight = value as? Double else { return nil }
+        return GameComplexity(serverValue: actualWeight)
+    }
+}

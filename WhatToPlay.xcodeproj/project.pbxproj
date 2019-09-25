@@ -3,17 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF06A7811F7A012200240274 /* SWXMLHash.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF06A76A1F7A009600240274 /* SWXMLHash.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DF06A7821F7A012200240274 /* AlamofireImage.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF06A7521F7A008B00240274 /* AlamofireImage.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DF1FFCC820BCADB500B0A655 /* PMKAlamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF1FFCC120BCAD4200B0A655 /* PMKAlamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DF1FFCC920BCADB500B0A655 /* PromiseKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF1FFCAA20BCAD2900B0A655 /* PromiseKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DF1FFCE620BCE66100B0A655 /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF1FFCDD20BCE64900B0A655 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DF1FFCE820BCE66100B0A655 /* Material.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF1FFCD020BCE62600B0A655 /* Material.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		DF25A8AA20BCE9A6009264B8 /* Motion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF25A8AB20BCE9A6009264B8 /* Motion.framework */; };
+		DF0A09FE2339BBC700A7360D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DF0A09FD2339BBC700A7360D /* Alamofire */; };
+		DF0A0A012339BBF700A7360D /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = DF0A0A002339BBF700A7360D /* AlamofireImage */; };
+		DF0A0A042339BCC700A7360D /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = DF0A0A032339BCC700A7360D /* SWXMLHash */; };
+		DF0A0A072339BCF400A7360D /* Material in Frameworks */ = {isa = PBXBuildFile; productRef = DF0A0A062339BCF400A7360D /* Material */; };
+		DF0A0A0A2339BD1600A7360D /* Motion in Frameworks */ = {isa = PBXBuildFile; productRef = DF0A0A092339BD1600A7360D /* Motion */; };
+		DF0A0A0D2339BD6E00A7360D /* PMKAlamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DF0A0A0C2339BD6E00A7360D /* PMKAlamofire */; };
 		DF25A8AF20BCEB3E009264B8 /* FilterDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF25A8AE20BCEB3E009264B8 /* FilterDescriptionView.swift */; };
 		DF3B1B211F003E4F00E4E8F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3B1B201F003E4F00E4E8F7 /* AppDelegate.swift */; };
 		DF3B1B231F003E4F00E4E8F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3B1B221F003E4F00E4E8F7 /* ViewController.swift */; };
@@ -25,8 +24,6 @@
 		DF3B1B591F0041BF00E4E8F7 /* BoardGameGeekAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF3B1B581F0041BF00E4E8F7 /* BoardGameGeekAPI.swift */; };
 		DF622F091F6A1090003BE61E /* MockCollection.txt in Resources */ = {isa = PBXBuildFile; fileRef = DF622F081F6A1090003BE61E /* MockCollection.txt */; };
 		DF816ABC1F8B0ED30037ADA9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF816ABB1F8B0ED30037ADA9 /* GameViewController.swift */; };
-		DF816ABE1F8B12FD0037ADA9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF816ABD1F8B12FD0037ADA9 /* Alamofire.framework */; };
-		DF816ABF1F8B12FD0037ADA9 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = DF816ABD1F8B12FD0037ADA9 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		DF8582551F677A7000543AB8 /* PlayerCountFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8582541F677A7000543AB8 /* PlayerCountFilter.swift */; };
 		DF8582571F677B0A00543AB8 /* FilterTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8582561F677B0A00543AB8 /* FilterTemplate.swift */; };
 		DF8582591F677F7800543AB8 /* GameCategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8582581F677F7700543AB8 /* GameCategoryFilter.swift */; };
@@ -40,7 +37,14 @@
 		DFA440431F79E74C005F706E /* ComplexityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA440421F79E74C005F706E /* ComplexityFilter.swift */; };
 		DFC0245D201E567B00F694BB /* EnumCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC0245C201E567B00F694BB /* EnumCollection.swift */; };
 		DFC803071F9CF55C008A6851 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC803061F9CF55C008A6851 /* HeaderTableViewCell.swift */; };
+		DFDA7141221A1FED00D69DF8 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA7140221A1FED00D69DF8 /* BaseCoordinator.swift */; };
+		DFDA7143221A203100D69DF8 /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA7142221A203100D69DF8 /* StoryboardInitializable.swift */; };
 		DFE1594C20F11D83006F63E4 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1594B20F11D83006F63E4 /* GameTableViewCell.swift */; };
+		DFE1596420F45C2C006F63E4 /* WhatToPlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFE1596220F45C2C006F63E4 /* WhatToPlay.xcdatamodeld */; };
+		DFE1596620F467E6006F63E4 /* URLValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1596520F467E6006F63E4 /* URLValueTransformer.swift */; };
+		DFE1596920F47A7B006F63E4 /* Game+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1596720F47A7B006F63E4 /* Game+CoreDataClass.swift */; };
+		DFE1596A20F47A7B006F63E4 /* Game+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1596820F47A7B006F63E4 /* Game+CoreDataProperties.swift */; };
+		DFE1596C20F5B413006F63E4 /* GameFamily.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1596B20F5B413006F63E4 /* GameFamily.swift */; };
 		DFECC9A31F68D69F00077A6C /* GameMechanicFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFECC9A21F68D69F00077A6C /* GameMechanicFilter.swift */; };
 		DFECC9A61F69F7D000077A6C /* GameMechanic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFECC9A51F69F7D000077A6C /* GameMechanic.swift */; };
 		DFECC9A81F69F7F400077A6C /* GameCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFECC9A71F69F7F400077A6C /* GameCategory.swift */; };
@@ -48,6 +52,17 @@
 		DFECC9AF1F69FFB400077A6C /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFECC9AE1F69FFB400077A6C /* MockData.swift */; };
 		DFF313271F004DB000A48FD0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF313261F004DB000A48FD0 /* User.swift */; };
 		DFF313291F0F329C00A48FD0 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF313281F0F329C00A48FD0 /* Game.swift */; };
+		DFF6244E221A6C43006DBBAD /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF6244D221A6C43006DBBAD /* AppCoordinator.swift */; };
+		DFF62452221A6DD1006DBBAD /* CollectionPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF62451221A6DD1006DBBAD /* CollectionPickerCoordinator.swift */; };
+		DFF62454221A6E4B006DBBAD /* CollectionPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF62453221A6E4B006DBBAD /* CollectionPickerViewModel.swift */; };
+		DFF62456221A70FC006DBBAD /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF62455221A70FC006DBBAD /* CollectionModel.swift */; };
+		DFF62458221A7B77006DBBAD /* CollectionSourceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF62457221A7B77006DBBAD /* CollectionSourceModel.swift */; };
+		DFF6245A221B0F3B006DBBAD /* FilterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF62459221B0F3B006DBBAD /* FilterModel.swift */; };
+		DFF6245C221B2559006DBBAD /* CollectionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF6245B221B2559006DBBAD /* CollectionPickerViewController.swift */; };
+		DFF6245E221B25E9006DBBAD /* ViewModelDependent.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF6245D221B25E9006DBBAD /* ViewModelDependent.swift */; };
+		DFF62461221B27F1006DBBAD /* CollectionCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF62460221B27F1006DBBAD /* CollectionCoordinator.swift */; };
+		DFF62463221B288A006DBBAD /* CollectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF62462221B288A006DBBAD /* CollectionViewModel.swift */; };
+		DFF62467221B7284006DBBAD /* BoardGameGeekAPIV2.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF62466221B7284006DBBAD /* BoardGameGeekAPIV2.swift */; };
 		DFF7C84F1F1EE3FE00443A6C /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF7C84E1F1EE3FE00443A6C /* GameTests.swift */; };
 		DFF7C8511F23AE5D00443A6C /* CollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF7C8501F23AE5D00443A6C /* CollectionTests.swift */; };
 		DFF7C8531F23AE7800443A6C /* GameTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF7C8521F23AE7800443A6C /* GameTestData.swift */; };
@@ -59,223 +74,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DF06A7511F7A008B00240274 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF06A7451F7A008A00240274 /* AlamofireImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4C9043771AABBFC5001B4E60;
-			remoteInfo = "AlamofireImage iOS";
-		};
-		DF06A7531F7A008B00240274 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF06A7451F7A008A00240274 /* AlamofireImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4C9043821AABBFC5001B4E60;
-			remoteInfo = "AlamofireImage iOS Tests";
-		};
-		DF06A7551F7A008B00240274 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF06A7451F7A008A00240274 /* AlamofireImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4CE611321AABC24E00D35044;
-			remoteInfo = "AlamofireImage macOS";
-		};
-		DF06A7571F7A008B00240274 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF06A7451F7A008A00240274 /* AlamofireImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4CE611471AABC5C900D35044;
-			remoteInfo = "AlamofireImage macOS Tests";
-		};
-		DF06A7591F7A008B00240274 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF06A7451F7A008A00240274 /* AlamofireImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4C16B37D1BA9399500A66EF0;
-			remoteInfo = "AlamofireImage tvOS";
-		};
-		DF06A75B1F7A008B00240274 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF06A7451F7A008A00240274 /* AlamofireImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4C16B3861BA9399500A66EF0;
-			remoteInfo = "AlamofireImage tvOS Tests";
-		};
-		DF06A75D1F7A008B00240274 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF06A7451F7A008A00240274 /* AlamofireImage.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4C4D4EC11B92976900C96855;
-			remoteInfo = "AlamofireImage watchOS";
-		};
-		DF06A7691F7A009600240274 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF06A75F1F7A009300240274 /* SWXMLHash.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CD6083EF196CA106000B4F8D;
-			remoteInfo = "SWXMLHash iOS";
-		};
-		DF06A76B1F7A009600240274 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF06A75F1F7A009300240274 /* SWXMLHash.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CD6083FA196CA106000B4F8D;
-			remoteInfo = "SWXMLHash iOS Tests";
-		};
-		DF06A76D1F7A009600240274 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF06A75F1F7A009300240274 /* SWXMLHash.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CD9D052C1A757D8B003CCB21;
-			remoteInfo = "SWXMLHash OSX";
-		};
-		DF06A76F1F7A009600240274 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF06A75F1F7A009300240274 /* SWXMLHash.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CD9D05361A757D8B003CCB21;
-			remoteInfo = "SWXMLHash OSX Tests";
-		};
-		DF06A7711F7A009600240274 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF06A75F1F7A009300240274 /* SWXMLHash.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CDDEC74C1BF6311A00AB138B;
-			remoteInfo = "SWXMLHash tvOS";
-		};
-		DF06A7731F7A009600240274 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF06A75F1F7A009300240274 /* SWXMLHash.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CDDEC7551BF6311B00AB138B;
-			remoteInfo = "SWXMLHash tvOS Tests";
-		};
-		DF06A7751F7A009600240274 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF06A75F1F7A009300240274 /* SWXMLHash.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = CDDEC7681BF6316C00AB138B;
-			remoteInfo = "SWXMLHash watchOS";
-		};
-		DF06A7771F7A00BC00240274 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF06A75F1F7A009300240274 /* SWXMLHash.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = CD6083EE196CA106000B4F8D;
-			remoteInfo = "SWXMLHash iOS";
-		};
-		DF06A7791F7A00BC00240274 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF06A7451F7A008A00240274 /* AlamofireImage.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 4C9043761AABBFC5001B4E60;
-			remoteInfo = "AlamofireImage iOS";
-		};
-		DF1FFCA920BCAD2900B0A655 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF1FFC9920BCAD2900B0A655 /* PromiseKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 63B0AC571D595E1B00FA21D9;
-			remoteInfo = PromiseKit;
-		};
-		DF1FFCAB20BCAD2900B0A655 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF1FFC9920BCAD2900B0A655 /* PromiseKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 631751A81D59766500A9DDDC;
-			remoteInfo = "PMKA+Tests";
-		};
-		DF1FFCAD20BCAD2900B0A655 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF1FFC9920BCAD2900B0A655 /* PromiseKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 6314113C1D59795700E24B9E;
-			remoteInfo = PMKBridgeTests;
-		};
-		DF1FFCAF20BCAD2900B0A655 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF1FFC9920BCAD2900B0A655 /* PromiseKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 630019221D596292003B4E30;
-			remoteInfo = PMKCoreTests;
-		};
-		DF1FFCB120BCAD2900B0A655 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF1FFC9920BCAD2900B0A655 /* PromiseKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 633027EA203CC0060037E136;
-			remoteInfo = PMKDeprecatedTests;
-		};
-		DF1FFCB320BCAD2900B0A655 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF1FFC9920BCAD2900B0A655 /* PromiseKit.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C0244E622047A6CB00ACB4AC;
-			remoteInfo = "PMKJSA+Tests";
-		};
-		DF1FFCC020BCAD4200B0A655 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF1FFCBB20BCAD4200B0A655 /* PMKAlamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 63C7FFA71D5BEE09003BAE60;
-			remoteInfo = PMKAlamofire;
-		};
-		DF1FFCC220BCAD4200B0A655 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF1FFCBB20BCAD4200B0A655 /* PMKAlamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 63C7FFF21D5C020D003BAE60;
-			remoteInfo = PMKAFTests;
-		};
-		DF1FFCC420BCAD5700B0A655 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF1FFCBB20BCAD4200B0A655 /* PMKAlamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 63C7FFA61D5BEE09003BAE60;
-			remoteInfo = PMKAlamofire;
-		};
-		DF1FFCC620BCAD5B00B0A655 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF1FFC9920BCAD2900B0A655 /* PromiseKit.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 63B0AC561D595E1B00FA21D9;
-			remoteInfo = PromiseKit;
-		};
-		DF1FFCCF20BCE62600B0A655 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF1FFCCA20BCE62600B0A655 /* Material.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 963832361B88DFD80015F710;
-			remoteInfo = Material;
-		};
-		DF1FFCDC20BCE64900B0A655 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF1FFCD720BCE64900B0A655 /* Eureka.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 51729DEB1B9A4F5E004A00EB;
-			remoteInfo = Eureka;
-		};
-		DF1FFCDE20BCE64900B0A655 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF1FFCD720BCE64900B0A655 /* Eureka.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 51729DF51B9A4F5E004A00EB;
-			remoteInfo = EurekaTests;
-		};
-		DF1FFCE020BCE65600B0A655 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF1FFCD720BCE64900B0A655 /* Eureka.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 51729DEA1B9A4F5E004A00EB;
-			remoteInfo = Eureka;
-		};
-		DF1FFCE420BCE65600B0A655 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DF1FFCCA20BCE62600B0A655 /* Material.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 963832351B88DFD80015F710;
-			remoteInfo = Material;
-		};
 		DF3B1B351F003E4F00E4E8F7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DF3B1B151F003E4F00E4E8F7 /* Project object */;
@@ -299,13 +97,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				DF1FFCE620BCE66100B0A655 /* Eureka.framework in Embed Frameworks */,
-				DF1FFCE820BCE66100B0A655 /* Material.framework in Embed Frameworks */,
-				DF1FFCC820BCADB500B0A655 /* PMKAlamofire.framework in Embed Frameworks */,
-				DF1FFCC920BCADB500B0A655 /* PromiseKit.framework in Embed Frameworks */,
-				DF06A7811F7A012200240274 /* SWXMLHash.framework in Embed Frameworks */,
-				DF816ABF1F8B12FD0037ADA9 /* Alamofire.framework in Embed Frameworks */,
-				DF06A7821F7A012200240274 /* AlamofireImage.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -313,13 +104,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DF06A7451F7A008A00240274 /* AlamofireImage.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AlamofireImage.xcodeproj; path = Carthage/Checkouts/AlamofireImage/AlamofireImage.xcodeproj; sourceTree = "<group>"; };
-		DF06A75F1F7A009300240274 /* SWXMLHash.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SWXMLHash.xcodeproj; path = Carthage/Checkouts/SWXMLHash/SWXMLHash.xcodeproj; sourceTree = "<group>"; };
-		DF1FFC9920BCAD2900B0A655 /* PromiseKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PromiseKit.xcodeproj; path = Carthage/Checkouts/PromiseKit/PromiseKit.xcodeproj; sourceTree = "<group>"; };
-		DF1FFCBB20BCAD4200B0A655 /* PMKAlamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = PMKAlamofire.xcodeproj; path = "Carthage/Checkouts/Alamofire-/PMKAlamofire.xcodeproj"; sourceTree = "<group>"; };
-		DF1FFCCA20BCE62600B0A655 /* Material.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Material.xcodeproj; path = Carthage/Checkouts/Material/Material.xcodeproj; sourceTree = "<group>"; };
-		DF1FFCD720BCE64900B0A655 /* Eureka.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Eureka.xcodeproj; path = Carthage/Checkouts/Eureka/Eureka.xcodeproj; sourceTree = "<group>"; };
-		DF25A8AB20BCE9A6009264B8 /* Motion.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Motion.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF25A8AE20BCEB3E009264B8 /* FilterDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDescriptionView.swift; sourceTree = "<group>"; };
 		DF3B1B1D1F003E4F00E4E8F7 /* WhatToPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF3B1B201F003E4F00E4E8F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -337,7 +121,6 @@
 		DF3B1B581F0041BF00E4E8F7 /* BoardGameGeekAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardGameGeekAPI.swift; sourceTree = "<group>"; };
 		DF622F081F6A1090003BE61E /* MockCollection.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MockCollection.txt; sourceTree = "<group>"; };
 		DF816ABB1F8B0ED30037ADA9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		DF816ABD1F8B12FD0037ADA9 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF8582541F677A7000543AB8 /* PlayerCountFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCountFilter.swift; sourceTree = "<group>"; };
 		DF8582561F677B0A00543AB8 /* FilterTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTemplate.swift; sourceTree = "<group>"; };
 		DF8582581F677F7700543AB8 /* GameCategoryFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCategoryFilter.swift; sourceTree = "<group>"; };
@@ -351,7 +134,14 @@
 		DFA440421F79E74C005F706E /* ComplexityFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexityFilter.swift; sourceTree = "<group>"; };
 		DFC0245C201E567B00F694BB /* EnumCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumCollection.swift; sourceTree = "<group>"; };
 		DFC803061F9CF55C008A6851 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
+		DFDA7140221A1FED00D69DF8 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		DFDA7142221A203100D69DF8 /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
 		DFE1594B20F11D83006F63E4 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
+		DFE1596320F45C2C006F63E4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		DFE1596520F467E6006F63E4 /* URLValueTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLValueTransformer.swift; sourceTree = "<group>"; };
+		DFE1596720F47A7B006F63E4 /* Game+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Game+CoreDataClass.swift"; path = "WhatToPlay/Models/Game+CoreDataClass.swift"; sourceTree = "<group>"; };
+		DFE1596820F47A7B006F63E4 /* Game+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DFE1596B20F5B413006F63E4 /* GameFamily.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameFamily.swift; sourceTree = "<group>"; };
 		DFECC9A21F68D69F00077A6C /* GameMechanicFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMechanicFilter.swift; sourceTree = "<group>"; };
 		DFECC9A51F69F7D000077A6C /* GameMechanic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameMechanic.swift; sourceTree = "<group>"; };
 		DFECC9A71F69F7F400077A6C /* GameCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCategory.swift; sourceTree = "<group>"; };
@@ -359,6 +149,17 @@
 		DFECC9AE1F69FFB400077A6C /* MockData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		DFF313261F004DB000A48FD0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		DFF313281F0F329C00A48FD0 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		DFF6244D221A6C43006DBBAD /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		DFF62451221A6DD1006DBBAD /* CollectionPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPickerCoordinator.swift; sourceTree = "<group>"; };
+		DFF62453221A6E4B006DBBAD /* CollectionPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPickerViewModel.swift; sourceTree = "<group>"; };
+		DFF62455221A70FC006DBBAD /* CollectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
+		DFF62457221A7B77006DBBAD /* CollectionSourceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSourceModel.swift; sourceTree = "<group>"; };
+		DFF62459221B0F3B006DBBAD /* FilterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterModel.swift; sourceTree = "<group>"; };
+		DFF6245B221B2559006DBBAD /* CollectionPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionPickerViewController.swift; sourceTree = "<group>"; };
+		DFF6245D221B25E9006DBBAD /* ViewModelDependent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelDependent.swift; sourceTree = "<group>"; };
+		DFF62460221B27F1006DBBAD /* CollectionCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionCoordinator.swift; sourceTree = "<group>"; };
+		DFF62462221B288A006DBBAD /* CollectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewModel.swift; sourceTree = "<group>"; };
+		DFF62466221B7284006DBBAD /* BoardGameGeekAPIV2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGameGeekAPIV2.swift; sourceTree = "<group>"; };
 		DFF7C84E1F1EE3FE00443A6C /* GameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
 		DFF7C8501F23AE5D00443A6C /* CollectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTests.swift; sourceTree = "<group>"; };
 		DFF7C8521F23AE7800443A6C /* GameTestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTestData.swift; sourceTree = "<group>"; };
@@ -374,8 +175,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF25A8AA20BCE9A6009264B8 /* Motion.framework in Frameworks */,
-				DF816ABE1F8B12FD0037ADA9 /* Alamofire.framework in Frameworks */,
+				DF0A0A042339BCC700A7360D /* SWXMLHash in Frameworks */,
+				DF0A09FE2339BBC700A7360D /* Alamofire in Frameworks */,
+				DF0A0A0A2339BD1600A7360D /* Motion in Frameworks */,
+				DF0A0A012339BBF700A7360D /* AlamofireImage in Frameworks */,
+				DF0A0A072339BCF400A7360D /* Material in Frameworks */,
+				DF0A0A0D2339BD6E00A7360D /* PMKAlamofire in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -396,82 +201,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DF06A7461F7A008A00240274 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DF06A7521F7A008B00240274 /* AlamofireImage.framework */,
-				DF06A7541F7A008B00240274 /* AlamofireImage iOS Tests.xctest */,
-				DF06A7561F7A008B00240274 /* AlamofireImage.framework */,
-				DF06A7581F7A008B00240274 /* AlamofireImage macOS Tests.xctest */,
-				DF06A75A1F7A008B00240274 /* AlamofireImage.framework */,
-				DF06A75C1F7A008B00240274 /* AlamofireImage tvOS Tests.xctest */,
-				DF06A75E1F7A008B00240274 /* AlamofireImage.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		DF06A7601F7A009300240274 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DF06A76A1F7A009600240274 /* SWXMLHash.framework */,
-				DF06A76C1F7A009600240274 /* SWXMLHash iOS Tests.xctest */,
-				DF06A76E1F7A009600240274 /* SWXMLHash.framework */,
-				DF06A7701F7A009600240274 /* SWXMLHash OSX Tests.xctest */,
-				DF06A7721F7A009600240274 /* SWXMLHash.framework */,
-				DF06A7741F7A009600240274 /* SWXMLHash tvOS Tests.xctest */,
-				DF06A7761F7A009600240274 /* SWXMLHash.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		DF06A77D1F7A010800240274 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				DF25A8AB20BCE9A6009264B8 /* Motion.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		DF1FFC9A20BCAD2900B0A655 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DF1FFCAA20BCAD2900B0A655 /* PromiseKit.framework */,
-				DF1FFCAC20BCAD2900B0A655 /* PMKA+Tests.xctest */,
-				DF1FFCAE20BCAD2900B0A655 /* PMKBridgeTests.xctest */,
-				DF1FFCB020BCAD2900B0A655 /* PMKCoreTests.xctest */,
-				DF1FFCB220BCAD2900B0A655 /* PMKDeprecatedTests.xctest */,
-				DF1FFCB420BCAD2900B0A655 /* PMKJSA+Tests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		DF1FFCBC20BCAD4200B0A655 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DF1FFCC120BCAD4200B0A655 /* PMKAlamofire.framework */,
-				DF1FFCC320BCAD4200B0A655 /* PMKAFTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		DF1FFCCB20BCE62600B0A655 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DF1FFCD020BCE62600B0A655 /* Material.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		DF1FFCD820BCE64900B0A655 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				DF1FFCDD20BCE64900B0A655 /* Eureka.framework */,
-				DF1FFCDF20BCE64900B0A655 /* EurekaTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		DF25A8AC20BCEB0B009264B8 /* Collection */ = {
+		DF25A8AC20BCEB0B009264B8 /* CollectionViews */ = {
 			isa = PBXGroup;
 			children = (
 				DF25A8AD20BCEB2A009264B8 /* Views */,
@@ -479,7 +216,7 @@
 				DF8C2A9F20F07ADE00DD7284 /* FilterCollectionViewController.swift */,
 				DFF7C8541F24F60F00443A6C /* GameTableViewController.swift */,
 			);
-			path = Collection;
+			path = CollectionViews;
 			sourceTree = "<group>";
 		};
 		DF25A8AD20BCEB2A009264B8 /* Views */ = {
@@ -496,9 +233,8 @@
 		DF3B1B141F003E4F00E4E8F7 = {
 			isa = PBXGroup;
 			children = (
-				DF816ABD1F8B12FD0037ADA9 /* Alamofire.framework */,
+				DFE1596720F47A7B006F63E4 /* Game+CoreDataClass.swift */,
 				DF3B1B1F1F003E4F00E4E8F7 /* WhatToPlay */,
-				DF3B1B511F00406200E4E8F7 /* Carthage */,
 				DF3B1B371F003E4F00E4E8F7 /* WhatToPlayTests */,
 				DF3B1B421F003E4F00E4E8F7 /* WhatToPlayUITests */,
 				DF3B1B1E1F003E4F00E4E8F7 /* Products */,
@@ -519,11 +255,16 @@
 		DF3B1B1F1F003E4F00E4E8F7 /* WhatToPlay */ = {
 			isa = PBXGroup;
 			children = (
+				DFF6245F221B27C8006DBBAD /* Collection */,
+				DFF62450221A6DB8006DBBAD /* CollectionPicker */,
+				DFF6244C221A6C2D006DBBAD /* App */,
+				DFDA713F221A1FCF00D69DF8 /* Coordinator */,
+				DFE1596120F45C17006F63E4 /* Models */,
 				DFC0244E201E565200F694BB /* Utils */,
 				DF3B1B201F003E4F00E4E8F7 /* AppDelegate.swift */,
 				DF3B1B241F003E4F00E4E8F7 /* Main.storyboard */,
 				DF3B1B221F003E4F00E4E8F7 /* ViewController.swift */,
-				DF25A8AC20BCEB0B009264B8 /* Collection */,
+				DF25A8AC20BCEB0B009264B8 /* CollectionViews */,
 				DFC803041F9CF4B5008A6851 /* Game */,
 				DFF7C85A1F257D3F00443A6C /* Filter */,
 				DF3B1B541F00410300E4E8F7 /* BoardGameGeek */,
@@ -557,19 +298,6 @@
 			path = WhatToPlayUITests;
 			sourceTree = "<group>";
 		};
-		DF3B1B511F00406200E4E8F7 /* Carthage */ = {
-			isa = PBXGroup;
-			children = (
-				DF1FFCD720BCE64900B0A655 /* Eureka.xcodeproj */,
-				DF1FFCCA20BCE62600B0A655 /* Material.xcodeproj */,
-				DF1FFCBB20BCAD4200B0A655 /* PMKAlamofire.xcodeproj */,
-				DF1FFC9920BCAD2900B0A655 /* PromiseKit.xcodeproj */,
-				DF06A75F1F7A009300240274 /* SWXMLHash.xcodeproj */,
-				DF06A7451F7A008A00240274 /* AlamofireImage.xcodeproj */,
-			);
-			name = Carthage;
-			sourceTree = "<group>";
-		};
 		DF3B1B541F00410300E4E8F7 /* BoardGameGeek */ = {
 			isa = PBXGroup;
 			children = (
@@ -583,7 +311,9 @@
 			children = (
 				DFECC9AB1F69FF8D00077A6C /* MockData */,
 				DF3B1B581F0041BF00E4E8F7 /* BoardGameGeekAPI.swift */,
+				DFF62466221B7284006DBBAD /* BoardGameGeekAPIV2.swift */,
 				DFF313261F004DB000A48FD0 /* User.swift */,
+				DFE1596820F47A7B006F63E4 /* Game+CoreDataProperties.swift */,
 				DFF313281F0F329C00A48FD0 /* Game.swift */,
 				DFECC9A41F69F7BA00077A6C /* GameMeta */,
 			);
@@ -624,6 +354,7 @@
 			isa = PBXGroup;
 			children = (
 				DFC0245C201E567B00F694BB /* EnumCollection.swift */,
+				DFE1596520F467E6006F63E4 /* URLValueTransformer.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -645,6 +376,24 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		DFDA713F221A1FCF00D69DF8 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				DFDA7140221A1FED00D69DF8 /* BaseCoordinator.swift */,
+				DFDA7142221A203100D69DF8 /* StoryboardInitializable.swift */,
+				DFF6245D221B25E9006DBBAD /* ViewModelDependent.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		DFE1596120F45C17006F63E4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DFE1596220F45C2C006F63E4 /* WhatToPlay.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		DFECC9A41F69F7BA00077A6C /* GameMeta */ = {
 			isa = PBXGroup;
 			children = (
@@ -652,6 +401,7 @@
 				DFECC9A71F69F7F400077A6C /* GameCategory.swift */,
 				DFECC9A91F69F81300077A6C /* PlayerCount.swift */,
 				DF95B9621F6ECF1900537DBE /* GameComplexity.swift */,
+				DFE1596B20F5B413006F63E4 /* GameFamily.swift */,
 			);
 			path = GameMeta;
 			sourceTree = "<group>";
@@ -664,6 +414,35 @@
 			path = MockData;
 			sourceTree = "<group>";
 		};
+		DFF6244C221A6C2D006DBBAD /* App */ = {
+			isa = PBXGroup;
+			children = (
+				DFF6244D221A6C43006DBBAD /* AppCoordinator.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DFF62450221A6DB8006DBBAD /* CollectionPicker */ = {
+			isa = PBXGroup;
+			children = (
+				DFF62451221A6DD1006DBBAD /* CollectionPickerCoordinator.swift */,
+				DFF62453221A6E4B006DBBAD /* CollectionPickerViewModel.swift */,
+				DFF6245B221B2559006DBBAD /* CollectionPickerViewController.swift */,
+				DFF62457221A7B77006DBBAD /* CollectionSourceModel.swift */,
+			);
+			path = CollectionPicker;
+			sourceTree = "<group>";
+		};
+		DFF6245F221B27C8006DBBAD /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				DFF62460221B27F1006DBBAD /* CollectionCoordinator.swift */,
+				DFF62462221B288A006DBBAD /* CollectionViewModel.swift */,
+				DFF62455221A70FC006DBBAD /* CollectionModel.swift */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
 		DFF7C85A1F257D3F00443A6C /* Filter */ = {
 			isa = PBXGroup;
 			children = (
@@ -671,6 +450,7 @@
 				DFF7C8581F257CA700443A6C /* FilterViewController.swift */,
 				DFF7C85B1F257DA400443A6C /* PlayerCountController.swift */,
 				DFF7C85D1F25983E00443A6C /* PickerTableViewCell.swift */,
+				DFF62459221B0F3B006DBBAD /* FilterModel.swift */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -690,14 +470,16 @@
 			buildRules = (
 			);
 			dependencies = (
-				DF1FFCE120BCE65600B0A655 /* PBXTargetDependency */,
-				DF1FFCE520BCE65600B0A655 /* PBXTargetDependency */,
-				DF1FFCC720BCAD5B00B0A655 /* PBXTargetDependency */,
-				DF1FFCC520BCAD5700B0A655 /* PBXTargetDependency */,
-				DF06A7781F7A00BC00240274 /* PBXTargetDependency */,
-				DF06A77A1F7A00BC00240274 /* PBXTargetDependency */,
 			);
 			name = WhatToPlay;
+			packageProductDependencies = (
+				DF0A09FD2339BBC700A7360D /* Alamofire */,
+				DF0A0A002339BBF700A7360D /* AlamofireImage */,
+				DF0A0A032339BCC700A7360D /* SWXMLHash */,
+				DF0A0A062339BCF400A7360D /* Material */,
+				DF0A0A092339BD1600A7360D /* Motion */,
+				DF0A0A0C2339BD6E00A7360D /* PMKAlamofire */,
+			);
 			productName = WhatToPlay;
 			productReference = DF3B1B1D1F003E4F00E4E8F7 /* WhatToPlay.app */;
 			productType = "com.apple.product-type.application";
@@ -769,41 +551,23 @@
 			};
 			buildConfigurationList = DF3B1B181F003E4F00E4E8F7 /* Build configuration list for PBXProject "WhatToPlay" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
 			);
 			mainGroup = DF3B1B141F003E4F00E4E8F7;
+			packageReferences = (
+				DF0A09FC2339BBC700A7360D /* XCRemoteSwiftPackageReference "Alamofire" */,
+				DF0A09FF2339BBF700A7360D /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				DF0A0A022339BCC700A7360D /* XCRemoteSwiftPackageReference "SWXMLHash" */,
+				DF0A0A052339BCF400A7360D /* XCRemoteSwiftPackageReference "Material" */,
+				DF0A0A082339BD1600A7360D /* XCRemoteSwiftPackageReference "Motion" */,
+				DF0A0A0B2339BD6E00A7360D /* XCRemoteSwiftPackageReference "PMKAlamofire" */,
+			);
 			productRefGroup = DF3B1B1E1F003E4F00E4E8F7 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = DF06A7461F7A008A00240274 /* Products */;
-					ProjectRef = DF06A7451F7A008A00240274 /* AlamofireImage.xcodeproj */;
-				},
-				{
-					ProductGroup = DF1FFCD820BCE64900B0A655 /* Products */;
-					ProjectRef = DF1FFCD720BCE64900B0A655 /* Eureka.xcodeproj */;
-				},
-				{
-					ProductGroup = DF1FFCCB20BCE62600B0A655 /* Products */;
-					ProjectRef = DF1FFCCA20BCE62600B0A655 /* Material.xcodeproj */;
-				},
-				{
-					ProductGroup = DF1FFCBC20BCAD4200B0A655 /* Products */;
-					ProjectRef = DF1FFCBB20BCAD4200B0A655 /* PMKAlamofire.xcodeproj */;
-				},
-				{
-					ProductGroup = DF1FFC9A20BCAD2900B0A655 /* Products */;
-					ProjectRef = DF1FFC9920BCAD2900B0A655 /* PromiseKit.xcodeproj */;
-				},
-				{
-					ProductGroup = DF06A7601F7A009300240274 /* Products */;
-					ProjectRef = DF06A75F1F7A009300240274 /* SWXMLHash.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				DF3B1B1C1F003E4F00E4E8F7 /* WhatToPlay */,
@@ -812,184 +576,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		DF06A7521F7A008B00240274 /* AlamofireImage.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AlamofireImage.framework;
-			remoteRef = DF06A7511F7A008B00240274 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF06A7541F7A008B00240274 /* AlamofireImage iOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "AlamofireImage iOS Tests.xctest";
-			remoteRef = DF06A7531F7A008B00240274 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF06A7561F7A008B00240274 /* AlamofireImage.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AlamofireImage.framework;
-			remoteRef = DF06A7551F7A008B00240274 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF06A7581F7A008B00240274 /* AlamofireImage macOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "AlamofireImage macOS Tests.xctest";
-			remoteRef = DF06A7571F7A008B00240274 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF06A75A1F7A008B00240274 /* AlamofireImage.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AlamofireImage.framework;
-			remoteRef = DF06A7591F7A008B00240274 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF06A75C1F7A008B00240274 /* AlamofireImage tvOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "AlamofireImage tvOS Tests.xctest";
-			remoteRef = DF06A75B1F7A008B00240274 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF06A75E1F7A008B00240274 /* AlamofireImage.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = AlamofireImage.framework;
-			remoteRef = DF06A75D1F7A008B00240274 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF06A76A1F7A009600240274 /* SWXMLHash.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SWXMLHash.framework;
-			remoteRef = DF06A7691F7A009600240274 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF06A76C1F7A009600240274 /* SWXMLHash iOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SWXMLHash iOS Tests.xctest";
-			remoteRef = DF06A76B1F7A009600240274 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF06A76E1F7A009600240274 /* SWXMLHash.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SWXMLHash.framework;
-			remoteRef = DF06A76D1F7A009600240274 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF06A7701F7A009600240274 /* SWXMLHash OSX Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SWXMLHash OSX Tests.xctest";
-			remoteRef = DF06A76F1F7A009600240274 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF06A7721F7A009600240274 /* SWXMLHash.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SWXMLHash.framework;
-			remoteRef = DF06A7711F7A009600240274 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF06A7741F7A009600240274 /* SWXMLHash tvOS Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "SWXMLHash tvOS Tests.xctest";
-			remoteRef = DF06A7731F7A009600240274 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF06A7761F7A009600240274 /* SWXMLHash.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = SWXMLHash.framework;
-			remoteRef = DF06A7751F7A009600240274 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF1FFCAA20BCAD2900B0A655 /* PromiseKit.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = PromiseKit.framework;
-			remoteRef = DF1FFCA920BCAD2900B0A655 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF1FFCAC20BCAD2900B0A655 /* PMKA+Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "PMKA+Tests.xctest";
-			remoteRef = DF1FFCAB20BCAD2900B0A655 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF1FFCAE20BCAD2900B0A655 /* PMKBridgeTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = PMKBridgeTests.xctest;
-			remoteRef = DF1FFCAD20BCAD2900B0A655 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF1FFCB020BCAD2900B0A655 /* PMKCoreTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = PMKCoreTests.xctest;
-			remoteRef = DF1FFCAF20BCAD2900B0A655 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF1FFCB220BCAD2900B0A655 /* PMKDeprecatedTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = PMKDeprecatedTests.xctest;
-			remoteRef = DF1FFCB120BCAD2900B0A655 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF1FFCB420BCAD2900B0A655 /* PMKJSA+Tests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = "PMKJSA+Tests.xctest";
-			remoteRef = DF1FFCB320BCAD2900B0A655 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF1FFCC120BCAD4200B0A655 /* PMKAlamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = PMKAlamofire.framework;
-			remoteRef = DF1FFCC020BCAD4200B0A655 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF1FFCC320BCAD4200B0A655 /* PMKAFTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = PMKAFTests.xctest;
-			remoteRef = DF1FFCC220BCAD4200B0A655 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF1FFCD020BCE62600B0A655 /* Material.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Material.framework;
-			remoteRef = DF1FFCCF20BCE62600B0A655 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF1FFCDD20BCE64900B0A655 /* Eureka.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Eureka.framework;
-			remoteRef = DF1FFCDC20BCE64900B0A655 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		DF1FFCDF20BCE64900B0A655 /* EurekaTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = EurekaTests.xctest;
-			remoteRef = DF1FFCDE20BCE64900B0A655 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		DF3B1B1B1F003E4F00E4E8F7 /* Resources */ = {
@@ -1029,6 +615,7 @@
 				DFECC9A61F69F7D000077A6C /* GameMechanic.swift in Sources */,
 				DF25A8AF20BCEB3E009264B8 /* FilterDescriptionView.swift in Sources */,
 				DFF7C8571F24FA6600443A6C /* GameCollectionViewController.swift in Sources */,
+				DFF6245A221B0F3B006DBBAD /* FilterModel.swift in Sources */,
 				DFF7C85E1F25983E00443A6C /* PickerTableViewCell.swift in Sources */,
 				DF8C2A9C20F06F6B00DD7284 /* MiniFilterView.swift in Sources */,
 				DFECC9A81F69F7F400077A6C /* GameCategory.swift in Sources */,
@@ -1036,24 +623,41 @@
 				DFECC9AA1F69F81300077A6C /* PlayerCount.swift in Sources */,
 				DF8C2AA020F07ADE00DD7284 /* FilterCollectionViewController.swift in Sources */,
 				DF3B1B591F0041BF00E4E8F7 /* BoardGameGeekAPI.swift in Sources */,
+				DFE1596C20F5B413006F63E4 /* GameFamily.swift in Sources */,
 				DFA440431F79E74C005F706E /* ComplexityFilter.swift in Sources */,
 				DFC0245D201E567B00F694BB /* EnumCollection.swift in Sources */,
 				DF95B9611F6B621000537DBE /* PlayDurationFilter.swift in Sources */,
+				DFE1596A20F47A7B006F63E4 /* Game+CoreDataProperties.swift in Sources */,
 				DFF7C8551F24F60F00443A6C /* GameTableViewController.swift in Sources */,
 				DF3B1B231F003E4F00E4E8F7 /* ViewController.swift in Sources */,
+				DFE1596620F467E6006F63E4 /* URLValueTransformer.swift in Sources */,
 				DFF7C85C1F257DA400443A6C /* PlayerCountController.swift in Sources */,
 				DF8582571F677B0A00543AB8 /* FilterTemplate.swift in Sources */,
 				DFF7C8591F257CA700443A6C /* FilterViewController.swift in Sources */,
+				DFDA7143221A203100D69DF8 /* StoryboardInitializable.swift in Sources */,
 				DFF313291F0F329C00A48FD0 /* Game.swift in Sources */,
+				DFF62463221B288A006DBBAD /* CollectionViewModel.swift in Sources */,
+				DFF62467221B7284006DBBAD /* BoardGameGeekAPIV2.swift in Sources */,
 				DFE1594C20F11D83006F63E4 /* GameTableViewCell.swift in Sources */,
+				DFF62452221A6DD1006DBBAD /* CollectionPickerCoordinator.swift in Sources */,
+				DFF62461221B27F1006DBBAD /* CollectionCoordinator.swift in Sources */,
+				DFF6244E221A6C43006DBBAD /* AppCoordinator.swift in Sources */,
+				DFDA7141221A1FED00D69DF8 /* BaseCoordinator.swift in Sources */,
+				DFF6245C221B2559006DBBAD /* CollectionPickerViewController.swift in Sources */,
 				DF8582591F677F7800543AB8 /* GameCategoryFilter.swift in Sources */,
 				DF95B9631F6ECF1900537DBE /* GameComplexity.swift in Sources */,
 				DFF313271F004DB000A48FD0 /* User.swift in Sources */,
+				DFF62454221A6E4B006DBBAD /* CollectionPickerViewModel.swift in Sources */,
 				DFC803071F9CF55C008A6851 /* HeaderTableViewCell.swift in Sources */,
 				DF3B1B211F003E4F00E4E8F7 /* AppDelegate.swift in Sources */,
+				DFE1596920F47A7B006F63E4 /* Game+CoreDataClass.swift in Sources */,
 				DFECC9A31F68D69F00077A6C /* GameMechanicFilter.swift in Sources */,
+				DFF62456221A70FC006DBBAD /* CollectionModel.swift in Sources */,
+				DFF62458221A7B77006DBBAD /* CollectionSourceModel.swift in Sources */,
 				DF816ABC1F8B0ED30037ADA9 /* GameViewController.swift in Sources */,
 				DFECC9AF1F69FFB400077A6C /* MockData.swift in Sources */,
+				DFF6245E221B25E9006DBBAD /* ViewModelDependent.swift in Sources */,
+				DFE1596420F45C2C006F63E4 /* WhatToPlay.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1080,36 +684,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DF06A7781F7A00BC00240274 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "SWXMLHash iOS";
-			targetProxy = DF06A7771F7A00BC00240274 /* PBXContainerItemProxy */;
-		};
-		DF06A77A1F7A00BC00240274 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "AlamofireImage iOS";
-			targetProxy = DF06A7791F7A00BC00240274 /* PBXContainerItemProxy */;
-		};
-		DF1FFCC520BCAD5700B0A655 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PMKAlamofire;
-			targetProxy = DF1FFCC420BCAD5700B0A655 /* PBXContainerItemProxy */;
-		};
-		DF1FFCC720BCAD5B00B0A655 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PromiseKit;
-			targetProxy = DF1FFCC620BCAD5B00B0A655 /* PBXContainerItemProxy */;
-		};
-		DF1FFCE120BCE65600B0A655 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Eureka;
-			targetProxy = DF1FFCE020BCE65600B0A655 /* PBXContainerItemProxy */;
-		};
-		DF1FFCE520BCE65600B0A655 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Material;
-			targetProxy = DF1FFCE420BCE65600B0A655 /* PBXContainerItemProxy */;
-		};
 		DF3B1B361F003E4F00E4E8F7 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = DF3B1B1C1F003E4F00E4E8F7 /* WhatToPlay */;
@@ -1243,7 +817,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -1252,36 +827,34 @@
 		DF3B1B491F003E4F00E4E8F7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NP49CSYMEP;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = WhatToPlay/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rlasante.WhatToPlay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
 		DF3B1B4A1F003E4F00E4E8F7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NP49CSYMEP;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
 				INFOPLIST_FILE = WhatToPlay/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rlasante.WhatToPlay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -1292,7 +865,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = NP49CSYMEP;
 				INFOPLIST_FILE = WhatToPlayTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rlasante.WhatToPlayTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -1307,7 +884,11 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				DEVELOPMENT_TEAM = NP49CSYMEP;
 				INFOPLIST_FILE = WhatToPlayTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rlasante.WhatToPlayTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -1321,7 +902,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = NP49CSYMEP;
 				INFOPLIST_FILE = WhatToPlayUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rlasante.WhatToPlayUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -1335,7 +920,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = NP49CSYMEP;
 				INFOPLIST_FILE = WhatToPlayUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.rlasante.WhatToPlayUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -1383,6 +972,103 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DF0A09FC2339BBC700A7360D /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.9.0;
+			};
+		};
+		DF0A09FF2339BBF700A7360D /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.5.2;
+			};
+		};
+		DF0A0A022339BCC700A7360D /* XCRemoteSwiftPackageReference "SWXMLHash" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/drmohundro/SWXMLHash";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		DF0A0A052339BCF400A7360D /* XCRemoteSwiftPackageReference "Material" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CosmicMind/Material";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.8;
+			};
+		};
+		DF0A0A082339BD1600A7360D /* XCRemoteSwiftPackageReference "Motion" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CosmicMind/Motion";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.1.3;
+			};
+		};
+		DF0A0A0B2339BD6E00A7360D /* XCRemoteSwiftPackageReference "PMKAlamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/PromiseKit/PMKAlamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.2.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DF0A09FD2339BBC700A7360D /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF0A09FC2339BBC700A7360D /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		DF0A0A002339BBF700A7360D /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF0A09FF2339BBF700A7360D /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+		DF0A0A032339BCC700A7360D /* SWXMLHash */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF0A0A022339BCC700A7360D /* XCRemoteSwiftPackageReference "SWXMLHash" */;
+			productName = SWXMLHash;
+		};
+		DF0A0A062339BCF400A7360D /* Material */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF0A0A052339BCF400A7360D /* XCRemoteSwiftPackageReference "Material" */;
+			productName = Material;
+		};
+		DF0A0A092339BD1600A7360D /* Motion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF0A0A082339BD1600A7360D /* XCRemoteSwiftPackageReference "Motion" */;
+			productName = Motion;
+		};
+		DF0A0A0C2339BD6E00A7360D /* PMKAlamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DF0A0A0B2339BD6E00A7360D /* XCRemoteSwiftPackageReference "PMKAlamofire" */;
+			productName = PMKAlamofire;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		DFE1596220F45C2C006F63E4 /* WhatToPlay.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DFE1596320F45C2C006F63E4 /* Model.xcdatamodel */,
+			);
+			currentVersion = DFE1596320F45C2C006F63E4 /* Model.xcdatamodel */;
+			path = WhatToPlay.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = DF3B1B151F003E4F00E4E8F7 /* Project object */;
 }

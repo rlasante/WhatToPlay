@@ -15,12 +15,15 @@ class GameTableViewController: UITableViewController {
     var games: [Game] = [] {
         didSet {
             tableView.reloadData()
+            // Prefetch the images
+            let urls = games.compactMap { $0.thumbnailURL }.map { URLRequest(url: $0) }
+            UIImageView.af_sharedImageDownloader.download(urls)
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 44
 
         // Uncomment the following line to preserve selection between presentations
@@ -137,9 +140,9 @@ class GameTableViewController: UITableViewController {
 extension Game {
     var detailText: String {
         let duration: String
-        if let minPlayingTime = minPlayingTime, let maxPlayingTime = maxPlayingTime, minPlayingTime != maxPlayingTime {
+        if minPlayingTime > 0, maxPlayingTime > 0, minPlayingTime != maxPlayingTime {
             duration = "\(Int(minPlayingTime / 60))-\(Int(maxPlayingTime / 60)) min"
-        } else if let playingTime = playingTime {
+        } else if playingTime > 0 {
             duration = "\(Int(playingTime / 60)) min"
         } else {
             duration = ""
