@@ -18,6 +18,7 @@ class BaseCoordinator<ResultType, ErrorType: Error> {
 
     /// Utility `DisposeBag` used by the subclasses.
 //    let disposeBag = DisposeBag()
+    var disposeBag = Set<AnyCancellable>()
 
     /// Unique identifier.
     private let identifier = UUID()

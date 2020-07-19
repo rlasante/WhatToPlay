@@ -22,12 +22,32 @@ class BoardGameGeekAPIV2: CollectionListAPI, CollectionAPI {
         self.context = context
     }
 
-    func collections(username _: String) -> AnyPublisher<[CollectionModel], Error> {
-        return Empty().eraseToAnyPublisher()
+    func collections(username: String) -> AnyPublisher<[CollectionModel], Error> {
+        let subject = PassthroughSubject<[CollectionModel], Error>()
+        BoardGameGeekAPI.getCollection(userName: username, context: context)
+            .pipe { result in
+                switch result {
+                case let .fulfilled(games):
+                    subject.send([CollectionModel(games: games)])
+                case let .rejected(error):
+                    subject.send(completion: .failure(error))
+                }
+        }
+        return subject.eraseToAnyPublisher()
     }
 
     func collection(collectionID: String) -> AnyPublisher<CollectionModel, Error> {
-        return Empty().eraseToAnyPublisher()
+        let subject = PassthroughSubject<[CollectionModel], Error>()
+        BoardGameGeekAPI.getCollection(userName: collectionID, context: context)
+            .pipe { result in
+                switch result {
+                case let .fulfilled(games):
+                    subject.send(CollectionModel(games: games))
+                case let .rejected(error):
+                    subject.send(completion: .failure(error))
+                }
+        }
+        return subject.eraseToAnyPublisher()
     }
 
 

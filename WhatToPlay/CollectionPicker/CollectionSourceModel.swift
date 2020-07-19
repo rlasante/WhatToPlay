@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 /// Class for the different sources to find collections
 class CollectionSourceModel {
@@ -35,6 +36,12 @@ class CollectionSourceModel {
         self.url = url
         self.baseAPIURL = baseAPIURL
         self.requiresAuthorization = requiresAuthorization
+    }
+
+    // TODO: Make this actually work with both
+    func api() -> CollectionListAPI {
+        let context = (UIApplication.shared.delegate as! AppDelegate).mainManagedObjectContext
+        return BoardGameGeekAPIV2(context: context)
     }
 }
 

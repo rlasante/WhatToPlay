@@ -20,6 +20,7 @@ enum CollectionSourceError: Error {
 }
 
 class CollectionPickerViewModel {
+    private var cancelBag: Set<AnyCancellable> = []
 
     // MARK: - Inputs
 
@@ -30,13 +31,13 @@ class CollectionPickerViewModel {
     let username: PassthroughSubject<String, Never>
 
     /// Calls to get named collection
-    let collection: PassthroughSubject<CollectionModel, Never>
+    let collection: PassthroughSubject<CollectionModel, Error>
 
     /// Calls to reload collections
     let reload: PassthroughSubject<Void, Never>
 
     // MARK: - Outputs
-    let sources: AnyPublisher<[CollectionSourceModel], Never>
+    let sources: AnyPublisher<[CollectionSourceModel], Error>
 
     /// Emits an array of fetched repositories.
     let collections: AnyPublisher<[CollectionModel], Error>
@@ -48,7 +49,7 @@ class CollectionPickerViewModel {
     let alertMessage: AnyPublisher<String, Never>
 
     /// Emits an collection to be shown.
-    let showCollection: AnyPublisher<CollectionModel, Never>
+    let showCollection: AnyPublisher<CollectionModel, Error>
 
     init() {
         // Reload collections
@@ -67,7 +68,7 @@ class CollectionPickerViewModel {
         let _alertMessageSubject = PassthroughSubject<String, Never>()
         alertMessage = _alertMessageSubject.eraseToAnyPublisher()
 
-        let _collectionSubject = PassthroughSubject<CollectionModel, Never>()
+        let _collectionSubject = PassthroughSubject<CollectionModel, Error>()
         collection = _collectionSubject
 
         showCollection = _collectionSubject.eraseToAnyPublisher()
@@ -75,31 +76,73 @@ class CollectionPickerViewModel {
         username = PassthroughSubject()
 
         // Listen to changes in source then fetch the latest
-        collections = Publishers.CombineLatest(reload, source)
-            .tryMap { latest -> AnyPublisher<[CollectionModel], Error> in
-                throw CollectionSourceError.unableToConnect(latest.1)
-            }.flatMap { source in
-                source.catch { error -> AnyPublisher<[CollectionModel], Error> in
-                    guard let sourceError = error as? CollectionSourceError else {
-                        print("Received error: \(error)")
-                        _alertMessageSubject.send(NSLocalizedString("Received unknown error while trying to connect to the site", comment: "Generic unknown collection source Error message"))
-                        return Empty(completeImmediately: false).eraseToAnyPublisher()
-                    }
-                    switch sourceError {
-                    case .unableToConnect(.boardGameGeek):
-                        _alertMessageSubject.send(NSLocalizedString("Unable to connect to Board Game Atlas at this time", comment: "Generic unable to connect to Board Game Geek Error message"))
-                    case .unableToConnect(.boardGameAtlas):
-                        _alertMessageSubject.send(NSLocalizedString("Unable to connect to Board Game Atlas at this time", comment: "Generic unable to connect to Board Game atlas Error message"))
-                    case .unableToConnect:
-                        print("Received unableToConnect: \(sourceError)")
-                        _alertMessageSubject.send(NSLocalizedString("Unable to connect to Source", comment: "Generic unknown collection source Error message"))
-                    default:
-                        print("Received sourceError: \(sourceError)")
-                        _alertMessageSubject.send(NSLocalizedString("Received unknown error while trying to connect to the site", comment: "Generic unknown collection source Error message"))
-                    }
-                    return Empty(completeImmediately: false).eraseToAnyPublisher()
-                }
-            }.eraseToAnyPublisher()
+        collections = Publishers.CombineLatest3(reload, source, username)
+            .setFailureType(to: Error.self)
+            .flatMap { latest -> AnyPublisher<[CollectionModel], Error> in
+                return latest.1.api().collections(username: latest.2)
+//                throw CollectionSourceError.unableToConnect(latest.1)
+        }.catch { error -> AnyPublisher<[CollectionModel], Error> in
+            guard let sourceError = error as? CollectionSourceError else {
+                print("Received error: \(error)")
+                _alertMessageSubject.send(NSLocalizedString("Received unknown error while trying to connect to the site", comment: "Generic unknown collection source Error message"))
+                return Empty(completeImmediately: false).eraseToAnyPublisher()
+            }
+            switch sourceError {
+            case .unableToConnect(.boardGameGeek):
+                _alertMessageSubject.send(NSLocalizedString("Unable to connect to Board Game Atlas at this time", comment: "Generic unable to connect to Board Game Geek Error message"))
+            case .unableToConnect(.boardGameAtlas):
+                _alertMessageSubject.send(NSLocalizedString("Unable to connect to Board Game Atlas at this time", comment: "Generic unable to connect to Board Game atlas Error message"))
+            case .unableToConnect:
+                print("Received unableToConnect: \(sourceError)")
+                _alertMessageSubject.send(NSLocalizedString("Unable to connect to Source", comment: "Generic unknown collection source Error message"))
+            default:
+                print("Received sourceError: \(sourceError)")
+                _alertMessageSubject.send(NSLocalizedString("Received unknown error while trying to connect to the site", comment: "Generic unknown collection source Error message"))
+            }
+            return Empty(completeImmediately: false).eraseToAnyPublisher()
+        }
+        .eraseToAnyPublisher()
+
+        // Listen to changes to collections. If only one in the list then mark as completion
+        collections
+            .filter {
+                $0.count == 1
+            }
+            .compactMap {
+                $0.first
+            }
+            .sink(receiveCompletion: { _ in },  receiveValue: { [weak self] model in
+                self?.collection.send(model)
+            })
+            .store(in: &cancelBag)
+//            .subscribe(collection)
+
+
+            // Listen to changes to collections. If only one in the list then mark as completion
+
+//        .flatMap { collectionSource -> AnyPublisher<[CollectionModel], Never> in
+//                collectionSource.catch { error -> AnyPublisher<[CollectionModel], Error> in
+//                    guard let sourceError = error as? CollectionSourceError else {
+//                        print("Received error: \(error)")
+//                        _alertMessageSubject.send(NSLocalizedString("Received unknown error while trying to connect to the site", comment: "Generic unknown collection source Error message"))
+//                        return Empty(completeImmediately: false).eraseToAnyPublisher()
+//                    }
+//                    switch sourceError {
+//                    case .unableToConnect(.boardGameGeek):
+//                        _alertMessageSubject.send(NSLocalizedString("Unable to connect to Board Game Atlas at this time", comment: "Generic unable to connect to Board Game Geek Error message"))
+//                    case .unableToConnect(.boardGameAtlas):
+//                        _alertMessageSubject.send(NSLocalizedString("Unable to connect to Board Game Atlas at this time", comment: "Generic unable to connect to Board Game atlas Error message"))
+//                    case .unableToConnect:
+//                        print("Received unableToConnect: \(sourceError)")
+//                        _alertMessageSubject.send(NSLocalizedString("Unable to connect to Source", comment: "Generic unknown collection source Error message"))
+//                    default:
+//                        print("Received sourceError: \(sourceError)")
+//                        _alertMessageSubject.send(NSLocalizedString("Received unknown error while trying to connect to the site", comment: "Generic unknown collection source Error message"))
+//                    }
+//                    return Empty(completeImmediately: false).eraseToAnyPublisher()
+//                }
+//            }
+//            .eraseToAnyPublisher()
 //        .catch { error in
 //                guard let sourceError = error as? CollectionSourceError else {
 //                    print("Received error: \(error)")

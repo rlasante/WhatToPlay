@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     private var appCoordinator: AppCoordinator!
+    private var disposeBag: Set<AnyCancellable> = []
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -22,6 +23,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         appCoordinator = AppCoordinator(window: window!)
         appCoordinator.start()
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .finished:
+                    print("Done")
+                case .failure(let error):
+                    print("Error: \(error)")
+                }
+            }, receiveValue: { value in
+                print("Got a value: \(value)")
+            })
+            .store(in: &disposeBag)
 //        appCoordinator.start()
 //            .subscribe()
 //            .disposed(by: disposeBag)

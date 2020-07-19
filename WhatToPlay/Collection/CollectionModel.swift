@@ -14,4 +14,14 @@ class CollectionModel {
 
     /// List of games in the collection
     var games: [Game] = []
+
+    init(games: [Game]) {
+        self.games = games
+    }
+
+    // TODO: Make this actually work with both
+    func api() -> CollectionAPI {
+        let context = (UIApplication.shared.delegate as! AppDelegate).mainManagedObjectContext
+        return BoardGameGeekAPIV2(context: context)
+    }
 }
