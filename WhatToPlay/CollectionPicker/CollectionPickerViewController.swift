@@ -63,13 +63,13 @@ class CollectionPickerViewController: UIViewController, StoryboardInitializable,
             })
         cancelables.insert(selected)
 
-        let collection = viewModel.collections
-            .compactMap { $0.first }
-            .sink(receiveCompletion: { _ in },
-                  receiveValue: { collection in
-            self.viewModel.collection.send(collection)
-        })
-        cancelables.insert(collection)
+//        let collection = viewModel.collections
+//            .compactMap { $0.first }
+//            .sink(receiveCompletion: { _ in },
+//                  receiveValue: { collection in
+//            self.viewModel.collection.send(collection)
+//        })
+//        cancelables.insert(collection)
     }
 
     override func didReceiveMemoryWarning() {

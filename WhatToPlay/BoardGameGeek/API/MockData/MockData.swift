@@ -9,8 +9,7 @@
 import UIKit
 import Alamofire
 
-
-var mockCollectionData: Result<String>? = {
+var mockCollectionData: AFResult<String>? = {
     guard let path = Bundle.main.path(forResource: "MockCollection", ofType: "txt"),
         let content = try? String(contentsOfFile:path, encoding: .utf8) else {
         return nil
@@ -18,7 +17,7 @@ var mockCollectionData: Result<String>? = {
     return .success(content)
 }()
 
-var mockGameData: Result<String>? = {
+var mockGameData: AFResult<String>? = {
     guard let path = Bundle.main.path(forResource: "MockGames", ofType: "txt"),
         let content = try? String(contentsOfFile:path, encoding: .utf8) else {
             return nil

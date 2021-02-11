@@ -17,7 +17,7 @@ class GameTableViewController: UITableViewController {
             tableView.reloadData()
             // Prefetch the images
             let urls = games.compactMap { $0.thumbnailURL }.map { URLRequest(url: $0) }
-            UIImageView.af_sharedImageDownloader.download(urls)
+            UIImageView.af.sharedImageDownloader.download(urls)
         }
     }
 
@@ -57,7 +57,7 @@ class GameTableViewController: UITableViewController {
             return cell
         }
         let cell = tableView.dequeueReusableCell(withIdentifier: "GameCell", for: indexPath)
-        cell.imageView?.af_cancelImageRequest()
+        cell.imageView?.af.cancelImageRequest()
 
         guard games.count > indexPath.row else { return cell }
         let game = games[indexPath.row]
@@ -69,11 +69,11 @@ class GameTableViewController: UITableViewController {
         if let thumbnailURL = game.thumbnailURL {
             cell.imageView?.contentMode = .scaleAspectFill
             cell.imageView?.clipsToBounds = true
-            cell.imageView?.af_setImage(withURL: thumbnailURL) { response in
+            cell.imageView?.af.setImage(withURL: thumbnailURL, completion: { response in
                 guard response.response != nil else { return }
                 self.tableView.beginUpdates()
                 self.tableView.endUpdates()
-            }
+            })
         }
 
         return cell

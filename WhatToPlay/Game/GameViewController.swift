@@ -60,10 +60,10 @@ class GameViewController: UITableViewController {
             cell.bestPlayerCountLabel.text = nil
         }
         if let imageUrl = game.imageURL {
-            cell.backgroundImageView.af_setImage(withURL: imageUrl) { _ in
+            cell.backgroundImageView.af.setImage(withURL: imageUrl, completion: { _ in
                 self.tableView.beginUpdates()
                 self.tableView.endUpdates()
-            }
+            })
         }
         // TODO make these actually work
         cell.ratingLabel.text = "8.5"

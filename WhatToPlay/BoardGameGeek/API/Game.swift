@@ -23,9 +23,8 @@ extension String {
     }
 }
 
-class Game: NSManagedObject {
+class Game: NSManagedObject, Identifiable {
 
-//    @NSManaged var rawCategories: [String]
     var categories: [GameCategory] {
         get {
             return ArrayGameCategoryValueTransformer().reverseTransformedValue(rawCategories) as? [GameCategory] ?? []
@@ -35,7 +34,6 @@ class Game: NSManagedObject {
         }
     }
 
-//    @NSManaged var rawMechanics: [String]
     var mechanics: [GameMechanic] {
         get {
             return ArrayGameMechanicValueTransformer().reverseTransformedValue(rawMechanics) as? [GameMechanic] ?? []
@@ -45,7 +43,6 @@ class Game: NSManagedObject {
         }
     }
 
-//    @NSManaged var rawPlayerCount: [AnyObject]
     var playerCount: [PlayerCount] {
         get {
             return ArrayPlayerCountValueTransformer().reverseTransformedValue(rawPlayerCount) as? [PlayerCount] ?? []
@@ -55,7 +52,6 @@ class Game: NSManagedObject {
         }
     }
 
-//    @NSManaged var rawBestPlayerCount: AnyObject?
     var bestPlayerCount: PlayerCount? {
         get {
             return PlayerCountValueTransformer().reverseTransformedValue(rawBestPlayerCount) as? PlayerCount
@@ -64,7 +60,7 @@ class Game: NSManagedObject {
             rawBestPlayerCount = PlayerCountValueTransformer().transformedValue(newValue) as AnyObject
         }
     }
-//    @NSManaged var rawSuggestedPlayerCount: [AnyObject]
+
     var suggestedPlayerCount: [PlayerCount] {
         get {
             return ArrayPlayerCountValueTransformer().reverseTransformedValue(rawSuggestedPlayerCount) as? [PlayerCount] ?? []

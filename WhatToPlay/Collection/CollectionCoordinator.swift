@@ -7,6 +7,7 @@
 //
 
 import Combine
+import SwiftUI
 import UIKit
 
 class CollectionCoordinator: BaseCoordinator<Void, Error> {
@@ -20,21 +21,44 @@ class CollectionCoordinator: BaseCoordinator<Void, Error> {
     }
 
     override func start() -> AnyPublisher<Void, Error> {
-        let viewModel = CollectionViewModel(collectionAPI: collectionModel.api, collectionModel: collectionModel)
+        let viewModel = CollectionViewModel(collectionAPI: collectionModel.api(), collectionModel: collectionModel)
 
-        let viewController = GameCollectionViewController.initFromStoryboard(name: "Main")
-        let navigationController = UINavigationController(rootViewController: viewController)
+        let viewController = UIHostingController(rootView: CollectionView(viewModel: viewModel)) // , selectedGame: viewModel.selectedGame))
+        rootViewController.show(viewController, sender: self)
+        
+//        let viewController = GameCollectionViewController.initFromStoryboard(name: "Main")
+//        let navigationController = UINavigationController(rootViewController: viewController)
 
-        viewController.prepare(with: viewModel)
+//        viewController.prepare(with: viewModel)
 
-        window.rootViewController = navigationController
-        window.makeKeyAndVisible()
+//        window.rootViewController = navigationController
+//        window.makeKeyAndVisible()
+        let showGame = viewModel.showGame
+            .flatMap { game in
+                self.show(game: game, in: self.rootViewController)
+            }
+            .sink(receiveCompletion: { _ in }, receiveValue: { _ in })
+        disposeBag.insert(showGame)
 
-        return viewModel.showCollection
-            .flatMap { collectionModel in
-                self.show(collection: collectionModel, in: navigationController)
-            }.eraseToAnyPublisher()
-//        return Observable.
-        fatalError()
+        let showFilters = viewModel.pickFilters
+            .flatMap { game in
+                self.showFilters(in: self.rootViewController)
+            }
+            .sink(receiveCompletion: { _ in }, receiveValue: { filters in
+                viewModel.filters.send(filters)
+            })
+        disposeBag.insert(showFilters)
+
+        return viewModel.back.eraseToAnyPublisher()
+    }
+
+    func show(game: Game, in navController: UINavigationController) -> AnyPublisher<Void, Error> {
+        let gameDetailCoordinator = GameDetailCoordinator(rootViewController: navController, game: game)
+        return coordinate(to: gameDetailCoordinator)
+    }
+
+    func showFilters(in navController: UINavigationController) -> AnyPublisher<[FilterTemplate], Error> {
+        let filterPickerCoordinator = FilterPickerCoordinator(rootViewController: navController)
+        return coordinate(to: filterPickerCoordinator)
     }
 }

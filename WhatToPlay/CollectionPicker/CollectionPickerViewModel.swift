@@ -76,7 +76,7 @@ class CollectionPickerViewModel {
         username = PassthroughSubject()
 
         // Listen to changes in source then fetch the latest
-        collections = Publishers.CombineLatest3(reload, source, username)
+        collections = Publishers.CombineLatest3(reload, source, username.debounce(for: .seconds(0.6), scheduler: DispatchQueue.main))
             .setFailureType(to: Error.self)
             .flatMap { latest -> AnyPublisher<[CollectionModel], Error> in
                 return latest.1.api().collections(username: latest.2)

@@ -34,7 +34,7 @@ class CollectionPickerCoordinator: BaseCoordinator<Void, Error> {
     }
 
     private func show(collection: CollectionModel, in navigationController: UINavigationController) -> AnyPublisher<Void, Error> {
-        let collectionCoordinator = CollectionCoordinator(rootViewController: navigationController)
+        let collectionCoordinator = CollectionCoordinator(rootViewController: navigationController, collectionModel: collection)
         return coordinate(to: collectionCoordinator)
     }
 }

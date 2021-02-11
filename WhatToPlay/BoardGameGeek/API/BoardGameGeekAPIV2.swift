@@ -37,7 +37,7 @@ class BoardGameGeekAPIV2: CollectionListAPI, CollectionAPI {
     }
 
     func collection(collectionID: String) -> AnyPublisher<CollectionModel, Error> {
-        let subject = PassthroughSubject<[CollectionModel], Error>()
+        let subject = PassthroughSubject<CollectionModel, Error>()
         BoardGameGeekAPI.getCollection(userName: collectionID, context: context)
             .pipe { result in
                 switch result {

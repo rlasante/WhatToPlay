@@ -6,8 +6,8 @@
         "repositoryURL": "https://github.com/Alamofire/Alamofire",
         "state": {
           "branch": null,
-          "revision": "ce5be6fbc6f51414c49f56fc8e2b7c99253d9f8e",
-          "version": "4.9.0"
+          "revision": "eaf6e622dd41b07b251d8f01752eab31bc811493",
+          "version": "5.4.1"
         }
       },
       {
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/Alamofire/AlamofireImage",
         "state": {
           "branch": null,
-          "revision": "ad10c5f5dd3bca54c3da05627410c577a4c72ba6",
-          "version": "3.5.2"
+          "revision": "3e8edbeb75227f8542aa87f90240cf0424d6362f",
+          "version": "4.1.0"
         }
       },
       {
@@ -38,21 +38,30 @@
         }
       },
       {
-        "package": "PMKAlamofire",
-        "repositoryURL": "https://github.com/PromiseKit/PMKAlamofire",
+        "package": "PromiseKit",
+        "repositoryURL": "https://github.com/mxcl/PromiseKit",
         "state": {
           "branch": null,
-          "revision": "15a5ab2c243b73d875040897c56fa4f3f339808f",
-          "version": "3.2.4"
+          "revision": "aea48ea1855f5d82e2dffa6027afce3aab8f3dd7",
+          "version": "6.13.3"
         }
       },
       {
-        "package": "PromiseKit",
-        "repositoryURL": "https://github.com/mxcl/PromiseKit.git",
+        "package": "SDWebImage",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImage.git",
         "state": {
           "branch": null,
-          "revision": "4d8d1287d2e50c53a9f8430ffe88925292838c57",
-          "version": "6.11.0"
+          "revision": "2f9ef53b99a25bdfba97660c69c42cb54e323b78",
+          "version": "5.8.4"
+        }
+      },
+      {
+        "package": "SDWebImageSwiftUI",
+        "repositoryURL": "https://github.com/SDWebImage/SDWebImageSwiftUI.git",
+        "state": {
+          "branch": null,
+          "revision": "4c7f169e39bc35d6b80d42b8eb8301bee9cd0907",
+          "version": "1.5.0"
         }
       },
       {
