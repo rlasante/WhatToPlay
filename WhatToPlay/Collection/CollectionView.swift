@@ -15,7 +15,11 @@ struct CollectionView: View {
 
     var body: some View {
         List(viewModel.games) { game in
-            CollectionGameCell(game: game, selectedGame: self.$viewModel.selectedGame)
+            CollectionGameCell(game: game)
+                .background(Color.white) // don't know why it
+                .onTapGesture {
+                    self.viewModel.selectedGame = game
+                }
         }
 //        ScrollView {
 //            ForEach(viewModel.games) { game in

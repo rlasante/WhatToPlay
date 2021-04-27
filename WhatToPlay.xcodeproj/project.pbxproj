@@ -26,6 +26,9 @@
 		DF622F091F6A1090003BE61E /* MockCollection.txt in Resources */ = {isa = PBXBuildFile; fileRef = DF622F081F6A1090003BE61E /* MockCollection.txt */; };
 		DF65F0C025CF922E00113735 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = DF65F0BF25CF922E00113735 /* PromiseKit */; };
 		DF65F0C425D4E5F000113735 /* DataRequest+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF65F0C325D4E5F000113735 /* DataRequest+Promise.swift */; };
+		DF65F0CD25E3592100113735 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF65F0CC25E3592100113735 /* FilterViewModel.swift */; };
+		DF65F0D925EB52EE00113735 /* CombineLatestCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF65F0D825EB52EE00113735 /* CombineLatestCollection.swift */; };
+		DF65F0DF25EC91BE00113735 /* MechanicFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF65F0DE25EC91BE00113735 /* MechanicFilterView.swift */; };
 		DF816ABC1F8B0ED30037ADA9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF816ABB1F8B0ED30037ADA9 /* GameViewController.swift */; };
 		DF8582551F677A7000543AB8 /* PlayerCountFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8582541F677A7000543AB8 /* PlayerCountFilter.swift */; };
 		DF8582571F677B0A00543AB8 /* FilterTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8582561F677B0A00543AB8 /* FilterTemplate.swift */; };
@@ -74,7 +77,7 @@
 		DFF7392624C92B73008990D9 /* FilterPickerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF7392524C92B73008990D9 /* FilterPickerCoordinator.swift */; };
 		DFF7392824C92C79008990D9 /* FilterPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF7392724C92C79008990D9 /* FilterPickerView.swift */; };
 		DFF7392A24C92C8D008990D9 /* FilterPickerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF7392924C92C8D008990D9 /* FilterPickerViewModel.swift */; };
-		DFF7392C24C93A22008990D9 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF7392B24C93A22008990D9 /* FilterView.swift */; };
+		DFF7392C24C93A22008990D9 /* CategoryFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF7392B24C93A22008990D9 /* CategoryFilterView.swift */; };
 		DFF7C84F1F1EE3FE00443A6C /* GameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF7C84E1F1EE3FE00443A6C /* GameTests.swift */; };
 		DFF7C8511F23AE5D00443A6C /* CollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF7C8501F23AE5D00443A6C /* CollectionTests.swift */; };
 		DFF7C8531F23AE7800443A6C /* GameTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF7C8521F23AE7800443A6C /* GameTestData.swift */; };
@@ -135,6 +138,9 @@
 		DF61188324B41B1D00F16EEB /* UIControlPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIControlPublisher.swift; sourceTree = "<group>"; };
 		DF622F081F6A1090003BE61E /* MockCollection.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MockCollection.txt; sourceTree = "<group>"; };
 		DF65F0C325D4E5F000113735 /* DataRequest+Promise.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataRequest+Promise.swift"; sourceTree = "<group>"; };
+		DF65F0CC25E3592100113735 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
+		DF65F0D825EB52EE00113735 /* CombineLatestCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineLatestCollection.swift; sourceTree = "<group>"; };
+		DF65F0DE25EC91BE00113735 /* MechanicFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MechanicFilterView.swift; sourceTree = "<group>"; };
 		DF816ABB1F8B0ED30037ADA9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		DF8582541F677A7000543AB8 /* PlayerCountFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCountFilter.swift; sourceTree = "<group>"; };
 		DF8582561F677B0A00543AB8 /* FilterTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTemplate.swift; sourceTree = "<group>"; };
@@ -182,7 +188,7 @@
 		DFF7392524C92B73008990D9 /* FilterPickerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPickerCoordinator.swift; sourceTree = "<group>"; };
 		DFF7392724C92C79008990D9 /* FilterPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPickerView.swift; sourceTree = "<group>"; };
 		DFF7392924C92C8D008990D9 /* FilterPickerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterPickerViewModel.swift; sourceTree = "<group>"; };
-		DFF7392B24C93A22008990D9 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		DFF7392B24C93A22008990D9 /* CategoryFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryFilterView.swift; sourceTree = "<group>"; };
 		DFF7C84E1F1EE3FE00443A6C /* GameTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTests.swift; sourceTree = "<group>"; };
 		DFF7C8501F23AE5D00443A6C /* CollectionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTests.swift; sourceTree = "<group>"; };
 		DFF7C8521F23AE7800443A6C /* GameTestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameTestData.swift; sourceTree = "<group>"; };
@@ -355,6 +361,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		DF65F0CB25E3590000113735 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				DFF7392B24C93A22008990D9 /* CategoryFilterView.swift */,
+				DF65F0DE25EC91BE00113735 /* MechanicFilterView.swift */,
+				DF65F0CC25E3592100113735 /* FilterViewModel.swift */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
 		DF8582531F677A0700543AB8 /* Types */ = {
 			isa = PBXGroup;
 			children = (
@@ -383,6 +399,7 @@
 				DFE1596520F467E6006F63E4 /* URLValueTransformer.swift */,
 				DF61188324B41B1D00F16EEB /* UIControlPublisher.swift */,
 				DF65F0C325D4E5F000113735 /* DataRequest+Promise.swift */,
+				DF65F0D825EB52EE00113735 /* CombineLatestCollection.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -486,9 +503,9 @@
 		DFF7392424C92B52008990D9 /* Filtering */ = {
 			isa = PBXGroup;
 			children = (
+				DF65F0CB25E3590000113735 /* Filter */,
 				DFF7392524C92B73008990D9 /* FilterPickerCoordinator.swift */,
 				DFF7392724C92C79008990D9 /* FilterPickerView.swift */,
-				DFF7392B24C93A22008990D9 /* FilterView.swift */,
 				DFF7392924C92C8D008990D9 /* FilterPickerViewModel.swift */,
 			);
 			path = Filtering;
@@ -687,13 +704,15 @@
 				DFC0245D201E567B00F694BB /* EnumCollection.swift in Sources */,
 				DF95B9611F6B621000537DBE /* PlayDurationFilter.swift in Sources */,
 				DFE1596A20F47A7B006F63E4 /* Game+CoreDataProperties.swift in Sources */,
+				DF65F0CD25E3592100113735 /* FilterViewModel.swift in Sources */,
 				DFF7C8551F24F60F00443A6C /* GameTableViewController.swift in Sources */,
+				DF65F0D925EB52EE00113735 /* CombineLatestCollection.swift in Sources */,
 				DF3B1B231F003E4F00E4E8F7 /* ViewController.swift in Sources */,
 				DFE1596620F467E6006F63E4 /* URLValueTransformer.swift in Sources */,
 				DFF7C85C1F257DA400443A6C /* PlayerCountController.swift in Sources */,
 				DF8582571F677B0A00543AB8 /* FilterTemplate.swift in Sources */,
 				DFF7C8591F257CA700443A6C /* FilterViewController.swift in Sources */,
-				DFF7392C24C93A22008990D9 /* FilterView.swift in Sources */,
+				DFF7392C24C93A22008990D9 /* CategoryFilterView.swift in Sources */,
 				DFF7391C24C7DC65008990D9 /* CollectionGameCell.swift in Sources */,
 				DFDA7143221A203100D69DF8 /* StoryboardInitializable.swift in Sources */,
 				DFF313291F0F329C00A48FD0 /* Game.swift in Sources */,
@@ -711,6 +730,7 @@
 				DF95B9631F6ECF1900537DBE /* GameComplexity.swift in Sources */,
 				DFF313271F004DB000A48FD0 /* User.swift in Sources */,
 				DFF62454221A6E4B006DBBAD /* CollectionPickerViewModel.swift in Sources */,
+				DF65F0DF25EC91BE00113735 /* MechanicFilterView.swift in Sources */,
 				DFC803071F9CF55C008A6851 /* HeaderTableViewCell.swift in Sources */,
 				DF3B1B211F003E4F00E4E8F7 /* AppDelegate.swift in Sources */,
 				DFE1596920F47A7B006F63E4 /* Game+CoreDataClass.swift in Sources */,

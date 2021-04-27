@@ -42,7 +42,7 @@ class CollectionCoordinator: BaseCoordinator<Void, Error> {
 
         let showFilters = viewModel.pickFilters
             .flatMap { game in
-                self.showFilters(in: self.rootViewController)
+                self.showFilters(in: self.rootViewController, filters: viewModel.filters.value, viewModel: viewModel)
             }
             .sink(receiveCompletion: { _ in }, receiveValue: { filters in
                 viewModel.filters.send(filters)
@@ -57,8 +57,14 @@ class CollectionCoordinator: BaseCoordinator<Void, Error> {
         return coordinate(to: gameDetailCoordinator)
     }
 
-    func showFilters(in navController: UINavigationController) -> AnyPublisher<[FilterTemplate], Error> {
-        let filterPickerCoordinator = FilterPickerCoordinator(rootViewController: navController)
+    func showFilters(in navController: UINavigationController, filters: [FilterModel], viewModel: CollectionViewModel) -> AnyPublisher<[FilterModel], Error> {
+        let filteredGames: AnyPublisher<[Game], Never> = viewModel.$games
+            .eraseToAnyPublisher()
+        let filterPickerCoordinator = FilterPickerCoordinator(
+            rootViewController: navController,
+            filters: filters,
+            filteredGames: filteredGames
+        )
         return coordinate(to: filterPickerCoordinator)
     }
 }

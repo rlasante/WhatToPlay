@@ -66,13 +66,22 @@ class CollectionViewModel: NSObject, ObservableObject {
                 let (games, filters) = gamesFilters
                 return games.filter { game in
                     // Find first filter that would cause a game to get excluded
-                    let shouldFilterGame = filters.contains { !$0.filter(game) }
-                    return shouldFilterGame
+                    let shouldExcludeGame = filters.contains { !$0.filter(game) }
+                    return !shouldExcludeGame
                 }
-        }.share()
+            }
+            .share()
+
         gamesPublisher = _gamesPublisher.eraseToAnyPublisher()
 
         super.init()
+
+        gamesPublisher.sink(receiveCompletion: { [weak self] error in
+            print("Error \(error)")
+            self?.games = []
+        }, receiveValue: { [weak self] games in
+            self?.games = games
+        }).store(in: &disposeBag)
 
 //        Publishers.CombineLatest(collection, filters)
 //            .map { ($0.0.games, $0.1) }

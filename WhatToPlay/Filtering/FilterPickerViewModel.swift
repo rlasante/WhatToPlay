@@ -11,10 +11,47 @@ import Foundation
 import SwiftUI
 
 class FilterPickerViewModel: ObservableObject {
+    var disposeBag: Set<AnyCancellable> = []
+    
     // Inputs
-    var selectedFilters = PassthroughSubject<[FilterTemplate], Error>()
+    var selectedFilters: CurrentValueSubject<[FilterModel], Error>
 
     // Outputs
+    var filters: PassthroughSubject<[FilterModel], Error>
 
-    @Published var filters: [FilterTemplate] = []
+    init(filters: [FilterModel], filteredGames: AnyPublisher<[Game], Never>) {
+        let filters = filters.isEmpty ? [CategoryFilterViewModel(), MechanicFilterViewModel()] : filters
+        selectedFilters = CurrentValueSubject(filters)
+        self.filters = PassthroughSubject()
+
+
+
+        selectedFilters
+            .flatMap { filters -> CombineLatestCollection<[AnyPublisher<FilterModel, Error>]> in
+                let objectChangedFilters = filters
+                    .compactMap { currentFilter in
+                        return currentFilter
+                            .objectDidChange
+                            .tryMap {
+                                $0
+                            }
+                            .eraseToAnyPublisher()
+                    }
+                return CombineLatestCollection(objectChangedFilters)
+            }
+            .subscribe(self.filters)
+            .store(in: &disposeBag)
+        let _filteredGames = filteredGames.share()
+        filters.forEach {
+            _filteredGames
+                .subscribe($0.filteredGames)
+                .store(in: &disposeBag)
+
+            $0.refresh()
+        }
+    }
+
+    deinit {
+        print("Releasing FilterPickerViewModel")
+    }
 }

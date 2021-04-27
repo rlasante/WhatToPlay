@@ -12,9 +12,14 @@ struct FilterPickerView: View {
     @ObservedObject var viewModel: FilterPickerViewModel
 
     var body: some View {
-        ScrollView {
+        List {
             Text("Hello")
-//            FilterView()
+            ForEach(self.viewModel.selectedFilters.value.compactMap { $0 as? MechanicFilterViewModel }, id: \.shortDescription) { filter in
+                MechanicFilterView(viewModel: filter)
+            }
+            ForEach(self.viewModel.selectedFilters.value.compactMap { $0 as? CategoryFilterViewModel }, id: \.shortDescription) { filter in
+                CategoryFilterView(viewModel: filter)
+            }
         }
     }
 }

@@ -71,9 +71,9 @@ class GameCollectionViewController: UIViewController, FilterDelegate {
         } else if segue.identifier == "embed_filterCollectionVC", let destination = segue.destination as? FilterCollectionViewController {
             filterCollectionController = destination
             filterCollectionController?.filterLabels = filterLabels
-        } else if segue.identifier == "filter", let destination = segue.destination as? FilterViewController {
-            destination.delegate = self
-            destination.configure(withFilterData: filterData)
+//        } else if segue.identifier == "filter", let destination = segue.destination as? FilterViewController {
+//            destination.delegate = self
+//            destination.configure(withFilterData: filterData)
         } else if segue.identifier == "game", let desitination = segue.destination as? GameViewController,
             let indexPath = sender as? IndexPath {
             desitination.game = gamesViewController?.games[indexPath.row]

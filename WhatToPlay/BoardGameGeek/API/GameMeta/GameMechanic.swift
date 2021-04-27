@@ -9,7 +9,7 @@
 import UIKit
 import SWXMLHash
 
-enum GameMechanic: String, EnumCollection, XMLIndexerDeserializable {
+enum GameMechanic: String, EnumCollection, XMLIndexerDeserializable, Codable, Equatable, CaseIterable {
     case acting,
     areaControlAreaInfluence,
     areaimpulse,

@@ -12,7 +12,6 @@ import SwiftUI
 
 struct CollectionGameCell: View {
     @State var game: Game
-    @Binding var selectedGame: Game?
     var body: some View {
         HStack {
             WebImage(url: game.thumbnailURL)
@@ -27,9 +26,6 @@ struct CollectionGameCell: View {
                     .foregroundColor(.accentColor)
             }
             Spacer()
-        }.onTapGesture {
-            print("Cell Tapped \(self.game.id)")
-            self.selectedGame = self.game
         }
     }
 }
