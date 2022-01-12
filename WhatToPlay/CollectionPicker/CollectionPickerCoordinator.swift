@@ -27,6 +27,8 @@ class CollectionPickerCoordinator: BaseCoordinator<Void, Error> {
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
 
+        viewModel.username.send("Hunter9110")
+
         return viewModel.showCollection
             .flatMap { collectionModel in
                 self.show(collection: collectionModel, in: navigationController)

@@ -33,6 +33,9 @@
 		DF8582551F677A7000543AB8 /* PlayerCountFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8582541F677A7000543AB8 /* PlayerCountFilter.swift */; };
 		DF8582571F677B0A00543AB8 /* FilterTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8582561F677B0A00543AB8 /* FilterTemplate.swift */; };
 		DF8582591F677F7800543AB8 /* GameCategoryFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8582581F677F7700543AB8 /* GameCategoryFilter.swift */; };
+		DF8BD4562648C30B00703B88 /* UserDefaultsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8BD4552648C30A00703B88 /* UserDefaultsExtension.swift */; };
+		DF8BD45D264A1F9500703B88 /* ComplexityFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8BD45C264A1F9500703B88 /* ComplexityFilterViewModel.swift */; };
+		DF8BD461264A1FD700703B88 /* DurationFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8BD460264A1FD700703B88 /* DurationFilterViewModel.swift */; };
 		DF8C2A9C20F06F6B00DD7284 /* MiniFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8C2A9B20F06F6B00DD7284 /* MiniFilterView.swift */; };
 		DF8C2A9E20F06F8200DD7284 /* MiniFilterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF8C2A9D20F06F8200DD7284 /* MiniFilterView.xib */; };
 		DF8C2AA020F07ADE00DD7284 /* FilterCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8C2A9F20F07ADE00DD7284 /* FilterCollectionViewController.swift */; };
@@ -41,6 +44,7 @@
 		DF95B9631F6ECF1900537DBE /* GameComplexity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95B9621F6ECF1900537DBE /* GameComplexity.swift */; };
 		DF95B9661F6EDA2A00537DBE /* GameComplexityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF95B9651F6EDA2A00537DBE /* GameComplexityTests.swift */; };
 		DFA440431F79E74C005F706E /* ComplexityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA440421F79E74C005F706E /* ComplexityFilter.swift */; };
+		DFAED7802637AE3A003D3FB6 /* ComplexityFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAED77F2637AE3A003D3FB6 /* ComplexityFilterView.swift */; };
 		DFC0245D201E567B00F694BB /* EnumCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC0245C201E567B00F694BB /* EnumCollection.swift */; };
 		DFC803071F9CF55C008A6851 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC803061F9CF55C008A6851 /* HeaderTableViewCell.swift */; };
 		DFDA7141221A1FED00D69DF8 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA7140221A1FED00D69DF8 /* BaseCoordinator.swift */; };
@@ -145,6 +149,9 @@
 		DF8582541F677A7000543AB8 /* PlayerCountFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCountFilter.swift; sourceTree = "<group>"; };
 		DF8582561F677B0A00543AB8 /* FilterTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTemplate.swift; sourceTree = "<group>"; };
 		DF8582581F677F7700543AB8 /* GameCategoryFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCategoryFilter.swift; sourceTree = "<group>"; };
+		DF8BD4552648C30A00703B88 /* UserDefaultsExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtension.swift; sourceTree = "<group>"; };
+		DF8BD45C264A1F9500703B88 /* ComplexityFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexityFilterViewModel.swift; sourceTree = "<group>"; };
+		DF8BD460264A1FD700703B88 /* DurationFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationFilterViewModel.swift; sourceTree = "<group>"; };
 		DF8C2A9B20F06F6B00DD7284 /* MiniFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiniFilterView.swift; sourceTree = "<group>"; };
 		DF8C2A9D20F06F8200DD7284 /* MiniFilterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MiniFilterView.xib; sourceTree = "<group>"; };
 		DF8C2A9F20F07ADE00DD7284 /* FilterCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +160,7 @@
 		DF95B9621F6ECF1900537DBE /* GameComplexity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameComplexity.swift; sourceTree = "<group>"; };
 		DF95B9651F6EDA2A00537DBE /* GameComplexityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameComplexityTests.swift; sourceTree = "<group>"; };
 		DFA440421F79E74C005F706E /* ComplexityFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexityFilter.swift; sourceTree = "<group>"; };
+		DFAED77F2637AE3A003D3FB6 /* ComplexityFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexityFilterView.swift; sourceTree = "<group>"; };
 		DFC0245C201E567B00F694BB /* EnumCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumCollection.swift; sourceTree = "<group>"; };
 		DFC803061F9CF55C008A6851 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		DFDA7140221A1FED00D69DF8 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -364,8 +372,10 @@
 		DF65F0CB25E3590000113735 /* Filter */ = {
 			isa = PBXGroup;
 			children = (
+				DF8BD45B264A1E9400703B88 /* ViewModels */,
 				DFF7392B24C93A22008990D9 /* CategoryFilterView.swift */,
 				DF65F0DE25EC91BE00113735 /* MechanicFilterView.swift */,
+				DFAED77F2637AE3A003D3FB6 /* ComplexityFilterView.swift */,
 				DF65F0CC25E3592100113735 /* FilterViewModel.swift */,
 			);
 			path = Filter;
@@ -384,6 +394,15 @@
 			path = Types;
 			sourceTree = "<group>";
 		};
+		DF8BD45B264A1E9400703B88 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DF8BD45C264A1F9500703B88 /* ComplexityFilterViewModel.swift */,
+				DF8BD460264A1FD700703B88 /* DurationFilterViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		DF95B9641F6EDA1200537DBE /* MetaTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +419,7 @@
 				DF61188324B41B1D00F16EEB /* UIControlPublisher.swift */,
 				DF65F0C325D4E5F000113735 /* DataRequest+Promise.swift */,
 				DF65F0D825EB52EE00113735 /* CombineLatestCollection.swift */,
+				DF8BD4552648C30A00703B88 /* UserDefaultsExtension.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -699,6 +719,7 @@
 				DF8C2AA020F07ADE00DD7284 /* FilterCollectionViewController.swift in Sources */,
 				DF3B1B591F0041BF00E4E8F7 /* BoardGameGeekAPI.swift in Sources */,
 				DFF7391F24C7DFDC008990D9 /* GameDetailView.swift in Sources */,
+				DF8BD4562648C30B00703B88 /* UserDefaultsExtension.swift in Sources */,
 				DFE1596C20F5B413006F63E4 /* GameFamily.swift in Sources */,
 				DFA440431F79E74C005F706E /* ComplexityFilter.swift in Sources */,
 				DFC0245D201E567B00F694BB /* EnumCollection.swift in Sources */,
@@ -729,9 +750,11 @@
 				DF8582591F677F7800543AB8 /* GameCategoryFilter.swift in Sources */,
 				DF95B9631F6ECF1900537DBE /* GameComplexity.swift in Sources */,
 				DFF313271F004DB000A48FD0 /* User.swift in Sources */,
+				DF8BD461264A1FD700703B88 /* DurationFilterViewModel.swift in Sources */,
 				DFF62454221A6E4B006DBBAD /* CollectionPickerViewModel.swift in Sources */,
 				DF65F0DF25EC91BE00113735 /* MechanicFilterView.swift in Sources */,
 				DFC803071F9CF55C008A6851 /* HeaderTableViewCell.swift in Sources */,
+				DF8BD45D264A1F9500703B88 /* ComplexityFilterViewModel.swift in Sources */,
 				DF3B1B211F003E4F00E4E8F7 /* AppDelegate.swift in Sources */,
 				DFE1596920F47A7B006F63E4 /* Game+CoreDataClass.swift in Sources */,
 				DFECC9A31F68D69F00077A6C /* GameMechanicFilter.swift in Sources */,
@@ -740,6 +763,7 @@
 				DF816ABC1F8B0ED30037ADA9 /* GameViewController.swift in Sources */,
 				DFECC9AF1F69FFB400077A6C /* MockData.swift in Sources */,
 				DFF6245E221B25E9006DBBAD /* ViewModelDependent.swift in Sources */,
+				DFAED7802637AE3A003D3FB6 /* ComplexityFilterView.swift in Sources */,
 				DF65F0C425D4E5F000113735 /* DataRequest+Promise.swift in Sources */,
 				DFE1596420F45C2C006F63E4 /* WhatToPlay.xcdatamodeld in Sources */,
 			);

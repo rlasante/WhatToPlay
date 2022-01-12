@@ -28,7 +28,7 @@ class CollectionPickerViewModel {
     let source: PassthroughSubject<CollectionSourceModel, Never>
 
     /// Calls to update the current name of the collection
-    let username: PassthroughSubject<String, Never>
+    let username: CurrentValueSubject<String?, Never>
 
     /// Calls to get named collection
     let collection: PassthroughSubject<CollectionModel, Error>
@@ -73,14 +73,16 @@ class CollectionPickerViewModel {
 
         showCollection = _collectionSubject.eraseToAnyPublisher()
 
-        username = PassthroughSubject()
+        self.username = CurrentValueSubject(nil)
 
         // Listen to changes in source then fetch the latest
-        collections = Publishers.CombineLatest3(reload, source, username.debounce(for: .seconds(0.6), scheduler: DispatchQueue.main))
+        collections = Publishers.CombineLatest3(reload, source, self.username.debounce(for: .seconds(0.6), scheduler: DispatchQueue.main))
             .setFailureType(to: Error.self)
             .flatMap { latest -> AnyPublisher<[CollectionModel], Error> in
-                return latest.1.api().collections(username: latest.2)
-//                throw CollectionSourceError.unableToConnect(latest.1)
+                guard let username = latest.2 else {
+                    return Just([]).setFailureType(to: Error.self).eraseToAnyPublisher()
+                }
+                return latest.1.api().collections(username: username)
         }.catch { error -> AnyPublisher<[CollectionModel], Error> in
             guard let sourceError = error as? CollectionSourceError else {
                 print("Received error: \(error)")
@@ -116,7 +118,6 @@ class CollectionPickerViewModel {
             })
             .store(in: &cancelBag)
 //            .subscribe(collection)
-
 
             // Listen to changes to collections. If only one in the list then mark as completion
 

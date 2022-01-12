@@ -9,7 +9,10 @@
 import UIKit
 import SWXMLHash
 
-enum GameComplexity: XMLIndexerDeserializable, Comparable, PickerData, Codable {
+enum GameComplexity: XMLIndexerDeserializable, Comparable, PickerData, Codable, Hashable, Identifiable {
+    var id: String {
+        String(self.actualWeight)
+    }
 
     case light(actualWeight: Double)
     case mediumLight(actualWeight: Double)

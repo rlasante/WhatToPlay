@@ -20,7 +20,7 @@ class FilterPickerViewModel: ObservableObject {
     var filters: PassthroughSubject<[FilterModel], Error>
 
     init(filters: [FilterModel], filteredGames: AnyPublisher<[Game], Never>) {
-        let filters = filters.isEmpty ? [CategoryFilterViewModel(), MechanicFilterViewModel()] : filters
+        let filters = filters.isEmpty ? [CategoryFilterViewModel(), MechanicFilterViewModel(), ComplexityFilterViewModel()] : filters
         selectedFilters = CurrentValueSubject(filters)
         self.filters = PassthroughSubject()
 

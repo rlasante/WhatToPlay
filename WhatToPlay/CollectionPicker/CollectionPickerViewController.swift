@@ -22,6 +22,13 @@ class CollectionPickerViewController: UIViewController, StoryboardInitializable,
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let usernameSink = viewModel.username.first().sink { [weak self] name in
+            if let typedName = self?.usernameTextField.text, typedName != name {
+                self?.usernameTextField.text = name
+            }
+        }
+        self.cancelables.insert(usernameSink)
+
         let cancelable = viewModel.sources
             .map { sources in
                 return sources.map { source -> UIButton in

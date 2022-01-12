@@ -30,8 +30,6 @@ class FilterViewModel<Params: Codable>: ObservableObject, FilterModel {
     @Published var params: Params?
     var filteredGames: CurrentValueSubject<[Game], Never> = CurrentValueSubject([])
     var game: CurrentValueSubject<Game?, Never> = CurrentValueSubject(nil)
-
-
     
     // Outputs
     /// Returns true if the current game is included within the filter's specifications
@@ -143,37 +141,5 @@ class MechanicFilterViewModel: MultiSelectFilterViewModel<GameMechanic> {
         filteredGames.value.filter { game in
             game.mechanics.contains(mechanic)
         }
-    }
-}
-
-class ComplexityFilterViewModel: FilterViewModel<[GameComplexity]> {
-    override init() {
-        super.init()
-        $params
-            .combineLatest(game)
-            .map { selectedValues, game -> Bool? in
-                guard let game = game else {
-                    // If there's no game then no result
-                    return nil
-                }
-                guard let values = selectedValues else {
-                    // No params means auto pass on this game
-                    return true
-                }
-                guard let complexity = game.complexity else {
-                    print("Unknown Game Complexity")
-                    return false
-                }
-                return values.contains { $0.weight == complexity.weight }
-            }
-            .subscribe(filtersGame)
-            .store(in: &disposeBag)
-
-        $params
-            .map { values -> String in
-                return "Complexity: " + (values?.map { $0.label }.joined(separator: ", ") ?? "")
-            }
-            .assign(to: &$description)
-        shortDescription = "Complexity"
     }
 }

@@ -20,6 +20,10 @@ struct FilterPickerView: View {
             ForEach(self.viewModel.selectedFilters.value.compactMap { $0 as? CategoryFilterViewModel }, id: \.shortDescription) { filter in
                 CategoryFilterView(viewModel: filter)
             }
+            ForEach(self.viewModel.selectedFilters.value.compactMap { $0 as? ComplexityFilterViewModel }, id: \.shortDescription) { filter in
+                ComplexityFilterView(viewModel: filter)
+//                ComplexityFilterView(viewModel: filter, complexity: nil)
+            }
         }
     }
 }
