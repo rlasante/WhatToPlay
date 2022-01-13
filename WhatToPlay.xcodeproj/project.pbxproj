@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DACEEE12790647700D605D6 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DACEEE02790647700D605D6 /* StringExtensions.swift */; };
 		DF0A09FE2339BBC700A7360D /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DF0A09FD2339BBC700A7360D /* Alamofire */; };
 		DF0A0A012339BBF700A7360D /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = DF0A0A002339BBF700A7360D /* AlamofireImage */; };
 		DF0A0A042339BCC700A7360D /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = DF0A0A032339BCC700A7360D /* SWXMLHash */; };
@@ -123,6 +124,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1DACEEE02790647700D605D6 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		DF1F1C2024C3EE1A0034A8A5 /* CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionView.swift; sourceTree = "<group>"; };
 		DF25A8AE20BCEB3E009264B8 /* FilterDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterDescriptionView.swift; sourceTree = "<group>"; };
 		DF3B1B1D1F003E4F00E4E8F7 /* WhatToPlay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatToPlay.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -516,6 +518,7 @@
 				DFF7392224C7E008008990D9 /* GameDetailCoordinator.swift */,
 				DFF7391E24C7DFDC008990D9 /* GameDetailView.swift */,
 				DFF7392024C7DFFA008990D9 /* GameDetailViewModel.swift */,
+				1DACEEE02790647700D605D6 /* StringExtensions.swift */,
 			);
 			path = GameDetail;
 			sourceTree = "<group>";
@@ -739,6 +742,7 @@
 				DFF313291F0F329C00A48FD0 /* Game.swift in Sources */,
 				DFF7392824C92C79008990D9 /* FilterPickerView.swift in Sources */,
 				DFF62463221B288A006DBBAD /* CollectionViewModel.swift in Sources */,
+				1DACEEE12790647700D605D6 /* StringExtensions.swift in Sources */,
 				DFF62467221B7284006DBBAD /* BoardGameGeekAPIV2.swift in Sources */,
 				DFE1594C20F11D83006F63E4 /* GameTableViewCell.swift in Sources */,
 				DFF62452221A6DD1006DBBAD /* CollectionPickerCoordinator.swift in Sources */,
