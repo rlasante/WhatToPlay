@@ -10,7 +10,6 @@ import CoreData
 import UIKit
 import Alamofire
 import SWXMLHash
-import PMKAlamofire
 import PromiseKit
 
 enum APIError: Error {
@@ -25,20 +24,19 @@ class BoardGameGeekAPI {
 
     static let baseURL = "https://www.boardgamegeek.com/xmlapi2"
 
-    static let gamesSessionManager: SessionManager = {
+    static let gamesSessionManager: Session = {
         let sessionConfiguration = URLSessionConfiguration.default
 
-        let gamesSession = Alamofire.SessionManager(configuration: sessionConfiguration)
-        gamesSession.adapter = GamesAdapter()
-        gamesSession.retrier = BGGRetrier()
+        let interceptor = BGGInterceptor(adapter: GamesAdapter(), retrier: BGGRetrier())
+        let gamesSession = Alamofire.Session(configuration: sessionConfiguration, interceptor: interceptor)
         return gamesSession
     }()
 
-    static let bggSessionManager: SessionManager = {
+    static let bggSession: Session = {
         let sessionConfiguration = URLSessionConfiguration.default
 
-        let session = Alamofire.SessionManager(configuration: sessionConfiguration)
-        session.retrier = BGGRetrier()
+        let interceptor = BGGInterceptor(retrier: BGGRetrier())
+        let session = Alamofire.Session(configuration: sessionConfiguration, interceptor: interceptor)
         return session
     }()
 
@@ -58,7 +56,7 @@ class BoardGameGeekAPI {
 //        return attempt { Void -> String
 //            let url = "\(baseURL)/user?name=\(userName)&top=1"
 //            print("[GetUser] Performing Request: \(url)")
-//            return bggSessionManager.request(url)
+//            return bggSession.request(url)
 //            .responseString()
 //            .map { xmlString, dataResponse -> String in
 //                guard !dataResponse.response.statusCode else {
@@ -84,7 +82,7 @@ class BoardGameGeekAPI {
         return attempt { () -> Promise<String> in
             let url = "\(baseURL)/collection?username=\(userName)&own=1"
             print("\(#function) Performing Request: \(url)")
-            return bggSessionManager.request(url)
+            return bggSession.request(url)
             .responseString()
             .tap { _ in print("[API]: Fetched Collection") }
             .map { xmlString, dataResponse in
@@ -136,15 +134,15 @@ class BoardGameGeekAPI {
             let url = "\(baseURL)/thing?id=\(gameIds.joined(separator: ","))&type=boardgame&stats=1"
             print("\(#function) Performing Request: \(url)")
             return gamesSessionManager.request(url)
-            .responseString()
-            .tap { _ in print("[API]: Got Board Games") }
-            .map { xmlString, dataResponse -> String in
-                guard !dataResponse.response.shouldRetryRequest else {
-                    print("[API]: Retrying Fetching Board Games")
-                    throw APIError.tryAgain
+                .responseString()
+                .tap { _ in print("[API]: Got Board Games") }
+                .map { xmlString, dataResponse -> String in
+                    guard !dataResponse.response.shouldRetryRequest else {
+                        print("[API]: Retrying Fetching Board Games")
+                        throw APIError.tryAgain
+                    }
+                    return xmlString
                 }
-                return xmlString
-            }
         }.map(on: .main) { xmlString -> [Game] in
             let xml = SWXMLHash.parse(xmlString)
             // TODO figure out a way to store the data so that way we will have it when I add new properties
@@ -152,7 +150,9 @@ class BoardGameGeekAPI {
 
             let games = gamesData.map { Game(data: $0, in: context)}
             _ = try? context.save()
-            let allSortedGames = [games, localGames].flatMap { $0 }.sorted { $0.name ?? "" < $1.name ?? "" }
+            let allSortedGames = [games, localGames]
+                .flatMap { $0 }
+                .sorted { $0.name ?? "" < $1.name ?? "" }
             guard !allSortedGames.isEmpty else {
                 throw APIError.noGames
             }
@@ -163,24 +163,51 @@ class BoardGameGeekAPI {
         }
     }
 
+    private class BGGInterceptor: RequestInterceptor {
+        let adapter: RequestAdapter?
+        let retrier: RequestRetrier?
+        init(adapter: RequestAdapter? = nil, retrier: RequestRetrier? = nil) {
+            self.adapter = adapter
+            self.retrier = retrier
+        }
+
+        func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Swift.Result<URLRequest, Error>) -> Void) {
+            if let adapter = self.adapter {
+                adapter.adapt(urlRequest, for: session, completion: completion)
+            }
+            else {
+                completion(.success(urlRequest))
+            }
+        }
+
+        func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
+            if let retrier = retrier {
+                retrier.retry(request, for: session, dueTo: error, completion: completion)
+            }
+            else {
+                completion(.doNotRetry)
+            }
+        }
+    }
+
     private class GamesAdapter: RequestAdapter {
-        func adapt(_ urlRequest: URLRequest) throws -> URLRequest {
+        func adapt(_ urlRequest: URLRequest, for session: Session, completion: @escaping (Swift.Result<URLRequest, Error>) -> Void) {
             var urlRequest = urlRequest
             urlRequest.cachePolicy = .returnCacheDataElseLoad
-            return urlRequest
+            completion(.success(urlRequest))
         }
     }
 
     private class BGGRetrier: RequestRetrier {
-        func should(_ manager: SessionManager, retry request: Request, with error: Error, completion: @escaping RequestRetryCompletion) {
+        func retry(_ request: Request, for session: Session, dueTo error: Error, completion: @escaping (RetryResult) -> Void) {
             guard let response = request.response else {
-                completion(false, 0)
+                completion(.doNotRetry)
                 return
             }
             if response.shouldRetryRequest {
-                completion(true, 0.2)
+                completion(.retryWithDelay(0.2))
             }
-            completion(false, 0)
+            completion(.doNotRetry)
         }
     }
 }

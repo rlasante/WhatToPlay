@@ -24,19 +24,19 @@ class CollectionPickerCoordinator: BaseCoordinator<Void, Error> {
 
         viewController.prepare(with: viewModel)
 
-//        viewModel.showCollection
-//            .subscribe(onNext: { [weak self] in self?.show(collection: $0, in: navigationController) })
-//            .disposed(by: disposeBag)
-
-
         window.rootViewController = navigationController
         window.makeKeyAndVisible()
 
-        return Empty(completeImmediately: false).eraseToAnyPublisher()
+        viewModel.username.send("Hunter9110")
+
+        return viewModel.showCollection
+            .flatMap { collectionModel in
+                self.show(collection: collectionModel, in: navigationController)
+            }.eraseToAnyPublisher()
     }
 
     private func show(collection: CollectionModel, in navigationController: UINavigationController) -> AnyPublisher<Void, Error> {
-        let collectionCoordinator = CollectionCoordinator(rootViewController: navigationController)
+        let collectionCoordinator = CollectionCoordinator(rootViewController: navigationController, collectionModel: collection)
         return coordinate(to: collectionCoordinator)
     }
 }

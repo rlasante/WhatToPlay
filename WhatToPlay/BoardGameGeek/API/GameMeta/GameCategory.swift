@@ -10,7 +10,7 @@ import CoreData
 import UIKit
 import SWXMLHash
 
-enum GameCategory: String, EnumCollection, XMLIndexerDeserializable {
+enum GameCategory: String, EnumCollection, XMLIndexerDeserializable, CaseIterable, Codable, Equatable {
     case abstractStrategy,
     actionDexterity,
     adventure,

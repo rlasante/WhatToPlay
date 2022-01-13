@@ -8,19 +8,14 @@
 
 import Foundation
 
-protocol FilterModel {
-    /// Returns true if we should keep the game, false if it should be filtered out
-    func filter(_ game: Game) -> Bool
-}
-
 /// Simple Base Filter that requires no configuration
-struct SimpleFilter: FilterModel {
-    private let _filter: (Game) -> Bool
-    init(filter: @escaping (Game) -> Bool) {
-        self._filter = filter
-    }
-
-    func filter(_ game: Game) -> Bool {
-        return _filter(game)
-    }
-}
+//struct SimpleFilter: FilterModel {
+//    private let _filter: (Game) -> Bool
+//    init(filter: @escaping (Game) -> Bool) {
+//        self._filter = filter
+//    }
+//
+//    func filter(_ game: Game) -> Bool {
+//        return _filter(game)
+//    }
+//}

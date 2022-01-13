@@ -17,6 +17,8 @@ extension Game {
         return NSFetchRequest<Game>(entityName: "Game")
     }
 
+    var id: String { gameId ?? "unknown" }
+
     @NSManaged public var gameId: String?
     @NSManaged public var yearPublished: String?
     @NSManaged public var name: String?

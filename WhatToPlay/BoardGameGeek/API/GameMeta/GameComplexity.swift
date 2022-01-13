@@ -9,7 +9,10 @@
 import UIKit
 import SWXMLHash
 
-enum GameComplexity: XMLIndexerDeserializable, Comparable, PickerData {
+enum GameComplexity: XMLIndexerDeserializable, Comparable, PickerData, Codable, Hashable, Identifiable {
+    var id: String {
+        String(self.actualWeight)
+    }
 
     case light(actualWeight: Double)
     case mediumLight(actualWeight: Double)
@@ -35,6 +38,25 @@ enum GameComplexity: XMLIndexerDeserializable, Comparable, PickerData {
         default:
             return nil
         }
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let serverValue = try container.decode(Double.self)
+        switch serverValue {
+        case 0..<1.5: self = .light(actualWeight: serverValue)
+        case 1.5..<2.5: self = .mediumLight(actualWeight: serverValue)
+        case 2.5..<3.5: self = .medium(actualWeight: serverValue)
+        case 3.5..<4.5: self = .mediumHeavy(actualWeight: serverValue)
+        case 4.5...5: self = .heavy(actualWeight: serverValue)
+        default:
+            throw DecodingError.dataCorruptedError(in: container, debugDescription: "Invalid value \(serverValue)")
+        }
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var container = encoder.singleValueContainer()
+        try container.encode(actualWeight)
     }
 
     var isValid: Bool {
@@ -102,6 +124,8 @@ enum GameComplexity: XMLIndexerDeserializable, Comparable, PickerData {
         formatter.maximumSignificantDigits = 2
         return "\(title) \(formatter.string(for: self.weight) ?? "--")"
     }
+
+
 }
 
 class GameComplexityValueTransformer: ValueTransformer {

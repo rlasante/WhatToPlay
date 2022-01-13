@@ -18,35 +18,85 @@ protocol GameAPI {
     func game(_ input: GameInput) -> AnyPublisher<Game, Error>
 }
 
-class CollectionViewModel: NSObject {
+class CollectionViewModel: NSObject, ObservableObject {
+    var disposeBag: Set<AnyCancellable> = []
+    // Input
     let collectionID: CurrentValueSubject<String?, Error> = CurrentValueSubject(nil)
     let filters: CurrentValueSubject<[FilterModel], Error> = CurrentValueSubject([])
+    @Published var selectedGame: Game? {
+        didSet {
+            guard let selectedGame = selectedGame else {
+                return
+            }
+            selectGame.send(selectedGame)
+        }
+    }
+    let selectGame = PassthroughSubject<Game, Error>()
+    let selectFilters = PassthroughSubject<Void, Error>()
 
-    let games: AnyPublisher<[Game], Error>
+    // Output
+    let gamesPublisher: AnyPublisher<[Game], Error>
+    @Published var games: [Game] = []
 
-    let didSelectGame: CurrentValueSubject<Game?, Error> = CurrentValueSubject(nil)
+    let showGame: AnyPublisher<Game, Error>
+    let pickFilters: AnyPublisher<Void, Error>
 
     /// Emits back events
-    let back: PassthroughSubject<Void, Never> = PassthroughSubject()
+    let back: PassthroughSubject<Void, Error> = PassthroughSubject()
 
-    init(collectionAPI: CollectionAPI) {
-        let collection = collectionID.flatMap { collectionID -> AnyPublisher<CollectionModel, Error> in
-            guard let collectionID = collectionID else {
-                return Empty(completeImmediately: false).eraseToAnyPublisher()
+    init(collectionAPI: CollectionAPI, collectionModel: CollectionModel) {
+
+        let collection = CurrentValueSubject<CollectionModel, Error>(collectionModel)
+        games = collectionModel.games
+
+        showGame = selectGame.eraseToAnyPublisher()
+        pickFilters = selectFilters.eraseToAnyPublisher()
+
+//        let collection = collectionID.flatMap { collectionID -> AnyPublisher<CollectionModel, Error> in
+//            guard let collectionID = collectionID else {
+//                return Empty(completeImmediately: false).eraseToAnyPublisher()
+//            }
+//            return collectionAPI.collection(collectionID: collectionID)
+//        }
+        let _gamesPublisher = Publishers.CombineLatest(collection, filters)
+            .map { collectionFilter -> ([Game], [FilterModel]) in
+                (collectionFilter.0.games, collectionFilter.1)
             }
-            return collectionAPI.collection(collectionID: collectionID)
-        }
-        games = Publishers.CombineLatest(collection, filters)
-            .map { ($0.0.games, $0.1) }
-            .map {
-                let (games, filters) = $0
+            .map { gamesFilters -> [Game] in
+                let (games, filters) = gamesFilters
                 return games.filter { game in
                     // Find first filter that would cause a game to get excluded
-                    let shouldFilterGame = filters.contains { !$0.filter(game) }
-                    return shouldFilterGame
+                    let shouldExcludeGame = filters.contains { !$0.filter(game) }
+                    return !shouldExcludeGame
                 }
-            }.eraseToAnyPublisher()
+            }
+            .share()
+
+        gamesPublisher = _gamesPublisher.eraseToAnyPublisher()
+
+        super.init()
+
+        gamesPublisher.sink(receiveCompletion: { [weak self] error in
+            print("Error \(error)")
+            self?.games = []
+        }, receiveValue: { [weak self] games in
+            self?.games = games
+        }).store(in: &disposeBag)
+
+//        Publishers.CombineLatest(collection, filters)
+//            .map { ($0.0.games, $0.1) }
+//            .map {
+//                let (games, filters) = $0
+//                return games.filter { game in
+//                    // Find first filter that would cause a game to get excluded
+//                    let shouldFilterGame = filters.contains { !$0.filter(game) }
+//                    return shouldFilterGame
+//                }
+//        }.catch { _ in
+//            return CurrentValueSubject([])
+//        }.assign(to: \.games, on: self)
+//        .store(in: &disposeBag)
+
             // .replay(1)
     }
-
 }
