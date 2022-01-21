@@ -22,7 +22,11 @@ class DurationFilterViewModel: FilterViewModel<Range<TimeInterval>> {
                     // No params means auto pass on this game
                     return true
                 }
-                let playTimes = [game.minPlayingTime, game.playingTime, game.maxPlayingTime].compactMap { $0 }
+                let playTimes = [
+                    game.minPlayingTime,
+                    game.playingTime,
+                    game.maxPlayingTime
+                ].compactMap { $0 }
                 if playTimes.isEmpty {
                     print("Unknown PlayTime")
                     return false
@@ -41,12 +45,21 @@ class DurationFilterViewModel: FilterViewModel<Range<TimeInterval>> {
         shortDescription = "Duration"
     }
 
-    func filteredGames(with complexity: GameComplexity?) -> [Game] {
-        guard let complexity = complexity else {
+    func filteredGames(with duration: Range<TimeInterval>?) -> [Game] {
+        guard let duration = duration else {
             return filteredGames.value
         }
+
         return filteredGames.value.filter { game in
-            game.complexity?.weight == complexity.weight
+            let playTimes = [
+                game.minPlayingTime,
+                game.playingTime,
+                game.maxPlayingTime
+            ].compactMap { $0 }
+            if playTimes.isEmpty {
+                return false
+            }
+            return playTimes.contains { duration.contains($0) || duration.upperBound == $0 }
         }
     }
 }

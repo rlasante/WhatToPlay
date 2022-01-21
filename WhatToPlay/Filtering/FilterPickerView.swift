@@ -24,6 +24,9 @@ struct FilterPickerView: View {
                 ComplexityFilterView(viewModel: filter)
 //                ComplexityFilterView(viewModel: filter, complexity: nil)
             }
+            ForEach(self.viewModel.selectedFilters.value.compactMap { $0 as? DurationFilterViewModel }, id: \.shortDescription) { filter in
+                DurationFilterView(viewModel: filter)
+            }
         }
     }
 }
