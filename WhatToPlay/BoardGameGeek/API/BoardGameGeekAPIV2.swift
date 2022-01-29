@@ -22,7 +22,7 @@ class BoardGameGeekAPIV2: CollectionListAPI, CollectionAPI {
         self.context = context
     }
 
-    func collections(username: String) -> AnyPublisher<[CollectionModel], Error> {
+    func collectionsSubject(username: String) -> AnyPublisher<[CollectionModel], Error> {
         let subject = PassthroughSubject<[CollectionModel], Error>()
         BoardGameGeekAPI.getCollection(userName: username, context: context)
             .pipe { result in
@@ -36,7 +36,7 @@ class BoardGameGeekAPIV2: CollectionListAPI, CollectionAPI {
         return subject.eraseToAnyPublisher()
     }
 
-    func collection(collectionID: String) -> AnyPublisher<CollectionModel, Error> {
+    func collectionSubject(collectionID: String) -> AnyPublisher<CollectionModel, Error> {
         let subject = PassthroughSubject<CollectionModel, Error>()
         BoardGameGeekAPI.getCollection(userName: collectionID, context: context)
             .pipe { result in

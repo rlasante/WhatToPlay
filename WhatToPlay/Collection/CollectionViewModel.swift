@@ -10,7 +10,27 @@ import Combine
 import UIKit
 
 protocol CollectionAPI {
-    func collection(collectionID: String) -> AnyPublisher<CollectionModel, Error>
+    func collectionSubject(collectionID: String) -> AnyPublisher<CollectionModel, Error>
+}
+
+protocol CollectionAPIAsync {
+    func collection(collectionID: String) async throws -> CollectionModel
+}
+
+extension CollectionAPI where Self: CollectionAPIAsync {
+    func collectionSubject(collectionID: String) -> AnyPublisher<CollectionModel, Error> {
+        let subject = PassthroughSubject<CollectionModel, Error>()
+        Task {
+            do {
+                let model = try await collection(collectionID: collectionID)
+                subject.send(model)
+                subject.send(completion: .finished)
+            } catch {
+                subject.send(completion: .failure(error))
+            }
+        }
+        return subject.eraseToAnyPublisher()
+    }
 }
 
 protocol GameAPI {

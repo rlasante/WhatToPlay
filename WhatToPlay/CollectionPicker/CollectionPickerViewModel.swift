@@ -11,7 +11,28 @@ import Foundation
 
 /// API for fetching a list of collections
 protocol CollectionListAPI {
-    func collections(username: String) -> AnyPublisher<[CollectionModel], Error>
+    func collectionsSubject(username: String) -> AnyPublisher<[CollectionModel], Error>
+}
+
+/// API for fetching a list of collections
+protocol CollectionListAPIAsync {
+    func collections(username: String) async throws -> [CollectionModel]
+}
+
+extension CollectionListAPI where Self: CollectionListAPIAsync {
+    func collectionsSubject(username: String) -> AnyPublisher<[CollectionModel], Error> {
+        let subject = PassthroughSubject<[CollectionModel], Error>()
+        Task {
+            do {
+                let models = try await collections(username: username)
+                subject.send(models)
+                subject.send(completion: .finished)
+            } catch {
+                subject.send(completion: .failure(error))
+            }
+        }
+        return subject.eraseToAnyPublisher()
+    }
 }
 
 enum CollectionSourceError: Error {
@@ -82,7 +103,7 @@ class CollectionPickerViewModel {
                 guard let username = latest.2 else {
                     return Just([]).setFailureType(to: Error.self).eraseToAnyPublisher()
                 }
-                return latest.1.api().collections(username: username)
+                return latest.1.api().collectionsSubject(username: username)
         }.catch { error -> AnyPublisher<[CollectionModel], Error> in
             guard let sourceError = error as? CollectionSourceError else {
                 print("Received error: \(error)")
@@ -113,6 +134,7 @@ class CollectionPickerViewModel {
             .compactMap {
                 $0.first
             }
+            .receive(on: RunLoop.main)
             .sink(receiveCompletion: { _ in },  receiveValue: { [weak self] model in
                 self?.collection.send(model)
             })

@@ -33,6 +33,7 @@
 		DF769251278E8C6A00AFFADE /* DurationFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF769250278E8C6A00AFFADE /* DurationFilterView.swift */; };
 		DF769253278E997000AFFADE /* CustomSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF769252278E997000AFFADE /* CustomSlider.swift */; };
 		DF769255278E999000AFFADE /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF769254278E999000AFFADE /* SliderView.swift */; };
+		DF769257279A5DC400AFFADE /* BoardGameGeekAPIAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF769256279A5DC300AFFADE /* BoardGameGeekAPIAsync.swift */; };
 		DF816ABC1F8B0ED30037ADA9 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF816ABB1F8B0ED30037ADA9 /* GameViewController.swift */; };
 		DF8582551F677A7000543AB8 /* PlayerCountFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8582541F677A7000543AB8 /* PlayerCountFilter.swift */; };
 		DF8582571F677B0A00543AB8 /* FilterTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF8582561F677B0A00543AB8 /* FilterTemplate.swift */; };
@@ -153,6 +154,7 @@
 		DF769250278E8C6A00AFFADE /* DurationFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DurationFilterView.swift; sourceTree = "<group>"; };
 		DF769252278E997000AFFADE /* CustomSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSlider.swift; sourceTree = "<group>"; };
 		DF769254278E999000AFFADE /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		DF769256279A5DC300AFFADE /* BoardGameGeekAPIAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardGameGeekAPIAsync.swift; sourceTree = "<group>"; };
 		DF816ABB1F8B0ED30037ADA9 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		DF8582541F677A7000543AB8 /* PlayerCountFilter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerCountFilter.swift; sourceTree = "<group>"; };
 		DF8582561F677B0A00543AB8 /* FilterTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterTemplate.swift; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 			children = (
 				DFECC9AB1F69FF8D00077A6C /* MockData */,
 				DF3B1B581F0041BF00E4E8F7 /* BoardGameGeekAPI.swift */,
+				DF769256279A5DC300AFFADE /* BoardGameGeekAPIAsync.swift */,
 				DFF62466221B7284006DBBAD /* BoardGameGeekAPIV2.swift */,
 				DFF313261F004DB000A48FD0 /* User.swift */,
 				DFE1596820F47A7B006F63E4 /* Game+CoreDataProperties.swift */,
@@ -760,6 +763,7 @@
 				DFF7392624C92B73008990D9 /* FilterPickerCoordinator.swift in Sources */,
 				DFF6244E221A6C43006DBBAD /* AppCoordinator.swift in Sources */,
 				DF769251278E8C6A00AFFADE /* DurationFilterView.swift in Sources */,
+				DF769257279A5DC400AFFADE /* BoardGameGeekAPIAsync.swift in Sources */,
 				DFDA7141221A1FED00D69DF8 /* BaseCoordinator.swift in Sources */,
 				DFF6245C221B2559006DBBAD /* CollectionPickerViewController.swift in Sources */,
 				DF8582591F677F7800543AB8 /* GameCategoryFilter.swift in Sources */,
@@ -962,7 +966,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NP49CSYMEP;
 				INFOPLIST_FILE = WhatToPlay/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -979,7 +983,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = NP49CSYMEP;
 				INFOPLIST_FILE = WhatToPlay/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
