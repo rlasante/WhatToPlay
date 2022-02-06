@@ -15,15 +15,17 @@ class FilterPickerCoordinator: BaseCoordinator<[FilterModel], Error> {
     let rootViewController: UINavigationController
     var filters: [FilterModel]
     var filteredGames: AnyPublisher<[Game], Never>
+    var unfilteredGames: AnyPublisher<[Game], Never>
 
-    init(rootViewController: UINavigationController, filters: [FilterModel], filteredGames: AnyPublisher<[Game], Never>) {
+    init(rootViewController: UINavigationController, filters: [FilterModel], filteredGames: AnyPublisher<[Game], Never>, unfilteredGames: AnyPublisher<[Game], Never>) {
         self.rootViewController = rootViewController
         self.filters = filters
         self.filteredGames = filteredGames
+        self.unfilteredGames = unfilteredGames
     }
 
     override func start() -> AnyPublisher<[FilterModel], Error> {
-        let viewModel = FilterPickerViewModel(filters: filters, filteredGames: filteredGames)
+        let viewModel = FilterPickerViewModel(filters: filters, filteredGames: filteredGames, unfilteredGames: unfilteredGames)
 
         let viewController = UIHostingController(rootView: FilterPickerView(viewModel: viewModel))
         rootViewController.show(viewController, sender: self)

@@ -63,7 +63,8 @@ class CollectionCoordinator: BaseCoordinator<Void, Error> {
         let filterPickerCoordinator = FilterPickerCoordinator(
             rootViewController: navController,
             filters: filters,
-            filteredGames: filteredGames
+            filteredGames: filteredGames,
+            unfilteredGames: viewModel.allGamesPublisher
         )
         return coordinate(to: filterPickerCoordinator)
     }

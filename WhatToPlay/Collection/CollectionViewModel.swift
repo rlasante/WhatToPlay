@@ -55,6 +55,7 @@ class CollectionViewModel: NSObject, ObservableObject {
     let selectFilters = PassthroughSubject<Void, Error>()
 
     // Output
+    let allGamesPublisher: AnyPublisher<[Game], Never>
     let gamesPublisher: AnyPublisher<[Game], Error>
     @Published var games: [Game] = []
 
@@ -78,6 +79,16 @@ class CollectionViewModel: NSObject, ObservableObject {
 //            }
 //            return collectionAPI.collection(collectionID: collectionID)
 //        }
+        let _allGamesPublisher = collection
+            .map {
+                return $0.games
+            }
+            .catch { _ in
+                return Just([])
+            }
+            .share()
+        allGamesPublisher = _allGamesPublisher.eraseToAnyPublisher()
+        
         let _gamesPublisher = Publishers.CombineLatest(collection, filters)
             .map { collectionFilter -> ([Game], [FilterModel]) in
                 (collectionFilter.0.games, collectionFilter.1)

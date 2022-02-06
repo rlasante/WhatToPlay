@@ -68,6 +68,7 @@ class BoardGameGeekAPIAsync {
         }
         catch APIError.tryAgain {
             if retries <= 0 {
+                print("Retries failed")
                 throw APIError.fetchFailed
             }
             return try await collection(username: username, context: context, retries: retries - 1)
@@ -85,6 +86,7 @@ class BoardGameGeekAPIAsync {
         let (data, response) = try await URLSession.shared.data(from: url)
         // todo check if the response is 202
         if let httpResponse = response as? HTTPURLResponse, httpResponse.shouldRetryRequest {
+            print("\(#function) Try again")
             throw APIError.tryAgain
         }
         guard let xmlString = String(data: data, encoding: .utf8) else {

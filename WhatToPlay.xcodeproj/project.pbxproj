@@ -51,6 +51,8 @@
 		DFA440431F79E74C005F706E /* ComplexityFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA440421F79E74C005F706E /* ComplexityFilter.swift */; };
 		DFAED7802637AE3A003D3FB6 /* ComplexityFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAED77F2637AE3A003D3FB6 /* ComplexityFilterView.swift */; };
 		DFC0245D201E567B00F694BB /* EnumCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC0245C201E567B00F694BB /* EnumCollection.swift */; };
+		DFC7261C27AF9720007A5107 /* BarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7261B27AF9720007A5107 /* BarChartCell.swift */; };
+		DFC7261E27AF97A7007A5107 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7261D27AF97A7007A5107 /* BarChart.swift */; };
 		DFC803071F9CF55C008A6851 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC803061F9CF55C008A6851 /* HeaderTableViewCell.swift */; };
 		DFDA7141221A1FED00D69DF8 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA7140221A1FED00D69DF8 /* BaseCoordinator.swift */; };
 		DFDA7143221A203100D69DF8 /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA7142221A203100D69DF8 /* StoryboardInitializable.swift */; };
@@ -172,6 +174,8 @@
 		DFA440421F79E74C005F706E /* ComplexityFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexityFilter.swift; sourceTree = "<group>"; };
 		DFAED77F2637AE3A003D3FB6 /* ComplexityFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplexityFilterView.swift; sourceTree = "<group>"; };
 		DFC0245C201E567B00F694BB /* EnumCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumCollection.swift; sourceTree = "<group>"; };
+		DFC7261B27AF9720007A5107 /* BarChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartCell.swift; sourceTree = "<group>"; };
+		DFC7261D27AF97A7007A5107 /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
 		DFC803061F9CF55C008A6851 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		DFDA7140221A1FED00D69DF8 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		DFDA7142221A203100D69DF8 /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
@@ -434,6 +438,8 @@
 				DF8BD4552648C30A00703B88 /* UserDefaultsExtension.swift */,
 				DF769252278E997000AFFADE /* CustomSlider.swift */,
 				DF769254278E999000AFFADE /* SliderView.swift */,
+				DFC7261B27AF9720007A5107 /* BarChartCell.swift */,
+				DFC7261D27AF97A7007A5107 /* BarChart.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -724,6 +730,7 @@
 				DFF7392124C7DFFA008990D9 /* GameDetailViewModel.swift in Sources */,
 				DFF6245A221B0F3B006DBBAD /* FilterModel.swift in Sources */,
 				DFF7C85E1F25983E00443A6C /* PickerTableViewCell.swift in Sources */,
+				DFC7261E27AF97A7007A5107 /* BarChart.swift in Sources */,
 				DF1F1C2124C3EE1A0034A8A5 /* CollectionView.swift in Sources */,
 				DF8C2A9C20F06F6B00DD7284 /* MiniFilterView.swift in Sources */,
 				DFF7392A24C92C8D008990D9 /* FilterPickerViewModel.swift in Sources */,
@@ -785,6 +792,7 @@
 				DFF6245E221B25E9006DBBAD /* ViewModelDependent.swift in Sources */,
 				DFAED7802637AE3A003D3FB6 /* ComplexityFilterView.swift in Sources */,
 				DF65F0C425D4E5F000113735 /* DataRequest+Promise.swift in Sources */,
+				DFC7261C27AF9720007A5107 /* BarChartCell.swift in Sources */,
 				DFE1596420F45C2C006F63E4 /* WhatToPlay.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

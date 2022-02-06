@@ -6,25 +6,18 @@
 //  Copyright © 2022 rlasante. All rights reserved.
 //
 
+import Combine
 import SwiftUI
 
 struct DurationFilterView: View {
     @ObservedObject var viewModel: DurationFilterViewModel
 
-    @State private var durationRange: Range<TimeInterval> = (0.0 ..< TimeInterval.greatestFiniteMagnitude)
     private let allOptions: [TimeInterval] = {
         let intervals = stride(from: TimeInterval(0), to: 10*60*60, by: 15*60)
         return Array(intervals)
     }()
 
-    func update(option: Range<TimeInterval>) {
-        viewModel.params = option
-    }
-
     var body: some View {
-        let binder = $durationRange.onUpdate {
-            update(option: durationRange)
-        }
         return NavigationLink(
             viewModel.params == nil ? viewModel.shortDescription : viewModel.description,
             destination: DurationPicker(viewModel: viewModel)
@@ -33,14 +26,27 @@ struct DurationFilterView: View {
 }
 
 struct DurationPicker: View {
+    @State var maxDuration: TimeInterval = 0.0
+//    @ObservedObject var slider: CustomSlider
     @ObservedObject var viewModel: DurationFilterViewModel
-    @ObservedObject var slider = CustomSlider(start: 0, end: 10*60*60)
+    private var cancellable: AnyCancellable?
+
+    init(viewModel: DurationFilterViewModel) {
+        self.viewModel = viewModel
+//        cancellable = self.viewModel.$maxPlayTime
+//            .sink { maxPlayTime in
+//                self?.maxDuration = maxPlayTime
+//            }
+//        slider = viewModel.slider
+    }
 
     var body: some View {
+//        Binding
         return VStack {
-            Text("High Value: \(slider.highHandle.currentValue / 60 / 60)")
-            Text("Low Value: \(slider.lowHandle.currentValue / 60 / 60)")
-            SliderView(slider: slider)
+            BarChart(title: "Games Per Duration", barColor: .gray, selectedBarColor: .blue, data: $viewModel.barChartData, selectedData: $viewModel.selectedBarChartData)
+            Text("High Value: \(viewModel.highDuration)")
+            Text("Low Value: \(viewModel.lowDuration)")
+            SliderView(slider: viewModel.slider)
         }
         .navigationTitle("Duration (\(self.viewModel.filteredGames.value.count))")
     }
