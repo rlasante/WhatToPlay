@@ -12,12 +12,6 @@ import Alamofire
 import SWXMLHash
 import PromiseKit
 
-enum APIError: Error {
-    case noGames
-    case noUser
-    case tryAgain
-}
-
 class BoardGameGeekAPI {
 
     static let useMockData = false
@@ -212,12 +206,12 @@ class BoardGameGeekAPI {
     }
 }
 
-private extension Optional where Wrapped == HTTPURLResponse {
+extension Optional where Wrapped == HTTPURLResponse {
     var shouldRetryRequest: Bool {
         return self?.shouldRetryRequest ?? true
     }
 }
-private extension HTTPURLResponse {
+extension HTTPURLResponse {
     var shouldRetryRequest: Bool {
         return statusCode == 202
     }

@@ -41,7 +41,7 @@ class CollectionSourceModel {
     // TODO: Make this actually work with both
     func api() -> CollectionListAPI {
         let context = (UIApplication.shared.delegate as! AppDelegate).mainManagedObjectContext
-        return BoardGameGeekAPIV2(context: context)
+        return CollectionListAPIProvider(context: context)
     }
 }
 

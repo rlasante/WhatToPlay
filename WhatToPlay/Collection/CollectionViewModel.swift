@@ -10,7 +10,27 @@ import Combine
 import UIKit
 
 protocol CollectionAPI {
-    func collection(collectionID: String) -> AnyPublisher<CollectionModel, Error>
+    func collectionSubject(collectionID: String) -> AnyPublisher<CollectionModel, Error>
+}
+
+protocol CollectionAPIAsync {
+    func collection(collectionID: String) async throws -> CollectionModel
+}
+
+extension CollectionAPI where Self: CollectionAPIAsync {
+    func collectionSubject(collectionID: String) -> AnyPublisher<CollectionModel, Error> {
+        let subject = PassthroughSubject<CollectionModel, Error>()
+        Task {
+            do {
+                let model = try await collection(collectionID: collectionID)
+                subject.send(model)
+                subject.send(completion: .finished)
+            } catch {
+                subject.send(completion: .failure(error))
+            }
+        }
+        return subject.eraseToAnyPublisher()
+    }
 }
 
 protocol GameAPI {
@@ -35,6 +55,7 @@ class CollectionViewModel: NSObject, ObservableObject {
     let selectFilters = PassthroughSubject<Void, Error>()
 
     // Output
+    let allGamesPublisher: AnyPublisher<[Game], Never>
     let gamesPublisher: AnyPublisher<[Game], Error>
     @Published var games: [Game] = []
 
@@ -58,6 +79,16 @@ class CollectionViewModel: NSObject, ObservableObject {
 //            }
 //            return collectionAPI.collection(collectionID: collectionID)
 //        }
+        let _allGamesPublisher = collection
+            .map {
+                return $0.games
+            }
+            .catch { _ in
+                return Just([])
+            }
+            .share()
+        allGamesPublisher = _allGamesPublisher.eraseToAnyPublisher()
+        
         let _gamesPublisher = Publishers.CombineLatest(collection, filters)
             .map { collectionFilter -> ([Game], [FilterModel]) in
                 (collectionFilter.0.games, collectionFilter.1)
