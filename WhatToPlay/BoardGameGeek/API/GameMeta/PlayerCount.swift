@@ -9,7 +9,7 @@
 import UIKit
 import SWXMLHash
 
-enum PlayerCount {
+enum PlayerCount: Codable {
     case range(min: Int, max: Int)
     case count(value: Int)
 

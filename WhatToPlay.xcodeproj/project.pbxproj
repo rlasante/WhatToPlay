@@ -53,9 +53,12 @@
 		DFC0245D201E567B00F694BB /* EnumCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC0245C201E567B00F694BB /* EnumCollection.swift */; };
 		DFC7261C27AF9720007A5107 /* BarChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7261B27AF9720007A5107 /* BarChartCell.swift */; };
 		DFC7261E27AF97A7007A5107 /* BarChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7261D27AF97A7007A5107 /* BarChart.swift */; };
+		DFC7262027B20839007A5107 /* PlayerCountFilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7261F27B20838007A5107 /* PlayerCountFilterViewModel.swift */; };
+		DFC7262227B20985007A5107 /* PlayerCountFilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC7262127B20985007A5107 /* PlayerCountFilterView.swift */; };
 		DFC803071F9CF55C008A6851 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC803061F9CF55C008A6851 /* HeaderTableViewCell.swift */; };
 		DFDA7141221A1FED00D69DF8 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA7140221A1FED00D69DF8 /* BaseCoordinator.swift */; };
 		DFDA7143221A203100D69DF8 /* StoryboardInitializable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDA7142221A203100D69DF8 /* StoryboardInitializable.swift */; };
+		DFE0B5AF27CB1EC40044CC26 /* BarChartYAxis.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE0B5AE27CB1EC40044CC26 /* BarChartYAxis.swift */; };
 		DFE1594C20F11D83006F63E4 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1594B20F11D83006F63E4 /* GameTableViewCell.swift */; };
 		DFE1596420F45C2C006F63E4 /* WhatToPlay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DFE1596220F45C2C006F63E4 /* WhatToPlay.xcdatamodeld */; };
 		DFE1596620F467E6006F63E4 /* URLValueTransformer.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE1596520F467E6006F63E4 /* URLValueTransformer.swift */; };
@@ -176,9 +179,12 @@
 		DFC0245C201E567B00F694BB /* EnumCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumCollection.swift; sourceTree = "<group>"; };
 		DFC7261B27AF9720007A5107 /* BarChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartCell.swift; sourceTree = "<group>"; };
 		DFC7261D27AF97A7007A5107 /* BarChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChart.swift; sourceTree = "<group>"; };
+		DFC7261F27B20838007A5107 /* PlayerCountFilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCountFilterViewModel.swift; sourceTree = "<group>"; };
+		DFC7262127B20985007A5107 /* PlayerCountFilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCountFilterView.swift; sourceTree = "<group>"; };
 		DFC803061F9CF55C008A6851 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 		DFDA7140221A1FED00D69DF8 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		DFDA7142221A203100D69DF8 /* StoryboardInitializable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardInitializable.swift; sourceTree = "<group>"; };
+		DFE0B5AE27CB1EC40044CC26 /* BarChartYAxis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartYAxis.swift; sourceTree = "<group>"; };
 		DFE1594B20F11D83006F63E4 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		DFE1596320F45C2C006F63E4 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		DFE1596520F467E6006F63E4 /* URLValueTransformer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLValueTransformer.swift; sourceTree = "<group>"; };
@@ -392,7 +398,7 @@
 				DF65F0DE25EC91BE00113735 /* MechanicFilterView.swift */,
 				DFAED77F2637AE3A003D3FB6 /* ComplexityFilterView.swift */,
 				DF769250278E8C6A00AFFADE /* DurationFilterView.swift */,
-				DF65F0CC25E3592100113735 /* FilterViewModel.swift */,
+				DFC7262127B20985007A5107 /* PlayerCountFilterView.swift */,
 			);
 			path = Filter;
 			sourceTree = "<group>";
@@ -413,8 +419,10 @@
 		DF8BD45B264A1E9400703B88 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				DF65F0CC25E3592100113735 /* FilterViewModel.swift */,
 				DF8BD45C264A1F9500703B88 /* ComplexityFilterViewModel.swift */,
 				DF8BD460264A1FD700703B88 /* DurationFilterViewModel.swift */,
+				DFC7261F27B20838007A5107 /* PlayerCountFilterViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -439,6 +447,7 @@
 				DF769252278E997000AFFADE /* CustomSlider.swift */,
 				DF769254278E999000AFFADE /* SliderView.swift */,
 				DFC7261B27AF9720007A5107 /* BarChartCell.swift */,
+				DFE0B5AE27CB1EC40044CC26 /* BarChartYAxis.swift */,
 				DFC7261D27AF97A7007A5107 /* BarChart.swift */,
 			);
 			path = Utils;
@@ -738,6 +747,7 @@
 				DF8582551F677A7000543AB8 /* PlayerCountFilter.swift in Sources */,
 				DFF7392324C7E008008990D9 /* GameDetailCoordinator.swift in Sources */,
 				DF769253278E997000AFFADE /* CustomSlider.swift in Sources */,
+				DFC7262027B20839007A5107 /* PlayerCountFilterViewModel.swift in Sources */,
 				DFECC9AA1F69F81300077A6C /* PlayerCount.swift in Sources */,
 				DF8C2AA020F07ADE00DD7284 /* FilterCollectionViewController.swift in Sources */,
 				DF3B1B591F0041BF00E4E8F7 /* BoardGameGeekAPI.swift in Sources */,
@@ -753,6 +763,7 @@
 				DF65F0D925EB52EE00113735 /* CombineLatestCollection.swift in Sources */,
 				DF3B1B231F003E4F00E4E8F7 /* ViewController.swift in Sources */,
 				DFE1596620F467E6006F63E4 /* URLValueTransformer.swift in Sources */,
+				DFE0B5AF27CB1EC40044CC26 /* BarChartYAxis.swift in Sources */,
 				DFF7C85C1F257DA400443A6C /* PlayerCountController.swift in Sources */,
 				DF8582571F677B0A00543AB8 /* FilterTemplate.swift in Sources */,
 				DFF7C8591F257CA700443A6C /* FilterViewController.swift in Sources */,
@@ -763,6 +774,7 @@
 				DFF7392824C92C79008990D9 /* FilterPickerView.swift in Sources */,
 				DFF62463221B288A006DBBAD /* CollectionViewModel.swift in Sources */,
 				1DACEEE12790647700D605D6 /* StringExtensions.swift in Sources */,
+				DFC7262227B20985007A5107 /* PlayerCountFilterView.swift in Sources */,
 				DFF62467221B7284006DBBAD /* BoardGameGeekAPIV2.swift in Sources */,
 				DFE1594C20F11D83006F63E4 /* GameTableViewCell.swift in Sources */,
 				DFF62452221A6DD1006DBBAD /* CollectionPickerCoordinator.swift in Sources */,

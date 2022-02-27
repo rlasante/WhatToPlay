@@ -86,7 +86,6 @@ class CollectionViewModel: NSObject, ObservableObject {
             .catch { _ in
                 return Just([])
             }
-            .share()
         allGamesPublisher = _allGamesPublisher.eraseToAnyPublisher()
         
         let _gamesPublisher = Publishers.CombineLatest(collection, filters)

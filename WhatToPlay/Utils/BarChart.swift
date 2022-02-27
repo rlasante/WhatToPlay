@@ -19,8 +19,13 @@ struct BarChart: View {
 //    var legend: String
     var barColor: Color
     var selectedBarColor: Color
+
+    @State var touchLocation: CGFloat = -1
+    @Binding var currentLabel: String
+    @Binding var yAxisLabels: [ChartData]
     @Binding var data: [ChartData]
     @Binding var selectedData: [ChartData]
+    @Binding var highlightedData: [ChartData]
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -32,28 +37,49 @@ struct BarChart: View {
             GeometryReader { geometry in
                 VStack {
                     HStack {
-                        ForEach(0..<data.count, id: \.self) { i in
-                            let isSelected = selectedData.contains(data[i])
-                            let barColor = isSelected ? selectedBarColor : barColor
-                            BarChartCell(value: normalizedValue(index: i), barColor: barColor)
-                                .animation(.spring())
-                                .padding(.top)
+                        if !yAxisLabels.isEmpty {
+                            BarChartYAxis(width: geometry.size.width * 0.2, labels: $yAxisLabels)
+                        }
+                        GeometryReader { geo in
+                            HStack {
+                                ForEach(0..<data.count, id: \.self) { i in
+                                    BarChartCell(value: normalizedValue(index: i), barColor: self.finalBarColor(data[i]))
+                                        .animation(.spring())
+                                        .padding(.top)
+                                }
+                            }
+                            .gesture(
+                                DragGesture(minimumDistance: 0)
+                                    .onChanged { position in
+                                        let touchPosition = position.location.x / geo.frame(in: .local).width
+                                        touchLocation = touchPosition
+                                        updateCurrentValue()
+                                    }
+                                    .onEnded { _ in
+                                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                            withAnimation(Animation.easeOut(duration: 0.5)) {
+                                                resetValues()
+                                            }
+                                        }
+                                    }
+                            )
                         }
                     }
-//                    if currentLabel.isEmpty {
+
+                    if currentLabel.isEmpty {
 //                        Text(legend)
 //                            .bold()
 //                            .foregroundColor(.black)
 //                            .padding(5)
 //                            .background(RoundedRectangle(cornerRadius: 5).foregroundColor(.white).shadow(radius: 3))
-//                    } else {
-//                        Text(currentLabel)
-//                            .bold()
-//                            .foregroundColor(.black)
-//                            .padding(5)
-//                            .background(RoundedRectangle(cornerRadius: 5).foregroundColor(.white).shadow(radius: 3))
-//                            .animation(.easeIn)
-//                    }
+                    } else {
+                        Text(currentLabel)
+                            .bold()
+                            .foregroundColor(.black)
+                            .padding(5)
+                            .background(RoundedRectangle(cornerRadius: 5).foregroundColor(.white).shadow(radius: 3))
+                            .animation(.easeIn)
+                    }
                 }
                 
             }
@@ -61,22 +87,53 @@ struct BarChart: View {
         .padding()
     }
 
+    private func finalBarColor(_ barData: ChartData) -> Color {
+        let highlighting = !highlightedData.isEmpty
+        let isHighlighted = highlightedData.contains(barData)
+        let isSelected = selectedData.contains(barData)
+        switch (highlighting, isHighlighted, isSelected) {
+        case (true, true, _), (false, false, true):
+            return selectedBarColor
+        case (true, false, true):
+            return selectedBarColor.opacity(0.5)
+        case (_, false, false), (false, true, _):
+            return barColor
+        }
+    }
+
     private func normalizedValue(index: Int) -> Double {
-        var allValues: [Double]    {
-            var values = [Double]()
-            for data in data {
-                values.append(data.value)
-            }
-            return values
+        let allValues: [Double] = data.map {
+            $0.value
         }
-        guard let max = allValues.max() else {
+        guard let max = allValues.max(), max != 0 else {
             return 1
         }
-        if max != 0 {
-            return Double(data[index].value)/Double(max)
-        } else {
-            return 1
+        return data[index].value / max
+    }
+
+    func updateCurrentValue() {
+        let index = Int(touchLocation * CGFloat(data.count))
+        guard index < data.count && index >= 0 else {
+            highlightedData = []
+            return
         }
+        highlightedData = [data[index]]
+    }
+
+    func resetValues() {
+        touchLocation = -1
+        highlightedData  =  []
+    }
+
+    func labelOffset(in width: CGFloat) -> CGFloat {
+        let currentIndex = Int(touchLocation * CGFloat(data.count))
+        guard currentIndex < data.count && currentIndex >= 0 else {
+            return 0
+        }
+        let cellWidth = width / CGFloat(data.count)
+        let actualWidth = width - cellWidth
+        let position = cellWidth * CGFloat(currentIndex) - actualWidth/2
+        return position
     }
 }
 
