@@ -43,7 +43,16 @@ struct DurationPicker: View {
     var body: some View {
 //        Binding
         return VStack {
-            BarChart(title: "Games Per Duration", barColor: .gray, selectedBarColor: .blue, data: $viewModel.barChartData, selectedData: $viewModel.selectedBarChartData)
+            BarChart(
+                title: "Games Per Duration",
+                barColor: .gray,
+                selectedBarColor: .blue,
+                currentLabel: $viewModel.currentLabel,
+                yAxisLabels: $viewModel.yAxisLabels,
+                data: $viewModel.barChartData,
+                selectedData: $viewModel.selectedBarChartData,
+                highlightedData: $viewModel.currentHighlight
+            )
             Text("High Value: \(viewModel.highDuration)")
             Text("Low Value: \(viewModel.lowDuration)")
             SliderView(slider: viewModel.slider)

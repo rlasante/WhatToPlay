@@ -26,7 +26,7 @@ struct CollectionListAPIProvider: CollectionListAPI, CollectionListAPIAsync {
     }
 
     func collections(username: String) async throws -> [CollectionModel] {
-        let bggGames = try await BoardGameGeekAPIAsync.shared.getCollection(username: username, context: context)
+        let bggGames = try await BoardGameGeekAPIAsync.shared.collection(username: username, context: context)
         return [CollectionModel(games: bggGames)]
     }
 }
@@ -63,6 +63,7 @@ class BoardGameGeekAPIAsync {
 //    }
 
     func collection(username: String, context: NSManagedObjectContext, retries: Int = 3) async throws -> [Game] {
+        print(#function)
         do {
             return try await getCollection(username: username, context: context)
         }
@@ -74,11 +75,13 @@ class BoardGameGeekAPIAsync {
             return try await collection(username: username, context: context, retries: retries - 1)
         }
         catch {
+            print("Failed to get collection \(error)")
             throw error
         }
     }
 
-    func getCollection(username: String, context: NSManagedObjectContext) async throws -> [Game] {
+    private func getCollection(username: String, context: NSManagedObjectContext) async throws -> [Game] {
+        print(#function)
         guard let url = URL(string:"\(baseURL)/collection?username=\(username)&own=1") else {
             throw APIError.invalidURL
         }

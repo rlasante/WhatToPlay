@@ -18,8 +18,11 @@ class DurationFilterViewModel: FilterViewModel<ClosedRange<TimeInterval>> {
     @Published var lowDuration: String
     @Published var highDuration: String
     @Published var histogram: [TimeInterval: [Game]] = [:]
+    @Published var yAxisLabels: [BarChart.ChartData] = []
     @Published var barChartData: [BarChart.ChartData] = []
     @Published var selectedBarChartData: [BarChart.ChartData] = []
+    @Published var currentHighlight: [BarChart.ChartData] = []
+    @Published var currentLabel: String = ""
 
     init(_ unfilteredGames: AnyPublisher<[Game], Never>) {
         slider = CustomSlider(start: 0, end: 0)
@@ -87,6 +90,20 @@ class DurationFilterViewModel: FilterViewModel<ClosedRange<TimeInterval>> {
             }
             .assign(to: &$barChartData)
 
+        $barChartData
+            .map { chartData -> [BarChart.ChartData] in
+                guard !chartData.isEmpty else {
+                    return []
+                }
+                let maxLevel = chartData.max { $0.value < $1.value }?.value ?? 0
+                let numberOfTicks = 10
+                let stepCount = maxLevel / Double(numberOfTicks)
+                return (0 ... numberOfTicks).map {
+                    BarChart.ChartData(label: "\(Int(Double($0) * stepCount))", value: Double($0) * stepCount)
+                }
+            }
+            .assign(to: &$yAxisLabels)
+
         $histogram
             .combineLatest($params)
             .map { histogram, params -> [BarChart.ChartData] in
@@ -107,6 +124,17 @@ class DurationFilterViewModel: FilterViewModel<ClosedRange<TimeInterval>> {
                     }
             }
             .assign(to: &$selectedBarChartData)
+
+        $currentHighlight
+            .map {
+                if let higlighted = $0.first, $0.count == 1 {
+                    return higlighted.label
+                }
+                else {
+                    return ""
+                }
+            }
+            .assign(to: &$currentLabel)
 
         // Labels
         $params

@@ -27,6 +27,9 @@ struct FilterPickerView: View {
             ForEach(self.viewModel.selectedFilters.value.compactMap { $0 as? DurationFilterViewModel }, id: \.shortDescription) { filter in
                 DurationFilterView(viewModel: filter)
             }
+            ForEach(self.viewModel.selectedFilters.value.compactMap { $0 as? PlayerCountFilterViewModel }, id: \.shortDescription) { filter in
+                PlayerCountFilterView(viewModel: filter)
+            }
         }
     }
 }
